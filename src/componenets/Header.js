@@ -13,20 +13,16 @@ import {
   Stack,
   Input,
 } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
     <>
-      <Box
-        height={'90px'}
-        justifyContent={'space-between'}
-        width={'100%'}
-        bg={useColorModeValue('gray.200', 'gray.900')}
-      >
+      <Box height={'90px'} justifyContent={'space-between'} width={'100%'} backgroundColor={'#EDEBF1'}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-around'}>
-          <Box m={'20px'}>
+          <Link to={'/'} m={'20px'}>
             <img style={{ width: '120px', marginTop: '50px' }} src='Images/RBR Logo 1.png' alt='logo' />
-          </Box>
+          </Link>
           <Stack mt={5} direction={'row'} borderRadius={'3xl'} border={'1px solid #B668D3'}>
             <Search2Icon m={3} />
             {/* <input
@@ -75,7 +71,7 @@ const Header = () => {
                   Login
                   <TriangleDownIcon />
                 </MenuButton>
-                <MenuList>
+                <MenuList backgroundColor={'transparent'}>
                   {/* <MenuDivider /> */}
                   <MenuItem>
                     <Button color={'B668D3'} bgColor={'#D5C9E8'}>

@@ -1,4 +1,7 @@
 import React from 'react';
+import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
+
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 
 import { useState, useEffect } from 'react';
 import '../global.css';
@@ -7,6 +10,8 @@ import {
   Flex,
   Text,
   Container,
+  UnorderedList,
+  ListItem,
   Heading,
   SimpleGrid,
   Image,
@@ -15,28 +20,12 @@ import {
   Center,
   Button,
   GridItem,
+  Avatar,
   useColorModeValue,
   StackDivider,
 } from '@chakra-ui/react';
+
 import {} from '@chakra-ui/react';
-import { IoSearchSharp, IoLogoBitcoin, IoAnalyticsSharp } from 'react-icons/io5';
-
-const Feature = ({ text, icon, iconBg }) => {
-  return (
-    <Stack direction={'row'} align={'center'}>
-      <Flex w={8} h={8} align={'center'} justify={'center'} rounded={'full'} bg={iconBg}>
-        {icon}
-      </Flex>
-      <Text fontWeight={600}>{text}</Text>
-    </Stack>
-  );
-};
-
-const StatsText = ({ children }) => (
-  <Text as={'span'} fontWeight={700} color={'white'}>
-    {children}
-  </Text>
-);
 
 const Home = () => {
   const sliderData = [
@@ -47,12 +36,14 @@ const Home = () => {
       //   btn: <ButtonOn name='Start Your journey with us' link='/GoalPage' />,
     },
     {
-      image: 'Images/rbr3.png',
+      image: 'https://res.cloudinary.com/mabhi8251/image/upload/v1637396498/samples/people/bicycle.jpg',
+
       heading: 'Are You Ready to start your day with RBR',
       desc: 'This is the description of slide two Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi quos quas, voluptatum nesciunt illum exercitationem.',
     },
     {
-      image: 'Images/rbr2.png',
+      image: 'https://res.cloudinary.com/mabhi8251/image/upload/v1637396498/samples/people/bicycle.jpg',
+
       //   heading: 'books our best doctors and best Prowfit trainers',
       //   desc: 'This is the description of slide three Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi quos quas, voluptatum nesciunt illum exercitationem.',
     },
@@ -141,18 +132,21 @@ const Home = () => {
           );
         })}
       </div>
-
       <Container maxW={'7xl'} py={5} mb={20} mt={60}>
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
           <Stack spacing={10}>
             <Heading color={'#773FC6'}>Where young minds meet industrious retirees</Heading>
 
             <Stack divider={<StackDivider borderColor={useColorModeValue('#606176', 'gray.700')} />}>
-              <Feature
+              <Text>
+                Retired professionals have a wealth of knowledge, wisdom and skills that can be beneficial to currently
+                employed professionals. RBR is where this juncture is made possible.
+              </Text>
+              {/* <Feature
                 text={
                   'Retired professionals have a wealth of knowledge, wisdom and skills that can be beneficial to currently employed professionals. RBR is where this juncture is made possible.'
                 }
-              />
+              /> */}
             </Stack>
 
             <Button
@@ -170,11 +164,10 @@ const Home = () => {
           </Stack>
 
           <Flex>
-            <Image rounded={'md'} alt={'feature image'} src={'Images/rbr3.png'} objectFit={'cover'} />
+            <Image rounded={'md'} alt={'feature image'} src={'Images/Rectangle 96.png'} objectFit={'cover'} />
           </Flex>
         </SimpleGrid>
       </Container>
-
       <Container
         backgroundColor={'#6300FF0F'}
         borderRadius={'md'}
@@ -220,7 +213,7 @@ const Home = () => {
                   fontWeight={'500'}
                   // _hover={{ bg: 'orange.500' }}
                 >
-                  Start Your Junrney
+                  Start your journey
                 </Button>
               </Center>
             </Flex>
@@ -258,7 +251,7 @@ const Home = () => {
                 fontWeight={'500'}
                 // _hover={{ bg: 'orange.500' }}
               >
-                Start Your Junrney
+                Start your journey
               </Button>
             </Center>
           </GridItem>
@@ -303,123 +296,304 @@ const Home = () => {
           </GridItem>
         </Grid>
       </Container>
-      <Container
-        backgroundColor={'#55FF001F'}
-        borderRadius={'md'}
-        border={'1px solid red'}
-        height={'554px'}
-        maxW={'8xl'}
-        mt={20}
-      >
-        <Heading>So much you can do with REtPRO</Heading>
+      <Container height={'554px'} maxW={'7xl'} mt={20}>
         <Grid
           templateColumns={{
             base: 'repeat(1, 1fr)',
             sm: 'repeat(2, 1fr)',
             md: 'repeat(2, 1fr)',
           }}
-          gap={4}
-          mt={'130px'}
+          mt={'50px'}
         >
-          <GridItem colSpan={1}>
-            <Center mt={20}></Center>
+          <GridItem colSpan={1} justifyContent={'center'} mt={'50px'}>
+            {/* <Flex direction={'row'}> */}
+            <Image src='Images/Group-114.png' alt='oldman' />
           </GridItem>
-          <GridItem left={'650px'}>
-            <Flex alignItems='center'></Flex>
-          </GridItem>
+          <Flex direction={'column'}>
+            <Heading color={'#2F327D'} fontWeight={'bold'} fontSize={'22px'}>
+              So much you can do with{' '}
+            </Heading>
+
+            <br />
+            <GridItem height={'64px'} width={'140px'} ml={'60px'}>
+              <img src='Images/Ret-pro-logo 2.png' alt='' />
+            </GridItem>
+            <GridItem>
+              {/* <Flex alignItems='center'> */}
+              <Text fontSize={'17px'} color={'#000000'}>
+                (your skills are all you need to begin)
+              </Text>
+              {/* </Flex> */}
+            </GridItem>
+            <GridItem width={700} mt={24} ml={'-120px'} justifyContent={'start'}>
+              <img src='Images/Group-626024.png' alt='' />
+            </GridItem>
+            {/* </Grid> */}
+          </Flex>
+
+          {/* </Flex>/ */}
         </Grid>
       </Container>
-      <Container
-        backgroundColor={'#55FF001F'}
-        borderRadius={'md'}
-        border={'1px solid red'}
-        height={'554px'}
-        maxW={'8xl'}
-        mt={40}
-      >
-        <Heading>Fastrack your career with JunPRO</Heading>
+      <Container height={'554px'} maxW={'6xl'} mt={20}>
         <Grid
           templateColumns={{
             base: 'repeat(1, 1fr)',
             sm: 'repeat(2, 1fr)',
             md: 'repeat(2, 1fr)',
           }}
-          gap={4}
-          mt={'130px'}
+          mt={'50px'}
         >
-          <GridItem colSpan={1}>
-            <Center mt={20}></Center>
+          <Flex direction={'column'} justifyContent={'start'} align={'center'}>
+            <Heading color={'#2F327D'} fontWeight={'bold'} fontSize={'22px'}>
+              Fastrack your career with{' '}
+            </Heading>
+
+            <br />
+            <GridItem height={'64px'} width={'140px'}>
+              <img src='Images/JunPro-2.png' alt='' />
+            </GridItem>
+            <GridItem>
+              {/* <Flex alignItems='center'> */}
+              <Text fontSize={'17px'} color={'#000000'}>
+                (your skills are all you need to begin)
+              </Text>
+              {/* </Flex> */}
+            </GridItem>
+            <GridItem width={700} mt={24} justifyContent={'center'}>
+              <img src='Images/Group-626024.png' alt='' />
+            </GridItem>
+            {/* </Grid> */}
+          </Flex>
+
+          <GridItem width={'308px'} colSpan={1} justifyContent={'center'} mt={'50px'}>
+            {/* <Flex direction={'row'}> */}
+            <Image src='Images/How-it-works.png' alt='oldman' />
           </GridItem>
-          <GridItem left={'650px'}>
-            <Flex alignItems='center'></Flex>
-          </GridItem>
+
+          {/* </Flex>/ */}
         </Grid>
-      </Container>
-      <Container
-        backgroundColor={'#55FF001F'}
-        borderRadius={'md'}
-        border={'1px solid red'}
-        height={'554px'}
-        maxW={'8xl'}
-        mt={40}
-      >
-        <Heading>Meet the RetPro area experts</Heading>
-        <Grid
-          templateColumns={{
-            base: 'repeat(1, 1fr)',
-            sm: 'repeat(2, 1fr)',
-            md: 'repeat(2, 1fr)',
-          }}
-          gap={4}
-          mt={'130px'}
-        >
-          <GridItem colSpan={1}>
-            <Center mt={20}></Center>
-          </GridItem>
-          <GridItem left={'650px'}>
-            <Flex alignItems='center'></Flex>
-          </GridItem>
-        </Grid>
-      </Container>
-      <Container borderRadius={'md'} border={'1px solid red'} height={'554px'} maxW={'8xl'} mt={40}>
-        <Heading>Creating impact for retired and working professionals</Heading>
-        <Grid
-          templateColumns={{
-            base: 'repeat(1, 1fr)',
-            sm: 'repeat(2, 1fr)',
-            md: 'repeat(2, 1fr)',
-          }}
-          gap={4}
-          mt={'130px'}
-        >
-          <GridItem colSpan={1}>
-            <Center mt={20}></Center>
-          </GridItem>
-          <GridItem left={'650px'}>
-            <Flex alignItems='center'></Flex>
-          </GridItem>
-        </Grid>
-      </Container>
-      <Container borderRadius={'md'} border={'1px solid red'} height={'554px'} maxW={'8xl'} mt={40}>
-        <Heading ml={'40'} fontSize={'5xl'}>
-          Some real-life success stories to get inspired by
+      </Container>{' '}
+      <Container align={'center'} maxW={'9xl'} mt={40}>
+        <Heading display={'inline-block'} align={'center'} color={'#2F327D'} width={'608px'}>
+          Meet the <span style={{ color: '#773FC6', fontSize: '55px' }}>RetPro</span>
+          area experts
         </Heading>
-        <Grid
-          templateColumns={{
-            base: 'repeat(1, 1fr)',
-            sm: 'repeat(2, 1fr)',
-            md: 'repeat(2, 1fr)',
-          }}
-          gap={4}
-          mt={'130px'}
+        <Flex justifyContent={'space-evenly'} mt={8}>
+          <Flex
+            width={'235px'}
+            border={'1px solid #773FC680'}
+            borderRadius={'20px'}
+            align={'center'}
+            mt={8}
+            direction={'column'}
+          >
+            <Avatar src='Images/Business-1.png' alt='name' p={2} mb={4} width={130} height={32} />
+            <Stack spacing={-1} align={'center'}>
+              <Text
+                fontSize='24px'
+                fontWeight={800}
+                maxW={190}
+                color={useColorModeValue('gray.600', 'gray.400')}
+                mb={4}
+              >
+                Frontend
+              </Text>
+            </Stack>
+          </Flex>
+          <Flex
+            width={'235px'}
+            border={'1px solid #773FC680'}
+            borderRadius={'20px'}
+            align={'center'}
+            mt={8}
+            direction={'column'}
+          >
+            <Avatar p={2} src='Images/Entertainment-1.png' alt='name' mb={4} width={130} height={32} />
+            <Stack spacing={-1} align={'center'}>
+              <Text
+                fontSize='24px'
+                fontWeight={800}
+                maxW={190}
+                color={useColorModeValue('gray.600', 'gray.400')}
+                mb={4}
+              >
+                Professors
+              </Text>
+            </Stack>
+          </Flex>
+          <Flex
+            width={'235px'}
+            border={'1px solid #773FC680'}
+            borderRadius={'20px'}
+            align={'center'}
+            mt={8}
+            direction={'column'}
+          >
+            <Avatar p={2} src='Images/Law-&-Order-1.png' alt='name' mb={4} width={130} height={32} />
+            <Stack spacing={-1} align={'center'}>
+              <Text
+                fontSize='24px'
+                fontWeight={800}
+                maxW={190}
+                color={useColorModeValue('gray.600', 'gray.400')}
+                mb={4}
+              >
+                Mentors
+              </Text>
+            </Stack>
+          </Flex>
+          <Flex
+            width={'235px'}
+            border={'1px solid #773FC680'}
+            borderRadius={'20px'}
+            align={'center'}
+            mt={8}
+            direction={'column'}
+          >
+            <Avatar p={2} src='Images/110.png' alt='name' mb={4} width={130} height={32} />
+            <Stack spacing={-1} align={'center'}>
+              <Text
+                fontSize='24px'
+                fontWeight={800}
+                maxW={190}
+                color={useColorModeValue('gray.600', 'gray.400')}
+                mb={4}
+              >
+                Consultants
+              </Text>
+            </Stack>
+          </Flex>
+        </Flex>
+      </Container>
+      <Center mt={20}>
+        <Button
+          fontSize={'20px'}
+          color={'#773FC6'}
+          border={'1px solid #773FC6'}
+          borderRadius={'3xl'}
+          height={'48px'}
+          width={'250px'}
         >
-          <GridItem colSpan={1}>
-            <Center mt={20}></Center>
-          </GridItem>
-          <GridItem left={'650px'}>
-            <Flex alignItems='center'></Flex>
-          </GridItem>
-        </Grid>
+          Explore all
+        </Button>
+      </Center>
+      <Container borderRadius={'md'} height={'554px'} maxW={'8xl'} mt={35}>
+        <Center>
+          <Heading align={'center'} width={'700px'} lineHeight={'56px'} fontSize={'44px'} color={'#101130'}>
+            Creating impact for retired and working professionals
+          </Heading>
+        </Center>
+        <Stack minH={'504px'} direction={{ base: 'column', md: 'row' }}>
+          <Flex p={10} flex={1} justify={'center'}>
+            <Stack background={'#EDF3FF'} width={'504px'} height={'411px'} spacing={5} w={'70%'}>
+              <Heading borderTopRadius={'20px'} height={20} align={'center'} background={'#773FC6'}>
+                {' '}
+                <Text justifyContent={'center'} color={'#fff'} mt={5}>
+                  Why RetPro?
+                </Text>{' '}
+              </Heading>
+              <Text fontSize={{ base: 'md', lg: 'lg' }} color={'#773FC6'}>
+                <UnorderedList ml={10} spacing={10}>
+                  <ListItem>work from the comfort of your home</ListItem>
+                  <ListItem>offer virtual/in-person mentoring & guidance</ListItem>
+                  <ListItem> connect & socialize with other RetPros & JunPros </ListItem>
+                  <ListItem>enjoy superior quality of life post retirement</ListItem>
+                </UnorderedList>
+              </Text>
+            </Stack>
+          </Flex>
+          <Flex p={10} flex={1} justify={'center'}>
+            <Stack background={'#EFFFE7'} width={'504px'} height={'411px'} spacing={5} w={'70%'}>
+              <Heading borderTopRadius={'20px'} height={20} align={'center'} background={'#46B40F'}>
+                {' '}
+                <Text justifyContent={'center'} color={'#fff'} mt={5}>
+                  Why JunPro?
+                </Text>{' '}
+              </Heading>
+              <Text fontSize={{ base: 'md', lg: 'lg' }} color={'#773FC6'}>
+                <UnorderedList ml={10} spacing={10}>
+                  <ListItem>work from the comfort of your homehire retired experts short or long-term</ListItem>
+                  <ListItem>receive top notch mentorship & wisdom</ListItem>
+                  <ListItem>pocket-friendly services that work for you</ListItem>
+                  <ListItem>network & engage with RetPros</ListItem>
+                </UnorderedList>
+              </Text>
+            </Stack>
+          </Flex>
+        </Stack>
+      </Container>
+      <Container borderRadius={'md'} border={'1px solid red'} height={'554px'} maxW={'7xl'} mt={40}>
+        <Heading fontSize={'44px'}>
+          Some real-life success stories to <hr /> get inspired by
+        </Heading>
+        <AiOutlineArrowLeft className='arrow prev' onClick={prevSlide} />
+        <AiOutlineArrowRight className='arrow next' onClick={nextSlide} />
+        <Stack border={'2px solid red'} minH={'504px'} direction={{ base: 'column', md: 'row' }}>
+          <Flex border={'2px solid red'} pt={10} flex={1} justify={'center'}>
+            <Stack
+              border={'2px solid red'}
+              //   background={'#EDF3FF'}
+              //   width={'100%'}
+              //   height={'411px'}
+              spacing={5}
+              w={'80%'}
+            >
+              <Heading borderTopRadius={'20px'} align={'center'}>
+                {' '}
+                <Text justifyContent={'center'} color={'#101130'} fontSize={'20px'} mt={5}>
+                  "No online course could have <br /> helped me this way"
+                </Text>{' '}
+              </Heading>
+              <Text color={'#606176'} fontSize={'15px'}>
+                "A RetPro helped me realize that my aspirations were leaning more towards Data sciences than what I am
+                currently doing"
+              </Text>
+              <Flex align={'center'} mt={8} direction={'row'}>
+                <Avatar spacing={10} src='Images/110.png' alt='name' mb={2} mr={5} />
+                <Stack align={'center'}>
+                  <Text color={'#101130'} fontWeight={1000}>
+                    Milena Belmar
+                  </Text>
+                  <Text mt={'-10px'} fontSize={'sm'} color={'#606176'}>
+                    Argentina
+                  </Text>
+                </Stack>
+              </Flex>
+            </Stack>
+          </Flex>
+          <Flex border={'2px solid red'} pt={10} flex={1} justify={'center'}>
+            <Stack
+              border={'2px solid red'}
+              //   background={'#EFFFE7'}
+              //   width={'504px'}
+              //   height={'411px'}
+              spacing={5}
+              w={'80%'}
+            >
+              <Heading height={20} align={'center'}>
+                {' '}
+                <Text lineHeight={'28px'} fontSize={'20px'} color={'#101130'} mt={5}>
+                  "I have been rewarded with both <br /> help and loyalty"
+                </Text>{' '}
+              </Heading>
+              <Text fontSize={'15px'} color={'#606176'}>
+                "The retired professional who is currently working with me to improve my language proficiency in French,
+                is extremely punctual and passionate about teaching"
+              </Text>
+              <Flex align={'center'} direction={'row'}>
+                <Avatar spacing={10} src='Images/Ellipse-38.png' alt='name' mb={2} mr={5} />
+                <Stack align={'center'}>
+                  <Text color={'#101130'} fontWeight={1000}>
+                    Milena Belmar
+                  </Text>
+                  <Text mt={'-10px'} fontSize={'sm'} color={'#606176'}>
+                    Argentina
+                  </Text>
+                </Stack>
+              </Flex>
+            </Stack>
+          </Flex>
+        </Stack>
       </Container>
     </div>
   );
