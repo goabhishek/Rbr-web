@@ -2,10 +2,18 @@ import React from 'react';
 import { Button, Flex, FormControl, Heading, Input, Stack, Image, Center, Text } from '@chakra-ui/react';
 import { FcFeedback, FcGoogle, FcTabletAndroid } from 'react-icons/fc';
 import { FaFacebook } from 'react-icons/fa';
+import LoginPopup from '../componenets/LoginPopup';
+import { useState } from 'react';
 
 const Register = () => {
+  const [modalIsOpen, setShowPopup] = useState(false);
+  const setModalIsOpenToTrue = () => {
+    setShowPopup(true);
+  };
+
   return (
     <div>
+      <LoginPopup modalIsOpen={modalIsOpen} showPopup={setShowPopup} />
       <Stack backgroundColor={'#EDEBF1'} minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
         <Flex width={'552px'} direction={'column'} p={8} flex={1} align={'center'} justify={'center'}>
           <Heading fontWeight={700} fontSize={'40px'}>
@@ -29,7 +37,7 @@ const Register = () => {
             </FormControl>
 
             <Stack p={2} spacing={6}>
-              <Button colorScheme={'blue'} variant={'solid'}>
+              <Button backgroundColor={'#773FC6'} color={'#fff'} onClick={setModalIsOpenToTrue}>
                 Create account
               </Button>
             </Stack>

@@ -4,6 +4,8 @@ import Header from './componenets/Header';
 import Footer from './componenets/Footer';
 import Register from './pages/register';
 import Login from './pages/login';
+import ProfileFirst from './pages/profile/ProfileFirst';
+// import LinaerStepper from './pages/profile/LinearStepper';
 function App() {
   return (
     <div className='App'>
@@ -12,8 +14,9 @@ function App() {
         <Route path='/' element={<Home />} /> {/* 👈 Renders at /app/ */}
         <Route path='/Register' element={<Register />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/ProfileFirst' element={<ProfileFirst />} />
+        {/* <Route path='/LinaerStepper' element={<LinaerStepper />} /> */}
       </Routes>
-
       <Footer />
     </div>
   );

@@ -1,18 +1,7 @@
 import React from 'react';
 import '../global.css';
-import {
-  Box,
-  Container,
-  Link,
-  Center,
-  Button,
-  SimpleGrid,
-  Stack,
-  Text,
-  useColorModeValue,
-  Image,
-} from '@chakra-ui/react';
-import MobileStoreButton from 'react-mobile-store-button';
+import { Box, Container, Link, Button, SimpleGrid, Stack, Text, useColorModeValue, Image } from '@chakra-ui/react';
+// import MobileStoreButton from 'react-mobile-store-button';
 
 const ListHeader = ({ children }) => {
   return (
@@ -23,7 +12,7 @@ const ListHeader = ({ children }) => {
 };
 
 const Footer = () => {
-  const AnsroidUrl = 'https://itunes.apple.com/us/app/all-of-the-lights/id959389722?mt=8';
+  //   const AnsroidUrl = 'https://itunes.apple.com/us/app/all-of-the-lights/id959389722?mt=8';
   return (
     <Box width={'100%'} backgroundColor={'#EDEBF1'} color={useColorModeValue('gray.700', 'gray.200')}>
       <Container as={Stack} maxW={'8xl'} py={10}>

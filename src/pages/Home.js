@@ -28,6 +28,40 @@ import {
 import {} from '@chakra-ui/react';
 
 const Home = () => {
+  const StoriesSliderData = [
+    {
+      HeadFont: 'No online course could have helped me this way',
+      Text: 'A RetPro helped me realize that my aspirations were leaning more towards Data sciences than what I am currently doing',
+      UserDp: 'Images/Ellipse-38.png',
+      UserName: 'Wilson Thai',
+      UserAddr: 'Ontario, Canada',
+      UserStar: '',
+    },
+    {
+      HeadFont: 'No online course could have helped me this way',
+      Text: 'A RetPro helped me realize that my aspirations were leaning more towards Data sciences than what I am currently doing',
+      UserDp: 'Images/Ellipse-38.png',
+      UserName: 'Wilson Thai',
+      UserAddr: 'Ontario, Canada',
+      UserStar: '',
+    },
+    {
+      HeadFont: 'No online course could have helped me this way',
+      Text: 'A RetPro helped me realize that my aspirations were leaning more towards Data sciences than what I am currently doing',
+      UserDp: 'Images/Ellipse-38.png',
+      UserName: 'Wilson Thai',
+      UserAddr: 'Ontario, Canada',
+      UserStar: '',
+    },
+    {
+      HeadFont: 'No online course could have helped me this way',
+      Text: 'A RetPro helped me realize that my aspirations were leaning more towards Data sciences than what I am currently doing',
+      UserDp: 'Images/Ellipse-38.png',
+      UserName: 'Wilson Thai',
+      UserAddr: 'Ontario, Canada',
+      UserStar: '',
+    },
+  ];
   const sliderData = [
     {
       image: 'https://res.cloudinary.com/mabhi8251/image/upload/v1637396498/samples/people/bicycle.jpg',
@@ -48,9 +82,20 @@ const Home = () => {
       //   desc: 'This is the description of slide three Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi quos quas, voluptatum nesciunt illum exercitationem.',
     },
   ];
-
+  const [storySlider, setStorySlider] = useState(0);
+  const sliderLength = StoriesSliderData.length;
   const [currentSlide, setCurrentSlide] = useState(0);
+
   const slideLength = sliderData.length;
+
+  const nextSlideData = () => {
+    setStorySlider(storySlider === sliderLength - 1 ? 0 : currentSlide + 1);
+    console.log('nextnext');
+  };
+  const prevSlideData = () => {
+    setStorySlider(storySlider === 0 ? sliderLength - 1 : storySlider - 1);
+    console.log('prevnext');
+  };
 
   const autoScroll = true;
   let slideInterval;
@@ -522,46 +567,49 @@ const Home = () => {
           </Flex>
         </Stack>
       </Container>
-      <Container borderRadius={'md'} border={'1px solid red'} height={'554px'} maxW={'7xl'} mt={40}>
-        <Heading fontSize={'44px'}>
-          Some real-life success stories to <hr /> get inspired by
-        </Heading>
-        <AiOutlineArrowLeft className='arrow prev' onClick={prevSlide} />
-        <AiOutlineArrowRight className='arrow next' onClick={nextSlide} />
-        <Stack border={'2px solid red'} minH={'504px'} direction={{ base: 'column', md: 'row' }}>
-          <Flex border={'2px solid red'} pt={10} flex={1} justify={'center'}>
-            <Stack
-              border={'2px solid red'}
-              //   background={'#EDF3FF'}
-              //   width={'100%'}
-              //   height={'411px'}
-              spacing={5}
-              w={'80%'}
-            >
-              <Heading borderTopRadius={'20px'} align={'center'}>
-                {' '}
-                <Text justifyContent={'center'} color={'#101130'} fontSize={'20px'} mt={5}>
-                  "No online course could have <br /> helped me this way"
-                </Text>{' '}
+      {StoriesSliderData.map((slider, indexs) => {
+        return (
+          <div className={indexs === storySlider ? 'slide current' : 'slide'} key={indexs}>
+            <Container borderRadius={'md'} border={'1px solid red'} height={'554px'} maxW={'7xl'} mt={40}>
+              <Heading fontSize={'44px'}>
+                Some real-life success stories to <hr /> get inspired by
               </Heading>
-              <Text color={'#606176'} fontSize={'15px'}>
-                "A RetPro helped me realize that my aspirations were leaning more towards Data sciences than what I am
-                currently doing"
-              </Text>
-              <Flex align={'center'} mt={8} direction={'row'}>
-                <Avatar spacing={10} src='Images/110.png' alt='name' mb={2} mr={5} />
-                <Stack align={'center'}>
-                  <Text color={'#101130'} fontWeight={1000}>
-                    Milena Belmar
-                  </Text>
-                  <Text mt={'-10px'} fontSize={'sm'} color={'#606176'}>
-                    Argentina
-                  </Text>
-                </Stack>
-              </Flex>
-            </Stack>
-          </Flex>
-          <Flex border={'2px solid red'} pt={10} flex={1} justify={'center'}>
+              <AiOutlineArrowLeft className='arrow prev' onClick={prevSlideData} />
+              <AiOutlineArrowRight className='arrow next' onClick={nextSlideData} />
+              <Stack border={'2px solid red'} minH={'504px'} direction={{ base: 'row', md: 'row' }}>
+                <Flex border={'2px solid red'} pt={10} flex={1} justify={'start'}>
+                  <Stack
+                    border={'2px solid red'}
+                    //   background={'#EDF3FF'}
+                    //   width={'100%'}
+                    //   height={'411px'}
+                    spacing={5}
+                    w={'40%'}
+                  >
+                    <Heading borderTopRadius={'20px'} align={'center'}>
+                      {' '}
+                      <Text justifyContent={'center'} color={'#101130'} fontSize={'20px'} maxW={'80'} mt={5}>
+                        " {slider.HeadFont}"
+                      </Text>{' '}
+                    </Heading>
+                    <Text color={'#606176'} fontSize={'15px'}>
+                      "A RetPro helped me realize that my aspirations were leaning more towards Data sciences than what
+                      I am currently doing"
+                    </Text>
+                    <Flex align={'center'} mt={8} direction={'row'}>
+                      <Avatar spacing={10} src='Images/110.png' alt='name' mb={2} mr={5} />
+                      <Stack align={'center'}>
+                        <Text color={'#101130'} fontWeight={1000}>
+                          Milena Belmar
+                        </Text>
+                        <Text mt={'-10px'} fontSize={'sm'} color={'#606176'}>
+                          Argentina
+                        </Text>
+                      </Stack>
+                    </Flex>
+                  </Stack>
+                </Flex>
+                {/* <Flex border={'2px solid red'} pt={10} flex={1} justify={'center'}>
             <Stack
               border={'2px solid red'}
               //   background={'#EFFFE7'}
@@ -592,9 +640,12 @@ const Home = () => {
                 </Stack>
               </Flex>
             </Stack>
-          </Flex>
-        </Stack>
-      </Container>
+          </Flex> */}
+              </Stack>
+            </Container>
+          </div>
+        );
+      })}
     </div>
   );
 };

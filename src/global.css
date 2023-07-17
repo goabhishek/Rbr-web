@@ -1,3 +1,165 @@
 .link-btn {
   color: 606176;
 }
+.Profile-main {
+  display: flex;
+
+  /* margin: 30px; */
+  width: 100%;
+  background-color: #eceaf0;
+}
+.sidebar-profile {
+  position: relative;
+  flex-wrap: wrap;
+
+  max-width: 250px;
+}
+/* Code for Popup */
+.trainer-popup {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.trainer-popup::before {
+  content: '';
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  background-color: rgb(24, 21, 21);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.popupModel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 3px 5px 10px 4px;
+}
+.rightpopup {
+  width: 100%;
+  height: 100%;
+}
+.Topbar {
+  position: relative;
+  height: 8%;
+  /* background-color: red; */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.CloseFontSize {
+  margin-left: auto;
+  margin-right: 5px;
+  font-size: 40px;
+  cursor: pointer;
+}
+.leftPopup {
+  /* position: relative; */
+  width: 100%;
+  height: 100%;
+}
+.leftPopup > img {
+  /* position: relative; */
+  /* width: 20%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 40px;
+  align-items: center;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  justify-content: center;
+  /* height: 20%; */
+}
+.img-pop {
+  margin-top: 80px;
+}
+
+.rightpopup {
+  text-align: center;
+}
+.popup-content {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  font-weight: 500;
+  font-size: 32px;
+  align-items: center;
+  height: 70%;
+  /* margin-bottom: -40px; */
+}
+.popup-content > h1 {
+  font-size: 53px;
+  text-transform: capitalize;
+  line-height: 50px;
+  margin-bottom: 30px;
+  color: #5b5b5e;
+
+  font-weight: 500;
+}
+.pop-btn {
+  width: 250px;
+  height: 40px;
+  background-color: #773fc6;
+  color: #fff;
+  margin-top: 10px;
+  font-size: 22px;
+  border-radius: 10px;
+}
+/* .popup-content>.joinBTN
+  {
+	font-size: 18px;
+	font-weight: 500;
+	margin-top: 50px;
+	border-radius: 5px;
+	border: 1px solid ;
+	padding: 10px;
+  } */
+@media screen and (max-width: 650px) {
+  .popup-content > h1 {
+    font-size: 22px;
+    line-height: 35px;
+  }
+  .stapper-login {
+    display: none;
+  }
+}
+@media screen and (max-width: 540px) {
+  .popupModel {
+    height: 70%;
+  }
+  .popup-content > h1 {
+    font-size: 30px;
+    line-height: 30px;
+    margin-bottom: 10px;
+  }
+  .rightpopup {
+    width: 100%;
+  }
+  .leftPopup {
+    display: none;
+  }
+  .stapper-login {
+    display: none;
+  }
+}
+@media screen and (max-width: 400px) {
+  .popup-content > h1 {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+  .stapper-login {
+    display: none;
+  }
+}

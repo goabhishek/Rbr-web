@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search2Icon, TriangleDownIcon } from '@chakra-ui/icons';
+import { PhoneIcon, Search2Icon, TriangleDownIcon } from '@chakra-ui/icons';
 import {
   Box,
   Flex,
@@ -12,6 +12,8 @@ import {
   useColorModeValue,
   Stack,
   Input,
+  InputGroup,
+  InputLeftElement,
 } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 
@@ -23,8 +25,7 @@ const Header = () => {
           <Link to={'/'} m={'20px'}>
             <img style={{ width: '120px', marginTop: '50px' }} src='Images/RBR Logo 1.png' alt='logo' />
           </Link>
-          <Stack mt={5} direction={'row'} borderRadius={'3xl'} border={'1px solid #B668D3'}>
-            <Search2Icon m={3} />
+          <Stack mt={5} direction={'row'}>
             {/* <input
               style={{
                 backgroundColor: 'ButtonFace',
@@ -38,7 +39,13 @@ const Header = () => {
               placeholder='Looking for...'
             /> */}
 
-            <Input
+            <InputGroup border={''}>
+              <InputLeftElement pointerEvents='none'>
+                <Search2Icon color='gray.700' />
+              </InputLeftElement>
+              <Input borderRadius={'2xl'} border={'1px solid #B668D3'} type='tel' placeholder='Looking for...' />
+            </InputGroup>
+            {/* <Input
               htmlSize={12}
               width={170}
               border={'none'}
@@ -46,7 +53,7 @@ const Header = () => {
               height={'40px'}
               placeholder='Looking for...'
               size='md'
-            />
+            /> */}
           </Stack>{' '}
           <Flex mt={5} alignItems={'center'} justifyContent={'space-evenly'}>
             <Stack mr={15}>
