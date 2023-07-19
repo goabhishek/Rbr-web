@@ -1,5 +1,4 @@
 import React from 'react';
-import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
 
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 
@@ -70,7 +69,7 @@ const Home = () => {
       //   btn: <ButtonOn name='Start Your journey with us' link='/GoalPage' />,
     },
     {
-      image: 'https://res.cloudinary.com/mabhi8251/image/upload/v1637396498/samples/people/bicycle.jpg',
+      image: 'Images/Rectangle-96.png',
 
       heading: 'Are You Ready to start your day with RBR',
       desc: 'This is the description of slide two Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi quos quas, voluptatum nesciunt illum exercitationem.',
@@ -224,14 +223,13 @@ const Home = () => {
         <Grid
           templateColumns={{
             base: 'repeat(1, 1fr)',
-            sm: 'repeat(2, 1fr)',
+            // sm: 'repeat(2, 1fr)',
             md: 'repeat(2, 1fr)',
           }}
-          gap={4}
-          mt={'130px'}
+          mt={'150px'}
         >
           <GridItem colSpan={1}>
-            <VStack alignItems='center' spacing='40px'>
+            <VStack alignItems='center' spacing={4}>
               <Heading fontSize='3xl' fontWeight='700' color={'#2F327D'}>
                 Introducing
               </Heading>
@@ -243,25 +241,23 @@ const Home = () => {
               </Text>
             </VStack>
           </GridItem>
-          <GridItem left={'650px'}>
-            <Flex alignItems='center'>
-              <Center mt={20}>
-                <Button
-                  height={'90px'}
-                  width={'292px'}
-                  rounded={'2xl'}
-                  px={6}
-                  ml={'70px'}
-                  colorScheme={''}
-                  bg={'#773FC6'}
-                  fontSize={'24px'}
-                  fontWeight={'500'}
-                  // _hover={{ bg: 'orange.500' }}
-                >
-                  Start your journey
-                </Button>
-              </Center>
-            </Flex>
+          <GridItem>
+            <Center mt={'30px'}>
+              <Button
+                height={'90px'}
+                width={'292px'}
+                rounded={'2xl'}
+                // ml={'30px'}
+                colorScheme={''}
+                bg={'#773FC6'}
+                fontSize={'24px'}
+                fontWeight={'500'}
+                // _hover={{ bg: 'orange.500' }}
+              >
+                Start your journey
+              </Button>
+            </Center>
+            {/* </Flex> */}
           </GridItem>
         </Grid>
       </Container>
@@ -275,21 +271,19 @@ const Home = () => {
       >
         <Grid
           templateColumns={{
-            base: 'repeat(1, 1fr)',
-            sm: 'repeat(2, 1fr)',
+            // base: 'repeat(1, 1fr)',
+            // sm: 'repeat(2, 1fr)',
             md: 'repeat(2, 1fr)',
           }}
-          gap={4}
+          gap={10}
           mt={'130px'}
         >
           <GridItem colSpan={1}>
-            <Center mt={20}>
+            <Center mt={'30px'}>
               <Button
                 height={'90px'}
                 width={'292px'}
                 rounded={'2xl'}
-                px={6}
-                ml={'70px'}
                 colorScheme={''}
                 bg={'#46B40F'}
                 fontSize={'24px'}
@@ -300,9 +294,9 @@ const Home = () => {
               </Button>
             </Center>
           </GridItem>
-          <GridItem left={'650px'}>
-            <Flex alignItems='center'>
-              <VStack alignItems='center' spacing='40px'>
+          <GridItem>
+            <Flex>
+              <VStack ml={'20px'} spacing='15px'>
                 <Heading fontSize='3xl' fontWeight='700' color={'#2F327D'}>
                   Currently working?
                 </Heading>
@@ -322,17 +316,17 @@ const Home = () => {
           templateColumns={{
             base: 'repeat(1, 1fr)',
             sm: 'repeat(2, 1fr)',
-            md: 'repeat(2, 1fr)',
+            // md: 'repeat(2, 1fr)',
           }}
-          gap={35}
+          //   gap={25}
         >
           <GridItem colSpan={1}>
             <Text fontWeight={'bold'} fontSize={'25px'} color={'#2F327D'}>
               Ask us how we are transforming lives.
             </Text>
           </GridItem>
-          <GridItem left={'650px'}>
-            <Button border={'1px solid #2F327D'} borderRadius={'3xl'} height={'48px'} width={'250px'}>
+          <GridItem>
+            <Button ml={'30px'} border={'1px solid #2F327D'} borderRadius={'3xl'} height={'48px'} width={'250px'}>
               Let's Chat
             </Button>
             <Button ml={'30px'} border={'1px solid #46B40F'} borderRadius={'3xl'} height={'48px'} width={'250px'}>
@@ -345,7 +339,7 @@ const Home = () => {
         <Grid
           templateColumns={{
             base: 'repeat(1, 1fr)',
-            sm: 'repeat(2, 1fr)',
+            // sm: 'repeat(2, 1fr)',
             md: 'repeat(2, 1fr)',
           }}
           mt={'50px'}
@@ -370,7 +364,7 @@ const Home = () => {
               </Text>
               {/* </Flex> */}
             </GridItem>
-            <GridItem width={700} mt={24} ml={'-120px'} justifyContent={'start'}>
+            <GridItem width={700} mt={24} justifyContent={'start'}>
               <img src='Images/Group-626024.png' alt='' />
             </GridItem>
             {/* </Grid> */}
@@ -570,7 +564,14 @@ const Home = () => {
       {StoriesSliderData.map((slider, indexs) => {
         return (
           <div className={indexs === storySlider ? 'slide current' : 'slide'} key={indexs}>
-            <Container borderRadius={'md'} border={'1px solid red'} height={'554px'} maxW={'7xl'} mt={40}>
+            <Container
+              overflow={'hidden'}
+              borderRadius={'md'}
+              border={'1px solid red'}
+              height={'554px'}
+              maxW={'7xl'}
+              mt={40}
+            >
               <Heading fontSize={'44px'}>
                 Some real-life success stories to <hr /> get inspired by
               </Heading>

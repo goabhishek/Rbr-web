@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Sidebar from '../../componenets/Sidebar';
-import { Form, useForm } from 'react-hook-form';
+
 import {
   Box,
   Center,
@@ -10,8 +10,6 @@ import {
   GridItem,
   Heading,
   InputGroup,
-  InputLeftAddon,
-  InputRightElement,
   Radio,
   RadioGroup,
   Select,
@@ -22,25 +20,20 @@ import {
 } from '@chakra-ui/react';
 import {
   Step,
-  StepDescription,
   StepIcon,
   StepIndicator,
   StepNumber,
   StepSeparator,
   StepStatus,
-  StepTitle,
   Stepper,
-  useSteps,
   FormLabel,
-  useToast,
   Button,
   FormControl,
   Input,
 } from '@chakra-ui/react';
 
 import '../../global.css';
-import { Link } from 'react-router-dom';
-import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
+
 // import LinaerStepper from './LinearStepper';
 // const steps = [
 //   { title: 'Profile', description: 'Contact Info' },
@@ -1168,7 +1161,7 @@ const ProfileFirst = () => {
       console.log(formData);
     }
   };
-  const toast = useToast();
+
   const [step, setStep] = useState(1);
   return (
     <div className='Profile-main'>
