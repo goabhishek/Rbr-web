@@ -610,6 +610,7 @@ const Home = () => {
                     </Flex>
                   </Stack>
                 </Flex>
+
                 {/* <Flex border={'2px solid red'} pt={10} flex={1} justify={'center'}>
             <Stack
               border={'2px solid red'}

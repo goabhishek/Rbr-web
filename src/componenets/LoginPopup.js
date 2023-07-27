@@ -10,12 +10,12 @@ const LoginPopup = (props) => {
     <div className='trainer-popup'>
       <div className='popupModel'>
         <img className='img-pop' src='Images/image-142.png' alt='loading' />
-        <p className='popup-content' style={{ color: '#773FC6', height: '250px' }}>
-          {' '}
-          Account created successfully
-        </p>
 
         <div className='rightpopup'>
+          <p className='popup-content' style={{ color: '#773FC6', height: '130px' }}>
+            {' '}
+            Account created successfully
+          </p>
           {/* <div className='Topbar'>
             <AiOutlineCloseSquare className='CloseFontSize' onClick={() => props.showPopup(false)} />
           </div> */}

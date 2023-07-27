@@ -1,47 +1,131 @@
-import React from 'react';
-import { Button, Flex, FormControl, Heading, Input, Stack, Image, Center, Text } from '@chakra-ui/react';
+import React, { useState } from 'react';
+import { Button, Flex, FormControl, Heading, Input, Stack, Image, Center, Text, Box } from '@chakra-ui/react';
 import { FcFeedback, FcGoogle, FcTabletAndroid } from 'react-icons/fc';
 import { FaFacebook } from 'react-icons/fa';
 import LoginPopup from '../componenets/LoginPopup';
-import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { createUser } from '../features/userDetailSlice';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+const initialState = {
+  name: '',
+  email: '',
+  password: '',
+  number: '',
+};
 const Register = () => {
   const [modalIsOpen, setShowPopup] = useState(false);
   const setModalIsOpenToTrue = () => {
     setShowPopup(true);
   };
+  const [users, setUsers] = useState({ initialState });
+  const { name, email, password, number } = users;
+  const dispatch = useDispatch();
+
+  const getUserData = (e) => {
+    const { name, value } = e.target;
+    setUsers({ ...users, [name]: value });
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('users...', users);
+    dispatch(createUser(users));
+
+    if (!name || !email || !password) {
+      return toast.error('All fields are required');
+    }
+    if (name.length < 4) {
+      return toast.error('Please enter a valid Name');
+    }
+    if (password.length < 6) {
+      return toast.error('Passwords must be up to 6 characters');
+    }
+  };
 
   return (
     <div>
+      <ToastContainer />
       <LoginPopup modalIsOpen={modalIsOpen} showPopup={setShowPopup} />
-      <Stack backgroundColor={'#EDEBF1'} minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
-        <Flex width={'552px'} direction={'column'} p={8} flex={1} align={'center'} justify={'center'}>
-          <Heading fontWeight={700} fontSize={'40px'}>
+      <Stack align={'center'} backgroundColor={'#EDEBF1'} minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
+        <Flex width={'700px'} direction={'column'} p={8} flex={1} align={'center'} justify={'center'}>
+          <Heading mb={10} fontWeight={700} fontSize={'40px'}>
             Create an account
           </Heading>
-          <Stack borderRadius={'10px'} border={'1px solid #773FC640'} spacing={3} w={'full'} maxW={'md'}>
-            <FormControl p={5} id='name'>
-              <Input opacity={'0.5'} border={'1px solid #B4B3B3'} placeholder='full name*' type='name' isRequired />
+          {/* <Box onSubmit={handleSubmit} as='form'> */}
+          <Stack
+            onSubmit={handleSubmit}
+            as='form'
+            borderRadius={'10px'}
+            border={'1px solid #773FC640'}
+            spacing={3}
+            w={'full'}
+            maxW={'md'}
+          >
+            <FormControl p={5} id='name' isRequired>
+              <Input
+                opacity={'0.5'}
+                border={'1px solid #B4B3B3'}
+                name='name'
+                placeholder='full name*'
+                value={name}
+                onChange={getUserData}
+              />
             </FormControl>
-            <FormControl p={5} id='email'>
-              <Input opacity={'0.5'} border={'1px solid #B4B3B3'} placeholder='e-mail address*' type='email' />
+            <FormControl p={5} id='email' isRequired>
+              <Input
+                opacity={'0.5'}
+                border={'1px solid #B4B3B3'}
+                name='email'
+                value={email}
+                onChange={getUserData}
+                placeholder='e-mail address*'
+                type='email'
+              />
             </FormControl>
-            <FormControl p={5} id='password'>
-              <Input opacity={'0.5'} border={'1px solid #B4B3B3'} placeholder='enter a password*' type='password' />
+            <FormControl p={5}>
+              <Input
+                opacity={'0.5'}
+                border={'1px solid #B4B3B3'}
+                name='password'
+                value={password}
+                type='password'
+                onChange={getUserData}
+                placeholder='enter a password*'
+              />
             </FormControl>
-            <FormControl p={5} id='number'>
-              <Input opacity={'0.5'} border={'1px solid #B4B3B3'} placeholder='mobile number' type='number' />
+            <FormControl p={5}>
+              <Input
+                opacity={'0.5'}
+                border={'1px solid #B4B3B3'}
+                name='number'
+                value={number}
+                onChange={getUserData}
+                placeholder='mobile number'
+                type='number'
+              />
             </FormControl>
-            <FormControl p={5} id='verify'>
-              <Input opacity={'0.5'} border={'1px solid #B4B3B3'} placeholder='tap to verify' type='verify' />
+            <FormControl p={5} id='verify' isRequired>
+              <Input opacity={'0.5'} type='text' border={'1px solid #B4B3B3'} placeholder='tap to verify' />
             </FormControl>
-
             <Stack p={2} spacing={6}>
-              <Button backgroundColor={'#773FC6'} color={'#fff'} onClick={setModalIsOpenToTrue}>
-                Create account
+              <Button
+                onSubmit={handleSubmit}
+                onClick={setModalIsOpenToTrue}
+                backgroundColor={'#773FC6'}
+                color={'#fff'}
+                variant={'solid'}
+              >
+                <Flex width={'552px'} direction={'column'} p={8} flex={1} align={'center'} justify={'center'}>
+                  <Text fontWeight={700} fontSize={'18px'}>
+                    Register
+                  </Text>
+                </Flex>
               </Button>
             </Stack>
           </Stack>
+          {/* </Box> */}
         </Flex>
         <Flex direction={'column'} mt={40} flex={1}>
           <Image width={'450px'} height={'284px'} alt={'Login Image'} src={'Images/Group-626217.png'} />

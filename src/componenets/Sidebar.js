@@ -16,7 +16,7 @@ import { FaRocket } from 'react-icons/fa';
 import { RiInformationFill } from 'react-icons/ri';
 
 const LinkItems = [
-  { icon: FiHome },
+  //   { icon: FiHome },
   { icon: FiFile },
   { icon: FiStar },
   { icon: FiFile },
@@ -30,7 +30,7 @@ const LinkItems = [
 export default function Sidebar({ children }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <Box mt={10} minH='100vh' backgroundColor={'#eceaf0'}>
+    <Box mt={5} minH='100vh' backgroundColor={'#eceaf0'}>
       <SidebarContent onClose={() => onClose} display={{ base: 'none', md: 'block' }} />
       <Drawer
         autoFocus={false}
@@ -39,7 +39,7 @@ export default function Sidebar({ children }) {
         onClose={onClose}
         returnFocusOnClose={false}
         onOverlayClick={onClose}
-        size='full'
+        size='70%'
       >
         <DrawerContent>
           <SidebarContent onClose={onClose} />
@@ -62,16 +62,22 @@ const SidebarContent = ({ onClose, ...rest }) => {
   return (
     <Box
       border={'2px solid #773FC6'}
+      borderRadius={10}
       backgroundColor={'#F4F4F4B2'}
       //   borderRight='1px'
       //   borderRightColor={useColorModeValue('gray.200', 'gray.700')}
-      w={{ base: 'full', md: '80px' }}
+      w={{ base: '50%', md: '100px' }}
       pos='relative'
       h='full'
+      ml={20}
+      p={1}
       {...rest}
     >
-      <Flex h='20' alignItems='center' mx='6' justifyContent='space-between'>
-        <Text fontSize='2xl' fontFamily='monospace' fontWeight='bold'>
+      <NavItem key='name' icon={FiHome}>
+        {/* Name  */}
+      </NavItem>
+      <Flex h='20px' alignItems='center' m={2} justifyContent='space-between'>
+        <Text fontSize='18px' fontFamily='monospace' fontWeight='bold'>
           My Tabs
         </Text>
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
@@ -90,13 +96,13 @@ const NavItem = ({ icon, children, ...rest }) => {
     <Link href='#' style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
       <Flex
         align='center'
-        p='4'
-        mx='4'
+        p='18px'
+        mx='5'
         borderRadius='lg'
         role='group'
         cursor='pointer'
         _hover={{
-          bg: 'cyan.400',
+          bg: '#8146C8',
           color: 'white',
         }}
         {...rest}

@@ -3,7 +3,14 @@ import { Button, Flex, FormControl, Heading, Input, Stack, Image, Center, Text, 
 import { FcFeedback, FcGoogle, FcTabletAndroid } from 'react-icons/fc';
 import { FaFacebook } from 'react-icons/fa';
 import ProfilePop from '../componenets/ProfilePop';
+ const initialstate:{
+	name,
+	password
+}
 const Login = () => {
+  const [form, setFrom] = useState(initialstate);
+
+  const handleSubmit = (e) => {};
   const [modalIsOpen, setShowPopup] = useState(false);
   const setModalIsOpenToTrue = () => {
     setShowPopup(true);
@@ -71,7 +78,7 @@ const Login = () => {
           </Stack>
         </Flex>
         <Flex
-          width={'700px'}
+          //   width={'700px'}
           height={'420px'}
           direction={'column'}
           flex={1}
@@ -82,7 +89,8 @@ const Login = () => {
             Login
           </Heading>
           <Stack
-            mt={-30}
+            onSubmit={handleSubmit}
+            // mt={-30}
             borderRadius={'10px'}
             border={'1px solid #773FC640'}
             spacing={3}
@@ -95,13 +103,22 @@ const Login = () => {
                 opacity={'0.5'}
                 border={'1px solid #B4B3B3'}
                 placeholder='Your full name*'
+                onChange={form}
                 type='name'
+                value={name}
                 isRequired
               />
             </FormControl>
 
             <FormControl p={5} id='password'>
-              <Input opacity={'0.5'} border={'1px solid #B4B3B3'} placeholder='enter a password*' type='password' />
+              <Input
+                opacity={'0.5'}
+                border={'1px solid #B4B3B3'}
+                onChange={form}
+                value={password}
+                placeholder='enter a password*'
+                type='password'
+              />
             </FormControl>
             <Stack align={'start'} ml={30}>
               <Link href='/ForgetPassword' color={'#2F1A31'}>
@@ -110,7 +127,13 @@ const Login = () => {
             </Stack>
 
             <Stack p={5} spacing={6}>
-              <Button onClick={setModalIsOpenToTrue} backgroundColor={'#773FC6'} color={'#fff'} variant={'solid'}>
+              <Button
+                onSubmit={handleSubmit}
+                onClick={setModalIsOpenToTrue}
+                backgroundColor={'#773FC6'}
+                color={'#fff'}
+                variant={'solid'}
+              >
                 <Flex width={'552px'} direction={'column'} p={8} flex={1} align={'center'} justify={'center'}>
                   <Text fontWeight={700} fontSize={'18px'}>
                     Login

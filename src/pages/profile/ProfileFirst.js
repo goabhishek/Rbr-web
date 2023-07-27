@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Sidebar from '../../componenets/Sidebar';
 
 import {
@@ -9,6 +9,7 @@ import {
   FormHelperText,
   GridItem,
   Heading,
+  Image,
   InputGroup,
   Radio,
   RadioGroup,
@@ -216,6 +217,10 @@ const ProfileFirst = () => {
             type='text'
             name='retirement'
             id='retirement'
+            fluid
+            multiple
+            selection
+            // multiple
             // placeholder='Select option'
             focusBorderColor='#808184'
             shadow='sm'
@@ -232,6 +237,15 @@ const ProfileFirst = () => {
             <option>Match-making</option>
           </Select>
         </FormControl>
+        {/* <Dropdown
+          placeholder='Select Multiple'
+          fluid
+          multiple
+          selection
+          options={interestedOptions}
+          onChange={(e, { value }) => setForm({ ...form, interested: value })}
+          style={{ maxWidth: 350 }}
+        /> */}
         <Heading mt={10} lineHeight={'24px'} fontWeight={500} fontSize={'24px'} color={'#000000'}>
           Link your Accounts
         </Heading>
@@ -1163,6 +1177,17 @@ const ProfileFirst = () => {
   };
 
   const [step, setStep] = useState(1);
+  const [image, setImage] = useState('');
+
+  const inputRef = useRef(null);
+  const handleImage = () => {
+    inputRef.current.click();
+  };
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+    console.log(file);
+    setImage('event.target.files[0]');
+  };
   return (
     <div className='Profile-main'>
       <div className='sidebar-profile'>
@@ -1172,13 +1197,46 @@ const ProfileFirst = () => {
 
       <Box backgroundColor={'#F2F1F3'} background={'#F2F1F3'} width={'100%'} position={'relative'}>
         <Center mt={40} display={'flex'} flexDirection={'column'}>
-          <Stack spacing={30} alignItems={'center'}>
-            <div style={{}}>
-              <Heading color={'#000000'} lineHeight={1.1} fontSize={{ base: '2xl', sm: '3xl', md: '4xl' }}>
-                Profile
-              </Heading>
-            </div>
-
+          <Box align={'center'} border={'2px solid red'} width={'900px'}>
+            <Heading color={'#000000'} lineHeight={1.1} fontSize={{ base: '2xl', sm: '3xl', md: '4xl' }}>
+              Profile
+            </Heading>
+            <Flex float={'right'} boxSize={'130px'} onClick={handleImage} cursor={'pointer'}>
+              {/* <Image
+                  is='input'
+                  borderRadius='full'
+                  boxSize='150px'
+                  src='https://bit.ly/dan-abramov'
+                  alt='Dan Abramov'
+                /> */}
+              {image ? (
+                <img
+                  style={{
+                    borderRadius: '50%',
+                  }}
+                  src={URL.createObjectURL(image)}
+                  alt='Dan Abramov'
+                />
+              ) : (
+                <img
+                  style={{
+                    borderRadius: '50%',
+                  }}
+                  src='https://bit.ly/dan-abramov'
+                  alt='Dan Abramov'
+                />
+              )}
+              <input
+                onChange={handleImageChange}
+                style={{
+                  display: 'none',
+                }}
+                type='file'
+                ref={inputRef}
+              />
+            </Flex>
+          </Box>
+          <Stack spacing={120}>
             <Text
               justifySelf={'center'}
               maxW={'650px'}
