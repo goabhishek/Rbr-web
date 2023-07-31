@@ -339,7 +339,7 @@ const Home = () => {
         <Grid
           templateColumns={{
             base: 'repeat(1, 1fr)',
-            // sm: 'repeat(2, 1fr)',
+            sm: 'repeat(2, 1fr)',
             md: 'repeat(2, 1fr)',
           }}
           mt={'50px'}
@@ -348,13 +348,13 @@ const Home = () => {
             {/* <Flex direction={'row'}> */}
             <Image src='Images/Group-114.png' alt='oldman' />
           </GridItem>
-          <Flex direction={'column'}>
+          <Flex align={'center'} direction={'column'}>
             <Heading color={'#2F327D'} fontWeight={'bold'} fontSize={'22px'}>
               So much you can do with{' '}
             </Heading>
 
             <br />
-            <GridItem height={'64px'} width={'140px'} ml={'60px'}>
+            <GridItem height={'64px'} width={'140px'}>
               <img src='Images/Ret-pro-logo 2.png' alt='' />
             </GridItem>
             <GridItem>
@@ -373,7 +373,7 @@ const Home = () => {
           {/* </Flex>/ */}
         </Grid>
       </Container>
-      <Container height={'554px'} maxW={'6xl'} mt={20}>
+      <Container overflow={'hidden'} height={'554px'} maxW={'6xl'} mt={20}>
         <Grid
           templateColumns={{
             base: 'repeat(1, 1fr)',
@@ -382,7 +382,7 @@ const Home = () => {
           }}
           mt={'50px'}
         >
-          <Flex direction={'column'} justifyContent={'start'} align={'center'}>
+          <Flex flexWrap={'wrap'} direction={'column'} justifyContent={'start'} align={'center'}>
             <Heading color={'#2F327D'} fontWeight={'bold'} fontSize={'22px'}>
               Fastrack your career with{' '}
             </Heading>
@@ -412,12 +412,12 @@ const Home = () => {
           {/* </Flex>/ */}
         </Grid>
       </Container>{' '}
-      <Container align={'center'} maxW={'9xl'} mt={40}>
+      <Container overflow={'hidden'} align={'center'} maxW={'9xl'} mt={40}>
         <Heading display={'inline-block'} align={'center'} color={'#2F327D'} width={'608px'}>
           Meet the <span style={{ color: '#773FC6', fontSize: '55px' }}>RetPro</span>
           area experts
         </Heading>
-        <Flex justifyContent={'space-evenly'} mt={8}>
+        <Flex flexWrap={'wrap'} justifyContent={'space-evenly'} mt={8}>
           <Flex
             width={'235px'}
             border={'1px solid #773FC680'}

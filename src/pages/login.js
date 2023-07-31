@@ -3,12 +3,12 @@ import { Button, Flex, FormControl, Heading, Input, Stack, Image, Center, Text, 
 import { FcFeedback, FcGoogle, FcTabletAndroid } from 'react-icons/fc';
 import { FaFacebook } from 'react-icons/fa';
 import ProfilePop from '../componenets/ProfilePop';
- const initialstate:{
-	name,
-	password
-}
+// const initialstate = {
+//   name,
+//   password,
+// };
 const Login = () => {
-  const [form, setFrom] = useState(initialstate);
+  const [form, setFrom] = useState();
 
   const handleSubmit = (e) => {};
   const [modalIsOpen, setShowPopup] = useState(false);
@@ -105,7 +105,6 @@ const Login = () => {
                 placeholder='Your full name*'
                 onChange={form}
                 type='name'
-                value={name}
                 isRequired
               />
             </FormControl>
@@ -115,7 +114,6 @@ const Login = () => {
                 opacity={'0.5'}
                 border={'1px solid #B4B3B3'}
                 onChange={form}
-                value={password}
                 placeholder='enter a password*'
                 type='password'
               />

@@ -9,7 +9,6 @@ import {
   FormHelperText,
   GridItem,
   Heading,
-  Image,
   InputGroup,
   Radio,
   RadioGroup,
