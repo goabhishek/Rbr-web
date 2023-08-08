@@ -69,8 +69,7 @@ const Home = () => {
       //   btn: <ButtonOn name='Start Your journey with us' link='/GoalPage' />,
     },
     {
-      image: 'Images/Rectangle-96.png',
-
+      image: 'Images/Image and card.png',
       heading: 'Are You Ready to start your day with RBR',
       desc: 'This is the description of slide two Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi quos quas, voluptatum nesciunt illum exercitationem.',
     },
@@ -81,101 +80,148 @@ const Home = () => {
       //   desc: 'This is the description of slide three Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi quos quas, voluptatum nesciunt illum exercitationem.',
     },
   ];
-  const [storySlider, setStorySlider] = useState(0);
-  const sliderLength = StoriesSliderData.length;
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const slideLength = sliderData.length;
-
-  const nextSlideData = () => {
-    setStorySlider(storySlider === sliderLength - 1 ? 0 : currentSlide + 1);
-    console.log('nextnext');
-  };
-  const prevSlideData = () => {
-    setStorySlider(storySlider === 0 ? sliderLength - 1 : storySlider - 1);
-    console.log('prevnext');
-  };
-
-  const autoScroll = true;
-  let slideInterval;
-  let intervalTime = 4000;
-
-  const nextSlide = () => {
-    setCurrentSlide(currentSlide === slideLength - 1 ? 0 : currentSlide + 1);
-    console.log('next');
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide(currentSlide === 0 ? slideLength - 1 : currentSlide - 1);
-    console.log('prev');
-  };
-
-  function auto() {
-    slideInterval = setInterval(nextSlide, intervalTime);
-  }
-
-  useEffect(() => {
-    if (autoScroll) {
-      auto();
-    }
-
-    return () => clearInterval(slideInterval);
-  }, [currentSlide]);
 
   return (
     <div style={{ backgroundColor: '#EDEBF1' }}>
-      <div className='slider'>
-        {sliderData.map((slide, index) => {
-          return (
-            <div className={index === currentSlide ? 'slide current' : 'slide'} key={index}>
-              {index === currentSlide && (
-                <div>
-                  <Stack>
-                    <img
-                      className='image'
-                      style={{
-                        height: '100vh',
-                        objectFit: 'cover',
-                        filter: 'brightness(1)',
-                      }}
-                      src={slide.image}
-                      alt='slides'
-                    />
+      <div className='scroll-parent'>
+        <div className='scroll-element primary'>
+          <Stack>
+            {/* <img
+              className='image'
+              style={{
+                height: '100vh',
+                objectFit: 'cover',
+                filter: 'brightness(1)',
+              }}
+              src='Images/7HbVrB.jpg'
+              alt='slides'
+            /> */}
+            <video controls muted poster='<https://ruttl.com/assets/img/index-hero.jpg>'>
+              <source src='<https://ruttl.com/assets/video/index-hero.webm>' type='video/mp4' />
+            </video>
+          </Stack>
+          <div className='content'>
+            <Flex p={20} flex={1} align={'center'} justify={'center'} mt={-400}>
+              <Stack spacing={4} w={'full'} maxW={'lg'}>
+                <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
+                  <Text
+                    as={'span'}
+                    color={'blackAlpha.800'}
+                    position={'relative'}
+                    _after={{
+                      width: 'full',
+                      //   height: useBreakpointValue({ base: '20%', md: '30%' }),
+                      position: 'absolute',
+                      //   bottom: 1,
+                      left: 0,
+                      bg: 'red.400',
+                      zIndex: -1,
+                    }}
+                  >
+                    <h2>Hello</h2>
+                  </Text>
+                  <br /> <Text color={'blue.400'} as={'span'}></Text>{' '}
+                </Heading>
+                <Text fontSize={{ base: 'md', lg: 'lg' }} color={'blue.600'}>
+                  hrllotrrb nbbhjb
+                </Text>
+              </Stack>
+            </Flex>
+          </div>
+        </div>
+        <div className='scroll-element secondary'>
+          <div>
+            <div>
+              <Stack>
+                <img
+                  className='image'
+                  style={{
+                    height: '100vh',
+                    objectFit: 'cover',
+                    filter: 'brightness(1)',
+                  }}
+                  src='https://res.cloudinary.com/mabhi8251/image/upload/v1637396498/samples/people/bicycle.jpg'
+                  alt='slides'
+                />
+              </Stack>
+              <div className='content'>
+                <Flex p={20} flex={1} align={'center'} justify={'center'} mt={-400}>
+                  <Stack spacing={4} w={'full'} maxW={'lg'}>
+                    <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
+                      <Text
+                        as={'span'}
+                        color={'blackAlpha.800'}
+                        position={'relative'}
+                        _after={{
+                          width: 'full',
+                          //   height: useBreakpointValue({ base: '20%', md: '30%' }),
+                          position: 'absolute',
+                          //   bottom: 1,
+                          left: 0,
+                          bg: 'red.400',
+                          zIndex: -1,
+                        }}
+                      >
+                        <h2>Hello</h2>
+                      </Text>
+                      <br /> <Text color={'blue.400'} as={'span'}></Text>{' '}
+                    </Heading>
+                    <Text fontSize={{ base: 'md', lg: 'lg' }} color={'blue.600'}>
+                      hrllotrrb nbbhjb
+                    </Text>
                   </Stack>
-                  <div className='content'>
-                    <Flex p={20} flex={1} align={'center'} justify={'center'} mt={-400}>
-                      <Stack spacing={4} w={'full'} maxW={'lg'}>
-                        <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
-                          <Text
-                            as={'span'}
-                            color={'blackAlpha.800'}
-                            position={'relative'}
-                            _after={{
-                              width: 'full',
-                              //   height: useBreakpointValue({ base: '20%', md: '30%' }),
-                              position: 'absolute',
-                              //   bottom: 1,
-                              left: 0,
-                              bg: 'red.400',
-                              zIndex: -1,
-                            }}
-                          >
-                            <h2>{slide.heading}</h2>
-                          </Text>
-                          <br /> <Text color={'blue.400'} as={'span'}></Text>{' '}
-                        </Heading>
-                        <Text fontSize={{ base: 'md', lg: 'lg' }} color={'blue.600'}>
-                          {slide.desc}
-                        </Text>
-                      </Stack>
-                    </Flex>
-                  </div>
-                </div>
-              )}
+                </Flex>
+              </div>
             </div>
-          );
-        })}
+          </div>
+        </div>
       </div>
+      {/* <div className='slider'>
+        <div>
+          <div>
+            <Stack>
+              <img
+                className='image'
+                style={{
+                  height: '100vh',
+                  objectFit: 'cover',
+                  filter: 'brightness(1)',
+                }}
+                src='Images/7HbVrB.jpg'
+                alt='slides'
+              />
+            </Stack>
+            <div className='content'>
+              <Flex p={20} flex={1} align={'center'} justify={'center'} mt={-400}>
+                <Stack spacing={4} w={'full'} maxW={'lg'}>
+                  <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
+                    <Text
+                      as={'span'}
+                      color={'blackAlpha.800'}
+                      position={'relative'}
+                      _after={{
+                        width: 'full',
+                        //   height: useBreakpointValue({ base: '20%', md: '30%' }),
+                        position: 'absolute',
+                        //   bottom: 1,
+                        left: 0,
+                        bg: 'red.400',
+                        zIndex: -1,
+                      }}
+                    >
+                      <h2>Hello</h2>
+                    </Text>
+                    <br /> <Text color={'blue.400'} as={'span'}></Text>{' '}
+                  </Heading>
+                  <Text fontSize={{ base: 'md', lg: 'lg' }} color={'blue.600'}>
+                    hrllotrrb nbbhjb
+                  </Text>
+                </Stack>
+              </Flex>
+            </div>
+          </div>
+        </div>
+      </div> */}
       <Container maxW={'7xl'} py={5} mb={20} mt={60}>
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
           <Stack spacing={10}>
@@ -563,7 +609,7 @@ const Home = () => {
       </Container>
       {StoriesSliderData.map((slider, indexs) => {
         return (
-          <div className={indexs === storySlider ? 'slide current' : 'slide'} key={indexs}>
+          <div>
             <Container
               overflow={'hidden'}
               borderRadius={'md'}
@@ -575,8 +621,7 @@ const Home = () => {
               <Heading fontSize={'44px'}>
                 Some real-life success stories to <hr /> get inspired by
               </Heading>
-              <AiOutlineArrowLeft className='arrow prev' onClick={prevSlideData} />
-              <AiOutlineArrowRight className='arrow next' onClick={nextSlideData} />
+
               <Stack border={'2px solid red'} minH={'504px'} direction={{ base: 'row', md: 'row' }}>
                 <Flex border={'2px solid red'} pt={10} flex={1} justify={'start'}>
                   <Stack
@@ -611,6 +656,21 @@ const Home = () => {
                   </Stack>
                 </Flex>
 
+                <section id='testimonial_area'>
+                  <div className='container'>
+                    <div className='row'>
+                      <div className='col-md-12'>
+                        <div className='textimonial_slider_area text-center owl-carousel'>
+                          <div className='box-area'>
+                            <img src='Images/7HbVrB.jpg' alt='test' />
+                          </div>
+                          <h5>Person's className</h5>
+                          <span>Designation</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
                 {/* <Flex border={'2px solid red'} pt={10} flex={1} justify={'center'}>
             <Stack
               border={'2px solid red'}

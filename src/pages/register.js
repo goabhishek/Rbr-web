@@ -40,7 +40,7 @@ const Register = () => {
       return toast.error('Please enter a valid Name');
     }
     if (password.length < 6) {
-      return toast.error('Passwords must be up to 6 characters');
+      return toast.error('  must be up to 6 characters');
     }
   };
 

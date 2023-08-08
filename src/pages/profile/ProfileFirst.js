@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import Sidebar from '../../componenets/Sidebar';
-
+import convertToBase64 from '../../componenets/convert';
 import {
   Box,
   Center,
@@ -33,21 +33,7 @@ import {
 } from '@chakra-ui/react';
 
 import '../../global.css';
-
-// import LinaerStepper from './LinearStepper';
-// const steps = [
-//   { title: 'Profile', description: 'Contact Info' },
-//   { title: 'Profile', description: 'Date & Time' },
-//   { title: 'Profile', description: 'Select Rooms' },
-//   { title: 'Profile', description: 'Select Rooms' },
-//   { title: 'Profile', description: 'Select Rooms' },
-// ];
-
-// type AppForm = {
-//   firstName: string,
-//   lastName: string,
-//   city: string,
-// };
+import { colorOptions } from '../../componenets/Data';
 
 const steps = ['Select campaign settings', 'Create an ad group', 'Create an ad', 'Create an ad', 'Create an ad'];
 
@@ -213,19 +199,16 @@ const ProfileFirst = () => {
             What do you want to do on this platform?
           </FormLabel>
           <Select
+            isMulti
             type='text'
             name='retirement'
             id='retirement'
-            fluid
-            multiple
-            selection
-            // multiple
-            // placeholder='Select option'
             focusBorderColor='#808184'
             shadow='sm'
             size='sm'
             w='full'
             rounded='md'
+            closeMenuOnSelect={false}
           >
             <option>Work as a freelancer</option>
             <option>Work full-time</option>
@@ -1176,16 +1159,23 @@ const ProfileFirst = () => {
   };
 
   const [step, setStep] = useState(1);
-  const [image, setImage] = useState('');
+  //   const [image, setImage] = useState('');
 
-  const inputRef = useRef(null);
-  const handleImage = () => {
-    inputRef.current.click();
-  };
-  const handleImageChange = (event) => {
-    const file = event.target.files[0];
-    console.log(file);
-    setImage('event.target.files[0]');
+  const [file, setFile] = useState();
+
+  //   const inputRef = useRef(null);
+  //   const handleImage = () => {
+  //     inputRef.current.click();
+  //   };
+  // const handleImageChange = (event) => {
+  //   const file = event.target.files[0];
+  //   console.log(file);
+  //   setImage('event.target.files[0]');
+  // };
+
+  const onUpload = async (e) => {
+    const base64 = await convertToBase64();
+    setFile(base64);
   };
   return (
     <div className='Profile-main'>
@@ -1200,7 +1190,7 @@ const ProfileFirst = () => {
             <Heading color={'#000000'} lineHeight={1.1} fontSize={{ base: '2xl', sm: '3xl', md: '4xl' }}>
               Profile
             </Heading>
-            <Flex float={'right'} boxSize={'130px'} onClick={handleImage} cursor={'pointer'}>
+            <Flex float={'right'} boxSize={'130px'} cursor={'pointer'}>
               {/* <Image
                   is='input'
                   borderRadius='full'
@@ -1208,31 +1198,23 @@ const ProfileFirst = () => {
                   src='https://bit.ly/dan-abramov'
                   alt='Dan Abramov'
                 /> */}
-              {image ? (
-                <img
-                  style={{
-                    borderRadius: '50%',
-                  }}
-                  src={URL.createObjectURL(image)}
-                  alt='Dan Abramov'
-                />
-              ) : (
-                <img
-                  style={{
-                    borderRadius: '50%',
-                  }}
-                  src='https://bit.ly/dan-abramov'
-                  alt='Dan Abramov'
-                />
-              )}
-              <input
+
+              <img
+                style={{
+                  borderRadius: '50%',
+                }}
+                src='https://bit.ly/dan-abramov'
+                alt='Dan Abramov'
+              />
+
+              {/* <input
                 onChange={handleImageChange}
                 style={{
                   display: 'none',
                 }}
                 type='file'
                 ref={inputRef}
-              />
+              /> */}
             </Flex>
           </Box>
           <Stack spacing={120}>

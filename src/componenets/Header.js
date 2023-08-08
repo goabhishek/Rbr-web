@@ -8,8 +8,6 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  MenuDivider,
-  useColorModeValue,
   Stack,
   Input,
   InputGroup,
@@ -22,10 +20,10 @@ const Header = () => {
     <>
       <Box height={'90px'} justifyContent={'space-between'} width={'100%'} backgroundColor={'#EDEBF1'}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-around'}>
-          <Link to={'/'} m={'20px'}>
+          <Link display={{ md: 'flex' }} to={'/'} m={'20px'}>
             <img style={{ width: '120px', marginTop: '50px' }} src='Images/RBR Logo 1.png' alt='logo' />
           </Link>
-          <Stack mt={5} direction={'row'}>
+          <Stack display={{ base: 'none', md: 'flex' }} mt={5} direction={'row'}>
             {/* <input
               style={{
                 backgroundColor: 'ButtonFace',
@@ -56,10 +54,10 @@ const Header = () => {
             /> */}
           </Stack>{' '}
           <Flex mt={5} alignItems={'center'} justifyContent={'space-evenly'}>
-            <Stack mr={15}>
+            <Stack display={{ base: 'none', md: 'flex' }} mr={15}>
               <Button bg={'transparent'}> Home</Button>
             </Stack>
-            <Button bg={'transparent'} mr={15}>
+            <Button display={{ base: 'none', md: 'flex' }} bg={'transparent'} mr={15}>
               EN+ <TriangleDownIcon />
             </Button>
             <Stack direction={'row'} spacing={3}>

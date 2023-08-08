@@ -163,3 +163,44 @@
     display: none;
   }
 }
+
+.scroll-parent {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  overflow-x: hidden;
+}
+
+.scroll-element {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  /* animation: primary 20s linear infinite; */
+}
+.primary {
+  animation: primary 50s linear infinite;
+}
+
+.secondary {
+  animation: secondary 50s linear infinite;
+}
+
+@keyframes primary {
+  from {
+    left: 0%;
+  }
+  to {
+    left: -100%;
+  }
+}
+
+@keyframes secondary {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0%;
+  }
+}

@@ -1,17 +1,5 @@
 import React from 'react';
-import {
-  Button,
-  Checkbox,
-  Flex,
-  Text,
-  FormControl,
-  FormLabel,
-  Heading,
-  Input,
-  Stack,
-  Image,
-  Center,
-} from '@chakra-ui/react';
+import { Button, Flex, Text, FormControl, Heading, Input, Stack, Image, Center } from '@chakra-ui/react';
 
 const ForgetPassword = () => {
   return (

@@ -8,9 +8,13 @@ import ProfilePop from '../componenets/ProfilePop';
 //   password,
 // };
 const Login = () => {
-  const [form, setFrom] = useState();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  const handleSubmit = (e) => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('submit');
+  };
   const [modalIsOpen, setShowPopup] = useState(false);
   const setModalIsOpenToTrue = () => {
     setShowPopup(true);
@@ -98,24 +102,26 @@ const Login = () => {
             minW={'sm'}
             maxW={'-webkit-max-content'}
           >
-            <FormControl p={5} id='name'>
+            <FormControl p={5}>
               <Input
                 opacity={'0.5'}
                 border={'1px solid #B4B3B3'}
-                placeholder='Your full name*'
-                onChange={form}
+                placeholder='Your full email*'
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 type='name'
                 isRequired
               />
             </FormControl>
 
-            <FormControl p={5} id='password'>
+            <FormControl p={5}>
               <Input
                 opacity={'0.5'}
                 border={'1px solid #B4B3B3'}
-                onChange={form}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 placeholder='enter a password*'
-                type='password'
+                isRequired
               />
             </FormControl>
             <Stack align={'start'} ml={30}>
@@ -130,6 +136,7 @@ const Login = () => {
                 onClick={setModalIsOpenToTrue}
                 backgroundColor={'#773FC6'}
                 color={'#fff'}
+                type='submit'
                 variant={'solid'}
               >
                 <Flex width={'552px'} direction={'column'} p={8} flex={1} align={'center'} justify={'center'}>

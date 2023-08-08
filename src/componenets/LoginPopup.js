@@ -1,6 +1,4 @@
-import { Button } from '@chakra-ui/react';
 import React from 'react';
-import { redirect } from 'react-router-dom';
 
 // import popuimg from '../Assets/trainer_popup.jpg';
 // import ButtonOn from './ButtonOn';
