@@ -1,8 +1,5 @@
 import React from 'react';
 
-import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
-
-import { useState, useEffect } from 'react';
 import '../global.css';
 import {
   Stack,
@@ -22,6 +19,7 @@ import {
   Avatar,
   useColorModeValue,
   StackDivider,
+  Link,
 } from '@chakra-ui/react';
 
 import {} from '@chakra-ui/react';
@@ -61,168 +59,49 @@ const Home = () => {
       UserStar: '',
     },
   ];
-  const sliderData = [
-    {
-      image: 'https://res.cloudinary.com/mabhi8251/image/upload/v1637396498/samples/people/bicycle.jpg',
-      //   heading: 'Your Fitness Meet the All-New  ',
-      //   desc: 'provide more support around improving our wellness by allowing us to track health and fitness achievements from anywhere.',
-      //   btn: <ButtonOn name='Start Your journey with us' link='/GoalPage' />,
-    },
-    {
-      image: 'Images/Image and card.png',
-      heading: 'Are You Ready to start your day with RBR',
-      desc: 'This is the description of slide two Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi quos quas, voluptatum nesciunt illum exercitationem.',
-    },
-    {
-      image: 'https://res.cloudinary.com/mabhi8251/image/upload/v1637396498/samples/people/bicycle.jpg',
-
-      //   heading: 'books our best doctors and best Prowfit trainers',
-      //   desc: 'This is the description of slide three Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi quos quas, voluptatum nesciunt illum exercitationem.',
-    },
-  ];
 
   return (
     <div style={{ backgroundColor: '#EDEBF1' }}>
       <div className='scroll-parent'>
         <div className='scroll-element primary'>
-          <Stack>
-            {/* <img
-              className='image'
-              style={{
-                height: '100vh',
-                objectFit: 'cover',
-                filter: 'brightness(1)',
-              }}
-              src='Images/7HbVrB.jpg'
-              alt='slides'
-            /> */}
-            <video controls muted poster='<https://ruttl.com/assets/img/index-hero.jpg>'>
-              <source src='<https://ruttl.com/assets/video/index-hero.webm>' type='video/mp4' />
-            </video>
-          </Stack>
-          <div className='content'>
-            <Flex p={20} flex={1} align={'center'} justify={'center'} mt={-400}>
-              <Stack spacing={4} w={'full'} maxW={'lg'}>
-                <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
-                  <Text
-                    as={'span'}
-                    color={'blackAlpha.800'}
-                    position={'relative'}
-                    _after={{
-                      width: 'full',
-                      //   height: useBreakpointValue({ base: '20%', md: '30%' }),
-                      position: 'absolute',
-                      //   bottom: 1,
-                      left: 0,
-                      bg: 'red.400',
-                      zIndex: -1,
-                    }}
-                  >
-                    <h2>Hello</h2>
-                  </Text>
-                  <br /> <Text color={'blue.400'} as={'span'}></Text>{' '}
-                </Heading>
-                <Text fontSize={{ base: 'md', lg: 'lg' }} color={'blue.600'}>
-                  hrllotrrb nbbhjb
-                </Text>
-              </Stack>
-            </Flex>
-          </div>
-        </div>
-        <div className='scroll-element secondary'>
-          <div>
-            <div>
-              <Stack>
+          <SimpleGrid mt={10} columns={{ base: 1, md: 2 }}>
+            <Center>
+              <Heading fontSize={'40px'} lineHeight={'60px'} fontWeight={'600'} color={'#101130'}>
+                The world's only exclusive platform and community for retired professionals
+              </Heading>
+            </Center>
+            <Flex>
+              <Stack display={{ base: 'none', md: 'flex' }}>
                 <img
                   className='image'
                   style={{
-                    height: '100vh',
+                    height: '80vh',
                     objectFit: 'cover',
                     filter: 'brightness(1)',
                   }}
-                  src='https://res.cloudinary.com/mabhi8251/image/upload/v1637396498/samples/people/bicycle.jpg'
+                  src='Images/Image and card.png'
                   alt='slides'
                 />
               </Stack>
-              <div className='content'>
-                <Flex p={20} flex={1} align={'center'} justify={'center'} mt={-400}>
-                  <Stack spacing={4} w={'full'} maxW={'lg'}>
-                    <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
-                      <Text
-                        as={'span'}
-                        color={'blackAlpha.800'}
-                        position={'relative'}
-                        _after={{
-                          width: 'full',
-                          //   height: useBreakpointValue({ base: '20%', md: '30%' }),
-                          position: 'absolute',
-                          //   bottom: 1,
-                          left: 0,
-                          bg: 'red.400',
-                          zIndex: -1,
-                        }}
-                      >
-                        <h2>Hello</h2>
-                      </Text>
-                      <br /> <Text color={'blue.400'} as={'span'}></Text>{' '}
-                    </Heading>
-                    <Text fontSize={{ base: 'md', lg: 'lg' }} color={'blue.600'}>
-                      hrllotrrb nbbhjb
-                    </Text>
-                  </Stack>
-                </Flex>
-              </div>
-            </div>
-          </div>
+            </Flex>
+          </SimpleGrid>
+        </div>
+        <div className='scroll-element secondary'>
+          <Stack m={5} borderRadius={'10%'}>
+            <img
+              className='image'
+              style={{
+                height: 'full',
+                objectFit: 'cover',
+                filter: 'brightness(1)',
+              }}
+              src='Images/Mask-group.png'
+              alt='slides'
+            />
+          </Stack>
         </div>
       </div>
-      {/* <div className='slider'>
-        <div>
-          <div>
-            <Stack>
-              <img
-                className='image'
-                style={{
-                  height: '100vh',
-                  objectFit: 'cover',
-                  filter: 'brightness(1)',
-                }}
-                src='Images/7HbVrB.jpg'
-                alt='slides'
-              />
-            </Stack>
-            <div className='content'>
-              <Flex p={20} flex={1} align={'center'} justify={'center'} mt={-400}>
-                <Stack spacing={4} w={'full'} maxW={'lg'}>
-                  <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
-                    <Text
-                      as={'span'}
-                      color={'blackAlpha.800'}
-                      position={'relative'}
-                      _after={{
-                        width: 'full',
-                        //   height: useBreakpointValue({ base: '20%', md: '30%' }),
-                        position: 'absolute',
-                        //   bottom: 1,
-                        left: 0,
-                        bg: 'red.400',
-                        zIndex: -1,
-                      }}
-                    >
-                      <h2>Hello</h2>
-                    </Text>
-                    <br /> <Text color={'blue.400'} as={'span'}></Text>{' '}
-                  </Heading>
-                  <Text fontSize={{ base: 'md', lg: 'lg' }} color={'blue.600'}>
-                    hrllotrrb nbbhjb
-                  </Text>
-                </Stack>
-              </Flex>
-            </div>
-          </div>
-        </div>
-      </div> */}
-      <Container maxW={'7xl'} py={5} mb={20} mt={60}>
+      <Container maxW={'7xl'} py={5} mb={20} mt={10}>
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
           <Stack spacing={10}>
             <Heading color={'#773FC6'}>Where young minds meet industrious retirees</Heading>
@@ -232,29 +111,27 @@ const Home = () => {
                 Retired professionals have a wealth of knowledge, wisdom and skills that can be beneficial to currently
                 employed professionals. RBR is where this juncture is made possible.
               </Text>
-              {/* <Feature
-                text={
-                  'Retired professionals have a wealth of knowledge, wisdom and skills that can be beneficial to currently employed professionals. RBR is where this juncture is made possible.'
-                }
-              /> */}
             </Stack>
-
-            <Button
-              width={'176px'}
-              rounded={'full'}
-              height={'50px'}
-              px={6}
-              fontSize={'18px'}
-              colorScheme={'orange'}
-              bg={'orange.400'}
-              _hover={{ bg: 'orange.500' }}
-            >
-              Start your journey
-            </Button>
+            <Link href='/Register'>
+              <Button
+                width={'176px'}
+                rounded={'full'}
+                height={'50px'}
+                px={6}
+                fontSize={'18px'}
+                colorScheme={'orange'}
+                bg={'orange.400'}
+                _hover={{ bg: 'orange.500' }}
+              >
+                Start your journey
+              </Button>
+            </Link>
           </Stack>
 
           <Flex>
-            <Image rounded={'md'} alt={'feature image'} src={'Images/Rectangle 96.png'} objectFit={'cover'} />
+            <video autoPlay controls poster='Images/Mask-group.png'>
+              <source src='<https://ruttl.com/assets/video/index-hero.webm>' type='video/mp4' />
+            </video>
           </Flex>
         </SimpleGrid>
       </Container>
@@ -269,7 +146,7 @@ const Home = () => {
         <Grid
           templateColumns={{
             base: 'repeat(1, 1fr)',
-            // sm: 'repeat(2, 1fr)',
+
             md: 'repeat(2, 1fr)',
           }}
           mt={'150px'}
@@ -289,21 +166,20 @@ const Home = () => {
           </GridItem>
           <GridItem>
             <Center mt={'30px'}>
-              <Button
-                height={'90px'}
-                width={'292px'}
-                rounded={'2xl'}
-                // ml={'30px'}
-                colorScheme={''}
-                bg={'#773FC6'}
-                fontSize={'24px'}
-                fontWeight={'500'}
-                // _hover={{ bg: 'orange.500' }}
-              >
-                Start your journey
-              </Button>
+              <Link href='/Register'>
+                <Button
+                  height={'90px'}
+                  width={'292px'}
+                  rounded={'2xl'}
+                  colorScheme={''}
+                  bg={'#773FC6'}
+                  fontSize={'24px'}
+                  fontWeight={'500'}
+                >
+                  Start your journey
+                </Button>
+              </Link>
             </Center>
-            {/* </Flex> */}
           </GridItem>
         </Grid>
       </Container>
@@ -317,8 +193,6 @@ const Home = () => {
       >
         <Grid
           templateColumns={{
-            // base: 'repeat(1, 1fr)',
-            // sm: 'repeat(2, 1fr)',
             md: 'repeat(2, 1fr)',
           }}
           gap={10}
@@ -326,18 +200,19 @@ const Home = () => {
         >
           <GridItem colSpan={1}>
             <Center mt={'30px'}>
-              <Button
-                height={'90px'}
-                width={'292px'}
-                rounded={'2xl'}
-                colorScheme={''}
-                bg={'#46B40F'}
-                fontSize={'24px'}
-                fontWeight={'500'}
-                // _hover={{ bg: 'orange.500' }}
-              >
-                Start your journey
-              </Button>
+              <Link href='/Register'>
+                <Button
+                  height={'90px'}
+                  width={'292px'}
+                  rounded={'2xl'}
+                  colorScheme={''}
+                  bg={'#46B40F'}
+                  fontSize={'24px'}
+                  fontWeight={'500'}
+                >
+                  Start your journey
+                </Button>
+              </Link>
             </Center>
           </GridItem>
           <GridItem>
@@ -362,9 +237,7 @@ const Home = () => {
           templateColumns={{
             base: 'repeat(1, 1fr)',
             sm: 'repeat(2, 1fr)',
-            // md: 'repeat(2, 1fr)',
           }}
-          //   gap={25}
         >
           <GridItem colSpan={1}>
             <Text fontWeight={'bold'} fontSize={'25px'} color={'#2F327D'}>
@@ -391,7 +264,6 @@ const Home = () => {
           mt={'50px'}
         >
           <GridItem colSpan={1} justifyContent={'center'} mt={'50px'}>
-            {/* <Flex direction={'row'}> */}
             <Image src='Images/Group-114.png' alt='oldman' />
           </GridItem>
           <Flex align={'center'} direction={'column'}>
@@ -404,19 +276,14 @@ const Home = () => {
               <img src='Images/Ret-pro-logo 2.png' alt='' />
             </GridItem>
             <GridItem>
-              {/* <Flex alignItems='center'> */}
               <Text fontSize={'17px'} color={'#000000'}>
                 (your skills are all you need to begin)
               </Text>
-              {/* </Flex> */}
             </GridItem>
             <GridItem width={700} mt={24} justifyContent={'start'}>
               <img src='Images/Group-626024.png' alt='' />
             </GridItem>
-            {/* </Grid> */}
           </Flex>
-
-          {/* </Flex>/ */}
         </Grid>
       </Container>
       <Container overflow={'hidden'} height={'554px'} maxW={'6xl'} mt={20}>
@@ -438,24 +305,17 @@ const Home = () => {
               <img src='Images/JunPro-2.png' alt='' />
             </GridItem>
             <GridItem>
-              {/* <Flex alignItems='center'> */}
               <Text fontSize={'17px'} color={'#000000'}>
                 (your skills are all you need to begin)
               </Text>
-              {/* </Flex> */}
             </GridItem>
             <GridItem width={700} mt={24} justifyContent={'center'}>
               <img src='Images/Group-626024.png' alt='' />
             </GridItem>
-            {/* </Grid> */}
           </Flex>
-
           <GridItem width={'308px'} colSpan={1} justifyContent={'center'} mt={'50px'}>
-            {/* <Flex direction={'row'}> */}
             <Image src='Images/How-it-works.png' alt='oldman' />
           </GridItem>
-
-          {/* </Flex>/ */}
         </Grid>
       </Container>{' '}
       <Container overflow={'hidden'} align={'center'} maxW={'9xl'} mt={40}>
@@ -607,7 +467,7 @@ const Home = () => {
           </Flex>
         </Stack>
       </Container>
-      {StoriesSliderData.map((slider, indexs) => {
+      {/* {StoriesSliderData.map((slider, indexs) => {
         return (
           <div>
             <Container
@@ -624,14 +484,7 @@ const Home = () => {
 
               <Stack border={'2px solid red'} minH={'504px'} direction={{ base: 'row', md: 'row' }}>
                 <Flex border={'2px solid red'} pt={10} flex={1} justify={'start'}>
-                  <Stack
-                    border={'2px solid red'}
-                    //   background={'#EDF3FF'}
-                    //   width={'100%'}
-                    //   height={'411px'}
-                    spacing={5}
-                    w={'40%'}
-                  >
+                  <Stack border={'2px solid red'} spacing={5} w={'40%'}>
                     <Heading borderTopRadius={'20px'} align={'center'}>
                       {' '}
                       <Text justifyContent={'center'} color={'#101130'} fontSize={'20px'} maxW={'80'} mt={5}>
@@ -671,43 +524,11 @@ const Home = () => {
                     </div>
                   </div>
                 </section>
-                {/* <Flex border={'2px solid red'} pt={10} flex={1} justify={'center'}>
-            <Stack
-              border={'2px solid red'}
-              //   background={'#EFFFE7'}
-              //   width={'504px'}
-              //   height={'411px'}
-              spacing={5}
-              w={'80%'}
-            >
-              <Heading height={20} align={'center'}>
-                {' '}
-                <Text lineHeight={'28px'} fontSize={'20px'} color={'#101130'} mt={5}>
-                  "I have been rewarded with both <br /> help and loyalty"
-                </Text>{' '}
-              </Heading>
-              <Text fontSize={'15px'} color={'#606176'}>
-                "The retired professional who is currently working with me to improve my language proficiency in French,
-                is extremely punctual and passionate about teaching"
-              </Text>
-              <Flex align={'center'} direction={'row'}>
-                <Avatar spacing={10} src='Images/Ellipse-38.png' alt='name' mb={2} mr={5} />
-                <Stack align={'center'}>
-                  <Text color={'#101130'} fontWeight={1000}>
-                    Milena Belmar
-                  </Text>
-                  <Text mt={'-10px'} fontSize={'sm'} color={'#606176'}>
-                    Argentina
-                  </Text>
-                </Stack>
-              </Flex>
-            </Stack>
-          </Flex> */}
               </Stack>
             </Container>
           </div>
         );
-      })}
+      })} */}
     </div>
   );
 };

@@ -3,10 +3,10 @@ import { Button, Flex, FormControl, Heading, Input, Stack, Image, Center, Text, 
 import { FcFeedback, FcGoogle, FcTabletAndroid } from 'react-icons/fc';
 import { FaFacebook } from 'react-icons/fa';
 import LoginPopup from '../componenets/LoginPopup';
-import { useDispatch } from 'react-redux';
-import { createUser } from '../features/userDetailSlice';
+// import { useDispatch } from 'react-redux';
+// import { createUser } from '../features/userDetailSlice';
 
-import { ToastContainer, toast } from 'react-toastify';
+// import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const initialState = {
@@ -21,32 +21,39 @@ const Register = () => {
     setShowPopup(true);
   };
   const [users, setUsers] = useState({ initialState });
-  const { name, email, password, number } = users;
-  const dispatch = useDispatch();
+  const { fname, email, password, number } = users;
+  //   const dispatch = useDispatch();
 
   const getUserData = (e) => {
-    const { name, value } = e.target;
-    setUsers({ ...users, [name]: value });
+    // const { name, value } = e.target;
+    // setUsers({ ...users, [name]: value });
+    setUsers(e.target.value);
+    console.log(setUsers);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('users...', users);
-    dispatch(createUser(users));
-
-    if (!name || !email || !password) {
-      return toast.error('All fields are required');
-    }
-    if (name.length < 4) {
-      return toast.error('Please enter a valid Name');
-    }
-    if (password.length < 6) {
-      return toast.error('  must be up to 6 characters');
-    }
   };
+
+  //   const handleSubmit = (e) => {
+  //     e.preventDefault();
+  //     console.log('users...', users);
+  //     dispatch(createUser(users));
+
+  //     if (!name || !email || !password) {
+  //       return toast.error('All fields are required');
+  //     }
+  //     if (name.length < 4) {
+  //       return toast.error('Please enter a valid Name');
+  //     }
+  //     if (password.length < 6) {
+  //       return toast.error('  must be up to 6 characters');
+  //     }
+  //   };
 
   return (
     <div>
-      <ToastContainer />
+      {/* <ToastContainer /> */}
       <LoginPopup modalIsOpen={modalIsOpen} showPopup={setShowPopup} />
       <Stack align={'center'} backgroundColor={'#EDEBF1'} minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
         <Flex width={'700px'} direction={'column'} p={8} flex={1} align={'center'} justify={'center'}>
@@ -67,9 +74,9 @@ const Register = () => {
               <Input
                 opacity={'0.5'}
                 border={'1px solid #B4B3B3'}
-                name='name'
+                // name='name'
                 placeholder='full name*'
-                value={name}
+                value={fname}
                 onChange={getUserData}
               />
             </FormControl>
@@ -77,7 +84,7 @@ const Register = () => {
               <Input
                 opacity={'0.5'}
                 border={'1px solid #B4B3B3'}
-                name='email'
+                // name='email'
                 value={email}
                 onChange={getUserData}
                 placeholder='e-mail address*'
@@ -88,7 +95,7 @@ const Register = () => {
               <Input
                 opacity={'0.5'}
                 border={'1px solid #B4B3B3'}
-                name='password'
+                // name='password'
                 value={password}
                 type='password'
                 onChange={getUserData}
@@ -99,7 +106,7 @@ const Register = () => {
               <Input
                 opacity={'0.5'}
                 border={'1px solid #B4B3B3'}
-                name='number'
+                // name='number'
                 value={number}
                 onChange={getUserData}
                 placeholder='mobile number'
