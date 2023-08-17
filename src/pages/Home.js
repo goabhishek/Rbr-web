@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 import '../global.css';
 import {
@@ -23,8 +23,26 @@ import {
 } from '@chakra-ui/react';
 
 import {} from '@chakra-ui/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons';
 
 const Home = () => {
+  //   const handleNext = () => {
+  //     SlideRef.current.swiper.SlideNext();
+  //   };
+  const SlideRef = useRef();
+  //   const handlePrev = () => {
+  //     SlideRef.current.swiper.SlidePrev();
+  //   };
+
   const StoriesSliderData = [
     {
       HeadFont: 'No online course could have helped me this way',
@@ -35,11 +53,11 @@ const Home = () => {
       UserStar: '',
     },
     {
-      HeadFont: 'No online course could have helped me this way',
-      Text: 'A RetPro helped me realize that my aspirations were leaning more towards Data sciences than what I am currently doing',
-      UserDp: 'Images/Ellipse-38.png',
-      UserName: 'Wilson Thai',
-      UserAddr: 'Ontario, Canada',
+      HeadFont: 'I have been rewarded with both help and loyalty',
+      Text: 'The retired professional who is currently working with me to improve my language proficiency in French, is extremely punctual and passionate about teaching',
+      UserDp: 'Images/Ellipse-39.png',
+      UserName: 'Milena Belmar',
+      UserAddr: 'Argentina',
       UserStar: '',
     },
     {
@@ -51,18 +69,73 @@ const Home = () => {
       UserStar: '',
     },
     {
-      HeadFont: 'No online course could have helped me this way',
-      Text: 'A RetPro helped me realize that my aspirations were leaning more towards Data sciences than what I am currently doing',
-      UserDp: 'Images/Ellipse-38.png',
-      UserName: 'Wilson Thai',
-      UserAddr: 'Ontario, Canada',
+      HeadFont: 'I have been rewarded with both help and loyalty',
+      Text: 'The retired professional who is currently working with me to improve my language proficiency in French, is extremely punctual and passionate about teaching',
+      UserDp: 'Images/Ellipse-39.png',
+      UserName: 'Milena Belmar',
+      UserAddr: 'Argentina',
       UserStar: '',
     },
   ];
 
   return (
     <div style={{ backgroundColor: '#EDEBF1' }}>
-      <div className='scroll-parent'>
+      <Swiper
+        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        spaceBetween={10}
+        slidesPerView={1}
+        onSlideChange={() => console.log('slide change')}
+        onSwiper={(swiper) => console.log(swiper)}
+      >
+        <SwiperSlide>
+          <SimpleGrid mt={10} columns={{ base: 1, md: 2 }}>
+            <Center>
+              <Heading
+                position={'relative'}
+                flexWrap={'wrap'}
+                fontSize={'40px'}
+                lineHeight={'60px'}
+                fontWeight={'700'}
+                color={'#101130'}
+              >
+                The world's only exclusive platform and community for retired professionals
+              </Heading>
+            </Center>
+
+            <Flex flexWrap={'wrap'}>
+              <Stack position={'absolute'}>
+                <img
+                  className='image'
+                  style={{
+                    height: '80vh',
+                    objectFit: 'cover',
+                    filter: 'brightness(1)',
+                  }}
+                  src='Images/Image and card.png'
+                  alt='slides'
+                />
+              </Stack>
+              <div className='semi-circle_one'></div>s
+            </Flex>
+          </SimpleGrid>
+        </SwiperSlide>
+        <SwiperSlide>
+          <Stack m={5} borderRadius={'10%'}>
+            <img
+              className='image'
+              style={{
+                height: '80vh',
+                objectFit: 'cover',
+                filter: 'brightness(1)',
+              }}
+              src='Images/Mask-group.png'
+              alt='slides'
+            />
+          </Stack>
+        </SwiperSlide>
+        ...
+      </Swiper>
+      {/* <div className='scroll-parent'>
         <div className='scroll-element primary'>
           <SimpleGrid mt={10} columns={{ base: 1, md: 2 }}>
             <Center>
@@ -100,7 +173,7 @@ const Home = () => {
             />
           </Stack>
         </div>
-      </div>
+      </div> */}
       <Container maxW={'7xl'} py={5} mb={20} mt={10}>
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
           <Stack spacing={10}>
@@ -135,6 +208,7 @@ const Home = () => {
           </Flex>
         </SimpleGrid>
       </Container>
+      <div className='semi-circle'></div>
       <Container
         backgroundColor={'#6300FF0F'}
         borderRadius={'md'}
@@ -254,7 +328,7 @@ const Home = () => {
           </GridItem>
         </Grid>
       </Container>
-      <Container height={'554px'} maxW={'7xl'} mt={20}>
+      <Container overflow={'hidden'} height={'554px'} maxW={'7xl'} mt={20}>
         <Grid
           templateColumns={{
             base: 'repeat(1, 1fr)',
@@ -422,7 +496,7 @@ const Home = () => {
           Explore all
         </Button>
       </Center>
-      <Container borderRadius={'md'} height={'554px'} maxW={'8xl'} mt={35}>
+      <Container position={'relative'} borderRadius={'md'} maxW={'8xl'}>
         <Center>
           <Heading align={'center'} width={'700px'} lineHeight={'56px'} fontSize={'44px'} color={'#101130'}>
             Creating impact for retired and working professionals
@@ -467,68 +541,73 @@ const Home = () => {
           </Flex>
         </Stack>
       </Container>
-      {/* {StoriesSliderData.map((slider, indexs) => {
-        return (
-          <div>
-            <Container
-              overflow={'hidden'}
-              borderRadius={'md'}
-              border={'1px solid red'}
-              height={'554px'}
-              maxW={'7xl'}
-              mt={40}
-            >
-              <Heading fontSize={'44px'}>
-                Some real-life success stories to <hr /> get inspired by
-              </Heading>
-
-              <Stack border={'2px solid red'} minH={'504px'} direction={{ base: 'row', md: 'row' }}>
-                <Flex border={'2px solid red'} pt={10} flex={1} justify={'start'}>
-                  <Stack border={'2px solid red'} spacing={5} w={'40%'}>
-                    <Heading borderTopRadius={'20px'} align={'center'}>
-                      {' '}
-                      <Text justifyContent={'center'} color={'#101130'} fontSize={'20px'} maxW={'80'} mt={5}>
-                        " {slider.HeadFont}"
-                      </Text>{' '}
-                    </Heading>
-                    <Text color={'#606176'} fontSize={'15px'}>
-                      "A RetPro helped me realize that my aspirations were leaning more towards Data sciences than what
-                      I am currently doing"
-                    </Text>
-                    <Flex align={'center'} mt={8} direction={'row'}>
-                      <Avatar spacing={10} src='Images/110.png' alt='name' mb={2} mr={5} />
-                      <Stack align={'center'}>
-                        <Text color={'#101130'} fontWeight={1000}>
-                          Milena Belmar
+      <div>
+        <Container overflow={'hidden'} maxW={'6xl'} position={'relative'} mt={20}>
+          <Flex justifyContent={'space-between'} flex={1}>
+            <Heading fontSize={'44px'}>
+              Some real-life success stories to <hr /> get inspired by
+            </Heading>
+            <Flex gap={30}>
+              <ArrowBackIcon
+                cursor={'pointer'}
+                height={50}
+                width={30}
+                onClick={() => SlideRef.current.swiper.slideNext()}
+              />
+              <ArrowForwardIcon
+                cursor={'pointer'}
+                height={50}
+                width={30}
+                onClick={() => SlideRef.current.swiper.slidePrev()}
+              />
+            </Flex>
+          </Flex>
+          <Swiper
+            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            spaceBetween={70}
+            slidesPerView={2}
+            navigation={false}
+            className={'mySwiper'}
+            ref={SlideRef}
+            onSlideChange={() => console.log('slide change')}
+            onSwiper={(swiper) => console.log(swiper)}
+          >
+            {StoriesSliderData.map((slider, indexs) => {
+              return (
+                <SwiperSlide key={indexs}>
+                  <Stack direction={{ base: 'row', md: 'row' }}>
+                    <Flex pt={10} flex={1} justify={'start'}>
+                      <Stack spacing={10} w={'80%'}>
+                        <Heading lineHeight={'30px'} align={'start'}>
+                          {' '}
+                          <Text fontWeight={500} justifyContent={'center'} color={'#101130'} fontSize={'28px'} mt={5}>
+                            " {slider.HeadFont}"
+                          </Text>{' '}
+                        </Heading>
+                        <Text color={'#606176'} fontSize={'18px'}>
+                          "A RetPro helped me realize that my aspirations were leaning more towards Data sciences than
+                          what I am currently doing"
                         </Text>
-                        <Text mt={'-10px'} fontSize={'sm'} color={'#606176'}>
-                          Argentina
-                        </Text>
+                        <Flex align={'center'} mr={8} direction={'row'}>
+                          <Avatar width={'70px'} height={'70px'} spacing={20} src={slider.UserDp} alt='name' m={5} />
+                          <Stack align={'center'}>
+                            <Text color={'#101130'} fontWeight={1000}>
+                              Milena Belmar
+                            </Text>
+                            <Text mt={'-10px'} fontSize={'sm'} color={'#606176'}>
+                              Argentina
+                            </Text>
+                          </Stack>
+                        </Flex>
                       </Stack>
                     </Flex>
                   </Stack>
-                </Flex>
-
-                <section id='testimonial_area'>
-                  <div className='container'>
-                    <div className='row'>
-                      <div className='col-md-12'>
-                        <div className='textimonial_slider_area text-center owl-carousel'>
-                          <div className='box-area'>
-                            <img src='Images/7HbVrB.jpg' alt='test' />
-                          </div>
-                          <h5>Person's className</h5>
-                          <span>Designation</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              </Stack>
-            </Container>
-          </div>
-        );
-      })} */}
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        </Container>
+      </div>
     </div>
   );
 };

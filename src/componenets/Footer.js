@@ -1,7 +1,6 @@
 import React from 'react';
 import '../global.css';
 import { Box, Container, Link, Button, SimpleGrid, Stack, Text, useColorModeValue, Image } from '@chakra-ui/react';
-// import MobileStoreButton from 'react-mobile-store-button';
 
 const ListHeader = ({ children }) => {
   return (
@@ -12,55 +11,57 @@ const ListHeader = ({ children }) => {
 };
 
 const Footer = () => {
-  //   const AnsroidUrl = 'https://itunes.apple.com/us/app/all-of-the-lights/id959389722?mt=8';
   return (
-    <Box width={'100%'} backgroundColor={'#EDEBF1'} color={useColorModeValue('gray.700', 'gray.200')}>
-      <Container as={Stack} maxW={'8xl'} py={10}>
-        <SimpleGrid templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr 1fr 1fr' }} spacing={8}>
-          <Stack spacing={6}>
-            <Box>
+    <Box bg={'#EDEBF1'} color={useColorModeValue('gray.700', 'gray.200')}>
+      <Container as={Stack} maxW={'7xl'} py={10}>
+        <SimpleGrid columns={{ base: 1, sm: 2, md: 5 }} spacing={8}>
+          <Stack align={'center'}>
+            <Link href='/'>
               <img src='Images/RBR Logo 1.png' alt='logo' />
-            </Box>
+            </Link>
             <Text fontSize={'m'} fontWeight={'500'} justifyContent={'center'}>
               Our mission is to create economic & engagement opportunity for our people around the world - age no bar.
             </Text>
           </Stack>
-          <Stack align={'flex-start'}>
+
+          <Stack align={'center'}>
             <ListHeader>About</ListHeader>
-            <Link color={'#606176'} href={'#'}>
+            <Box color={'#606176'} fontSize={'16px'} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
               About Us
-            </Link>
-            <Link color={'#606176'} href={'#'}>
+            </Box>
+            <Box color={'#606176'} fontSize={'16px'} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
               Features
-            </Link>
-            <Link color={'#606176'} href={'#'}>
+            </Box>
+            <Box color={'#606176'} fontSize={'16px'} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
               News
-            </Link>
-            <Link color={'#606176'} href={'#'}>
+            </Box>
+            <Box color={'#606176'} fontSize={'16px'} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
               Careers
-            </Link>
-            <Link color={'#606176'} href={'#'}>
+            </Box>
+            <Box color={'#606176'} fontSize={'16px'} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
               FAQ
-            </Link>
+            </Box>
           </Stack>
-          <Stack align={'flex-start'}>
+
+          <Stack align={'center'}>
             <ListHeader>Support</ListHeader>
-            <Link color={'#606176'} href={'#'}>
+            <Box color={'#606176'} fontSize={'16px'} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
               Account
-            </Link>
-            <Link color={'#606176'} href={'#'}>
-              Support center
-            </Link>
-            <Link color={'#606176'} href={'#'}>
+            </Box>
+            <Box color={'#606176'} fontSize={'16px'} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
+              Support Center
+            </Box>
+            <Box color={'#606176'} fontSize={'16px'} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
               Feedback
-            </Link>
-            <Link color={'#606176'} href={'#'}>
+            </Box>
+            <Box color={'#606176'} fontSize={'16px'} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
               Contact Us
-            </Link>
-            <Link color={'#606176'} href={'#'}>
+            </Box>
+            <Box color={'#606176'} fontSize={'16px'} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
               Accesbility
-            </Link>
+            </Box>
           </Stack>
+
           <Stack align={'center'}>
             <ListHeader>Get Our App</ListHeader>
 
@@ -107,57 +108,36 @@ const Footer = () => {
               Get It On Google Play
             </Button>
           </Stack>
-          <Box mt={'-35'} display='flex' flex='1' position='relative'>
-            <Box width={'400px'} alignItems='center' zIndex='2' marginLeft={{ base: '0', sm: '5%' }} marginTop='10%'>
-              <Link textDecoration='none' _hover={{ textDecoration: 'none' }}>
-                <Image
-                  borderRadius='lg'
-                  src={'Images/Landing page 1.png'}
-                  alt='some good alt text'
-                  objectFit='contain'
-                />
-              </Link>
+          <Stack align={'center'}>
+            <Box mt={'-35'} display='flex' flex='1' position='relative'>
+              <Box alignItems='center' zIndex='2' marginLeft={{ base: '0', sm: '5%' }} marginTop='10%'>
+                <Link textDecoration='none' _hover={{ textDecoration: 'none' }}>
+                  <Image
+                    borderRadius='lg'
+                    src={'Images/Landing page 1.png'}
+                    alt='some good alt text'
+                    objectFit='contain'
+                  />
+                </Link>
+              </Box>
             </Box>
-            <Box zIndex='1' position='absolute' height='100%'>
-              <Box
-              // alignItems={'end'}
-              // mr={'200px'}
-              // bgGradient={useColorModeValue(
-              //   'radial(orange.600 1px, transparent 1px)',
-              //   'radial(orange.300 1px, transparent 1px)'
-              // )}
-              // backgroundSize='20px 20px'
-              // opacity='0.4'
-              // height='100%'
-              />
-              <img
-                style={{
-                  rotate: '-97.31 deg',
-                }}
-                src='Images/Ellipse 129.png'
-                alt='back'
-              />
-            </Box>
-            <img
-              style={{
-                rotate: '-97.31 deg',
-              }}
-              src='Images/Ellipse 128.png'
-              alt='back'
-            />
-          </Box>
-          {/* <img
-            style={{
-              rotate: '-97.31 deg',
-            }}
-            src='Images/rbr2.png'
-            alt='back'
-          />
-          <Stack align={'flex-start'} width={'355.25px'} height={'264.74'} border={'1px'}>
-            <img src='Images/rbr.png' alt='side' />
-          </Stack> */}
+          </Stack>
         </SimpleGrid>
       </Container>
+
+      <Box borderTopWidth={1} borderStyle={'solid'} borderColor={useColorModeValue('gray.200', 'gray.700')}>
+        <Container
+          as={Stack}
+          maxW={'6xl'}
+          py={4}
+          direction={{ base: 'column', md: 'row' }}
+          spacing={4}
+          justify={{ md: 'space-between' }}
+          align={{ md: 'center' }}
+        >
+          <Stack direction={'row'} spacing={6}></Stack>
+        </Container>
+      </Box>
     </Box>
   );
 };

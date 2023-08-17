@@ -1,5 +1,5 @@
 import React from 'react';
-import { PhoneIcon, Search2Icon, TriangleDownIcon } from '@chakra-ui/icons';
+import { Search2Icon, TriangleDownIcon } from '@chakra-ui/icons';
 import {
   Box,
   Flex,
@@ -7,7 +7,6 @@ import {
   Menu,
   MenuButton,
   MenuList,
-  MenuItem,
   Stack,
   Input,
   InputGroup,

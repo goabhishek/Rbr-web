@@ -204,3 +204,18 @@
     left: 0%;
   }
 }
+
+.semi-circle {
+  width: 20rem;
+  height: 32rem;
+  background-color: #773fc633;
+  border-radius: 0 22rem 22rem 0;
+}
+.semi-circle_one {
+  width: 20rem;
+  height: 32rem;
+  background-color: #46b40f40;
+  border-radius: 22rem 0 0 22rem;
+  /* position: relative; */
+  margin: auto 0 auto auto;
+}

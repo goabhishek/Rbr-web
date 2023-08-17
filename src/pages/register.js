@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Flex, FormControl, Heading, Input, Stack, Image, Center, Text, Box } from '@chakra-ui/react';
+import { Button, Flex, FormControl, Heading, Input, Stack, Image, Center, Text } from '@chakra-ui/react';
 import { FcFeedback, FcGoogle, FcTabletAndroid } from 'react-icons/fc';
 import { FaFacebook } from 'react-icons/fa';
 import LoginPopup from '../componenets/LoginPopup';
