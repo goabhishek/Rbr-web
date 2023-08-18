@@ -341,20 +341,20 @@ const Home = () => {
             <Image src='Images/Group-114.png' alt='oldman' />
           </GridItem>
           <Flex align={'center'} direction={'column'}>
-            <Heading color={'#2F327D'} fontWeight={'bold'} fontSize={'22px'}>
+            <Heading mr={20} color={'#2F327D'} fontWeight={'bold'} fontSize={'22px'}>
               So much you can do with{' '}
             </Heading>
 
             <br />
-            <GridItem height={'64px'} width={'140px'}>
+            <GridItem mr={20} height={'64px'} width={'140px'}>
               <img src='Images/Ret-pro-logo 2.png' alt='' />
             </GridItem>
-            <GridItem>
+            <GridItem mr={20}>
               <Text fontSize={'17px'} color={'#000000'}>
                 (your skills are all you need to begin)
               </Text>
             </GridItem>
-            <GridItem width={700} mt={24} justifyContent={'start'}>
+            <GridItem flexWrap={'wrap'} width={700} mt={24} justifyContent={'start'}>
               <img src='Images/Group-626024.png' alt='' />
             </GridItem>
           </Flex>
@@ -370,15 +370,15 @@ const Home = () => {
           mt={'50px'}
         >
           <Flex flexWrap={'wrap'} direction={'column'} justifyContent={'start'} align={'center'}>
-            <Heading color={'#2F327D'} fontWeight={'bold'} fontSize={'22px'}>
+            <Heading mr={20} color={'#2F327D'} fontWeight={'bold'} fontSize={'22px'}>
               Fastrack your career with{' '}
             </Heading>
 
             <br />
-            <GridItem height={'64px'} width={'140px'}>
+            <GridItem mr={20} height={'64px'} width={'140px'}>
               <img src='Images/JunPro-2.png' alt='' />
             </GridItem>
-            <GridItem>
+            <GridItem mr={20}>
               <Text fontSize={'17px'} color={'#000000'}>
                 (your skills are all you need to begin)
               </Text>

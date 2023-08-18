@@ -27,8 +27,8 @@ const Register = () => {
   const getUserData = (e) => {
     // const { name, value } = e.target;
     // setUsers({ ...users, [name]: value });
-    setUsers(e.target.value);
-    console.log(setUsers);
+    // setUsers(e.target.value);
+    // console.log(setUsers);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
