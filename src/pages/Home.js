@@ -115,7 +115,7 @@ const Home = () => {
                   alt='slides'
                 />
               </Stack>
-              <div className='semi-circle_one'></div>s
+              <div className='semi-circle_one'></div>
             </Flex>
           </SimpleGrid>
         </SwiperSlide>

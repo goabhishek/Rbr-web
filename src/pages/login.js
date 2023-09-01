@@ -3,11 +3,15 @@ import { Button, Flex, FormControl, Heading, Input, Stack, Image, Center, Text, 
 import { FcFeedback, FcGoogle, FcTabletAndroid } from 'react-icons/fc';
 import { FaFacebook } from 'react-icons/fa';
 import ProfilePop from '../componenets/ProfilePop';
+import { useLocation, useNavigate } from 'react-router-dom';
 // const initialstate = {
 //   name,
 //   password,
 // };
 const Login = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -23,9 +27,15 @@ const Login = () => {
     <div>
       <ProfilePop modalIsOpen={modalIsOpen} showPopup={setShowPopup} />
       <Stack backgroundColor={'#EDEBF1'} minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
-        <Flex align={'center'} direction={'column'} mt={40} flex={1}>
-          <Image width={'450px'} height={'284px'} alt={'Login Image'} src={'Images/Group-626217.png'} />
-          <Stack width={'450px'} borderTop={'1px solid #9CA3AF'}>
+        <Flex transition={'linear'} align={'center'} direction={'column'} mt={40} flex={1}>
+          <Image
+            shadow={'dark-lg'}
+            width={'450px'}
+            height={'284px'}
+            alt={'Login Image'}
+            src={'Images/Group-626217.png'}
+          />
+          <Stack mt={12} width={'450px'} borderTop={'1px solid #9CA3AF'}>
             <Center ml={40} width={40} backgroundColor={'#EDEBF1'} mt={-3}>
               <Text>or login through</Text>
             </Center>
@@ -89,20 +99,21 @@ const Login = () => {
           align={'center'}
           justifyContent={'space-between'}
         >
-          <Heading fontWeight={700} mt={35} fontSize={'40px'}>
+          <Heading fontWeight={700} mt={37} fontSize={'40px'}>
             Login
           </Heading>
           <Stack
             onSubmit={handleSubmit}
-            // mt={-30}
+            mt={7}
             borderRadius={'10px'}
             border={'1px solid #773FC640'}
             spacing={3}
             w={'full'}
             minW={'sm'}
+            shadow={'2xl'}
             maxW={'-webkit-max-content'}
           >
-            <FormControl p={5}>
+            <FormControl p={5} width='100%' isRequired isInvalid={false} my='2'>
               <Input
                 opacity={'0.5'}
                 border={'1px solid #B4B3B3'}
@@ -110,11 +121,10 @@ const Login = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 type='name'
-                isRequired
               />
             </FormControl>
 
-            <FormControl p={5}>
+            <FormControl p={5} isRequired isInvalid={false}>
               <Input
                 opacity={'0.5'}
                 border={'1px solid #B4B3B3'}
@@ -145,6 +155,20 @@ const Login = () => {
                   </Text>
                 </Flex>
               </Button>
+              <Flex justifyContent={'center'}>
+                <span>Dont have an account?</span>
+                <Button
+                  color={'#EF8062'}
+                  variant='link'
+                  display='inline'
+                  ml='2'
+                  textDecoration='underline'
+                  fontSize='1.1rem'
+                  onClick={() => navigate('/Register', { state: location.state, replace: true })}
+                >
+                  Sign up here
+                </Button>
+              </Flex>
             </Stack>
           </Stack>
         </Flex>
