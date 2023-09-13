@@ -9,8 +9,10 @@ import ForgetPassword from './pages/profile/ForgetPassword';
 import VerificatioPage from './pages/profile/VerificatioPage';
 import ResetPage from './pages/profile/ResetPage';
 import Callme from './pages/profile/Callme';
-import Mainwall from './pages/profile-walls/Mainwall';
+import HeroContent from './pages/profile-walls/HeroContent';
 import { NotFound } from './componenets/NotFound';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 
 function App() {
   return (
@@ -25,7 +27,7 @@ function App() {
         <Route path='/VerificatioPage' element={<VerificatioPage />} />
         <Route path='/ResetPage' element={<ResetPage />} />
         <Route path='/Callme' element={<Callme />} />
-        <Route path='/Mainwall' element={<Mainwall />} />
+        <Route path='/HeroContent' element={<HeroContent />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
 

@@ -82,32 +82,40 @@ const Home = () => {
     <div style={{ backgroundColor: '#EDEBF1' }}>
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
-        spaceBetween={10}
+        spaceBetween={2}
         slidesPerView={1}
         onSlideChange={() => console.log('slide change')}
         onSwiper={(swiper) => console.log(swiper)}
       >
         <SwiperSlide>
-          <SimpleGrid mt={10} columns={{ base: 1, md: 2 }}>
-            <Center>
-              <Heading
-                position={'relative'}
-                flexWrap={'wrap'}
-                fontSize={'40px'}
-                lineHeight={'60px'}
-                fontWeight={'700'}
-                color={'#101130'}
-              >
-                The world's only exclusive platform and community for retired professionals
+          <SimpleGrid m={8} mt={16} columns={{ base: 1, md: 2 }}>
+            <Center maxW={'1000px'}>
+              <Heading align={'left'} fontSize={58}>
+                The world's only platform and community for retired professionals
               </Heading>
             </Center>
-
+            {/* <Center width={'1000px'} border={'2px solid red'}>
+              <Stack>
+                <Heading
+                  flexWrap={'wrap'}
+                  position={'relative'}
+                  fontSize={'64px'}
+                  lineHeight={'70px'}
+                  fontWeight={'700'}
+                  color={'#101130'}
+                >
+                  The world's only platform and community for retired professionals
+                </Heading>
+              </Stack>
+            </Center> */}
             <Flex flexWrap={'wrap'}>
-              <Stack position={'absolute'}>
-                <img
+              <Stack align={'center'} position={'absolute'}>
+                <Image
+                  ml={36}
                   className='image'
                   style={{
-                    height: '80vh',
+                    height: '85vh',
+
                     objectFit: 'cover',
                     filter: 'brightness(1)',
                   }}
@@ -124,7 +132,7 @@ const Home = () => {
             <img
               className='image'
               style={{
-                height: '80vh',
+                height: '85vh',
                 objectFit: 'cover',
                 filter: 'brightness(1)',
               }}
@@ -135,62 +143,25 @@ const Home = () => {
         </SwiperSlide>
         ...
       </Swiper>
-      {/* <div className='scroll-parent'>
-        <div className='scroll-element primary'>
-          <SimpleGrid mt={10} columns={{ base: 1, md: 2 }}>
-            <Center>
-              <Heading fontSize={'40px'} lineHeight={'60px'} fontWeight={'600'} color={'#101130'}>
-                The world's only exclusive platform and community for retired professionals
-              </Heading>
-            </Center>
-            <Flex>
-              <Stack display={{ base: 'none', md: 'flex' }}>
-                <img
-                  className='image'
-                  style={{
-                    height: '80vh',
-                    objectFit: 'cover',
-                    filter: 'brightness(1)',
-                  }}
-                  src='Images/Image and card.png'
-                  alt='slides'
-                />
-              </Stack>
-            </Flex>
-          </SimpleGrid>
-        </div>
-        <div className='scroll-element secondary'>
-          <Stack m={5} borderRadius={'10%'}>
-            <img
-              className='image'
-              style={{
-                height: 'full',
-                objectFit: 'cover',
-                filter: 'brightness(1)',
-              }}
-              src='Images/Mask-group.png'
-              alt='slides'
-            />
-          </Stack>
-        </div>
-      </div> */}
-      <Container maxW={'7xl'} py={5} mb={20} mt={10}>
-        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
+      <Container maxW={'7xl'} mb={20} mt={20}>
+        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={5}>
           <Stack spacing={10}>
-            <Heading color={'#773FC6'}>Where young minds meet industrious retirees</Heading>
+            <Heading fontSize={42} color={'#2F327D'}>
+              Where young minds meet industrious retirees
+            </Heading>
 
-            <Stack divider={<StackDivider borderColor={useColorModeValue('#606176', 'gray.700')} />}>
-              <Text>
+            <Stack maxWidth={'499px'} divider={<StackDivider borderColor={useColorModeValue('#606176', 'gray.700')} />}>
+              <Text align={'justify'} fontSize={20}>
                 Retired professionals have a wealth of knowledge, wisdom and skills that can be beneficial to currently
-                employed professionals. RBR is where this juncture is made possible.
+                employed professionals. Retired But Ready is where this juncture is made possible.
               </Text>
             </Stack>
             <Link href='/Register'>
               <Button
-                width={'176px'}
+                width={'220px'}
                 rounded={'full'}
-                height={'50px'}
-                px={6}
+                height={'70px'}
+                // px={6}
                 fontSize={'18px'}
                 colorScheme={'orange'}
                 bg={'orange.400'}
@@ -226,20 +197,20 @@ const Home = () => {
           mt={'150px'}
         >
           <GridItem colSpan={1}>
-            <VStack alignItems='center' spacing={4}>
-              <Heading fontSize='3xl' fontWeight='700' color={'#2F327D'}>
+            <VStack alignItems='center' spacing={2}>
+              <Heading fontSize={44} fontWeight='700' color={'#2F327D'}>
                 Introducing
               </Heading>
-              <Heading fontSize='8xl' fontWeight='1000' color={'#2F327D'}>
+              <Heading fontSize={112} fontWeight='1000' color={'#2F327D'}>
                 RetPro
               </Heading>
-              <Text fontSize={'3xl'} fontWeight={'700'}>
+              <Text fontSize={44} fontWeight={'700'}>
                 for retired professionals
               </Text>
             </VStack>
           </GridItem>
           <GridItem>
-            <Center mt={'30px'}>
+            <Center mt={'80px'}>
               <Link href='/Register'>
                 <Button
                   height={'90px'}
@@ -247,8 +218,8 @@ const Home = () => {
                   rounded={'2xl'}
                   colorScheme={''}
                   bg={'#773FC6'}
-                  fontSize={'24px'}
-                  fontWeight={'500'}
+                  fontSize={'30px'}
+                  fontWeight={'700'}
                 >
                   Start your journey
                 </Button>
@@ -273,7 +244,7 @@ const Home = () => {
           mt={'130px'}
         >
           <GridItem colSpan={1}>
-            <Center mt={'30px'}>
+            <Center mt={'80px'}>
               <Link href='/Register'>
                 <Button
                   height={'90px'}
@@ -281,8 +252,8 @@ const Home = () => {
                   rounded={'2xl'}
                   colorScheme={''}
                   bg={'#46B40F'}
-                  fontSize={'24px'}
-                  fontWeight={'500'}
+                  fontSize={'30px'}
+                  fontWeight={'700'}
                 >
                   Start your journey
                 </Button>
@@ -292,13 +263,13 @@ const Home = () => {
           <GridItem>
             <Flex>
               <VStack ml={'20px'} spacing='15px'>
-                <Heading fontSize='3xl' fontWeight='700' color={'#2F327D'}>
+                <Heading fontSize={44} fontWeight='700' color={'#2F327D'}>
                   Currently working?
                 </Heading>
-                <Heading fontSize='8xl' fontWeight='1000' color={'#46B40F'}>
+                <Heading fontSize={120} fontWeight='1000' color={'#46B40F'}>
                   JunPro
                 </Heading>
-                <Text fontSize={'3xl'} fontWeight={'700'}>
+                <Text fontSize={44} fontWeight={'700'}>
                   for employed professionals
                 </Text>
               </VStack>
@@ -314,21 +285,28 @@ const Home = () => {
           }}
         >
           <GridItem colSpan={1}>
-            <Text fontWeight={'bold'} fontSize={'25px'} color={'#2F327D'}>
+            <Text fontWeight={'bold'} fontSize={44} color={'#2F327D'}>
               Ask us how we are transforming lives.
             </Text>
           </GridItem>
-          <GridItem>
-            <Button ml={'30px'} border={'1px solid #2F327D'} borderRadius={'3xl'} height={'48px'} width={'250px'}>
+          <GridItem mt={10}>
+            <Button fontSize={'20px'} border={'1px solid #2F327D'} borderRadius={'3xl'} height={'48px'} width={'250px'}>
               Let's Chat
             </Button>
-            <Button ml={'30px'} border={'1px solid #46B40F'} borderRadius={'3xl'} height={'48px'} width={'250px'}>
+            <Button
+              fontSize={'20px'}
+              ml={'30px'}
+              border={'1px solid #46B40F'}
+              borderRadius={'3xl'}
+              height={'48px'}
+              width={'250px'}
+            >
               Request Callback
             </Button>
           </GridItem>
         </Grid>
       </Container>
-      <Container overflow={'hidden'} height={'554px'} maxW={'7xl'} mt={20}>
+      <Container overflow={'hidden'} height={'554px'} maxW={'7xl'} mt={28}>
         <Grid
           templateColumns={{
             base: 'repeat(1, 1fr)',
@@ -337,11 +315,11 @@ const Home = () => {
           }}
           mt={'50px'}
         >
-          <GridItem colSpan={1} justifyContent={'center'} mt={'50px'}>
+          <GridItem colSpan={1} justifyContent={'center'}>
             <Image src='Images/Group-114.png' alt='oldman' />
           </GridItem>
           <Flex align={'center'} direction={'column'}>
-            <Heading mr={20} color={'#2F327D'} fontWeight={'bold'} fontSize={'22px'}>
+            <Heading mr={20} color={'#2F327D'} fontWeight={'bold'} fontSize={44}>
               So much you can do with{' '}
             </Heading>
 
@@ -350,11 +328,11 @@ const Home = () => {
               <img src='Images/Ret-pro-logo 2.png' alt='' />
             </GridItem>
             <GridItem mr={20}>
-              <Text fontSize={'17px'} color={'#000000'}>
+              <Text fontSize={20} color={'#000000'}>
                 (your skills are all you need to begin)
               </Text>
             </GridItem>
-            <GridItem flexWrap={'wrap'} width={700} mt={24} justifyContent={'start'}>
+            <GridItem flexWrap={'wrap'} width={700} mt={12} justifyContent={'start'}>
               <img src='Images/Group-626024.png' alt='' />
             </GridItem>
           </Flex>
@@ -370,7 +348,7 @@ const Home = () => {
           mt={'50px'}
         >
           <Flex flexWrap={'wrap'} direction={'column'} justifyContent={'start'} align={'center'}>
-            <Heading mr={20} color={'#2F327D'} fontWeight={'bold'} fontSize={'22px'}>
+            <Heading mr={20} color={'#2F327D'} fontWeight={'bold'} fontSize={44}>
               Fastrack your career with{' '}
             </Heading>
 
@@ -379,22 +357,22 @@ const Home = () => {
               <img src='Images/JunPro-2.png' alt='' />
             </GridItem>
             <GridItem mr={20}>
-              <Text fontSize={'17px'} color={'#000000'}>
+              <Text fontSize={20} color={'#000000'}>
                 (your skills are all you need to begin)
               </Text>
             </GridItem>
-            <GridItem width={700} mt={24} justifyContent={'center'}>
+            <GridItem width={700} mt={12} justifyContent={'center'}>
               <img src='Images/Group-626024.png' alt='' />
             </GridItem>
           </Flex>
-          <GridItem width={'308px'} colSpan={1} justifyContent={'center'} mt={'50px'}>
+          <GridItem width={'308px'} colSpan={1} justifyContent={'center'}>
             <Image src='Images/How-it-works.png' alt='oldman' />
           </GridItem>
         </Grid>
       </Container>{' '}
-      <Container overflow={'hidden'} align={'center'} maxW={'9xl'} mt={40}>
+      <Container overflow={'hidden'} align={'center'} maxW={'9xl'} mt={20}>
         <Heading display={'inline-block'} align={'center'} color={'#2F327D'} width={'608px'}>
-          Meet the <span style={{ color: '#773FC6', fontSize: '55px' }}>RetPro</span>
+          Meet the <span style={{ color: '#773FC6', fontSize: '55px' }}>RetPro </span>
           area experts
         </Heading>
         <Flex flexWrap={'wrap'} justifyContent={'space-evenly'} mt={8}>
@@ -496,7 +474,7 @@ const Home = () => {
           Explore all
         </Button>
       </Center>
-      <Container position={'relative'} borderRadius={'md'} maxW={'8xl'}>
+      <Container mt={20} position={'relative'} borderRadius={'md'} maxW={'8xl'}>
         <Center>
           <Heading align={'center'} width={'700px'} lineHeight={'56px'} fontSize={'44px'} color={'#101130'}>
             Creating impact for retired and working professionals
@@ -511,8 +489,8 @@ const Home = () => {
                   Why RetPro?
                 </Text>{' '}
               </Heading>
-              <Text fontSize={{ base: 'md', lg: 'lg' }} color={'#773FC6'}>
-                <UnorderedList ml={10} spacing={10}>
+              <Text fontSize={20} color={'#773FC6'}>
+                <UnorderedList ml={10} spacing={6}>
                   <ListItem>work from the comfort of your home</ListItem>
                   <ListItem>offer virtual/in-person mentoring & guidance</ListItem>
                   <ListItem> connect & socialize with other RetPros & JunPros </ListItem>
@@ -529,8 +507,8 @@ const Home = () => {
                   Why JunPro?
                 </Text>{' '}
               </Heading>
-              <Text fontSize={{ base: 'md', lg: 'lg' }} color={'#773FC6'}>
-                <UnorderedList ml={10} spacing={10}>
+              <Text fontSize={20} color={'#773FC6'}>
+                <UnorderedList ml={10} spacing={6}>
                   <ListItem>work from the comfort of your homehire retired experts short or long-term</ListItem>
                   <ListItem>receive top notch mentorship & wisdom</ListItem>
                   <ListItem>pocket-friendly services that work for you</ListItem>
@@ -544,9 +522,7 @@ const Home = () => {
       <div>
         <Container overflow={'hidden'} maxW={'6xl'} position={'relative'} mt={20}>
           <Flex justifyContent={'space-between'} flex={1}>
-            <Heading fontSize={'44px'}>
-              Some real-life success stories to <hr /> get inspired by
-            </Heading>
+            <Heading fontSize={44}>Some real-life success stories to get inspired by</Heading>
             <Flex gap={30}>
               <ArrowBackIcon
                 cursor={'pointer'}
@@ -577,24 +553,24 @@ const Home = () => {
                 <SwiperSlide key={indexs}>
                   <Stack direction={{ base: 'row', md: 'row' }}>
                     <Flex pt={10} flex={1} justify={'start'}>
-                      <Stack spacing={10} w={'80%'}>
-                        <Heading lineHeight={'30px'} align={'start'}>
+                      <Stack spacing={10} w={'90%'}>
+                        <Heading lineHeight={'40px'} align={'start'}>
                           {' '}
-                          <Text fontWeight={500} justifyContent={'center'} color={'#101130'} fontSize={'28px'} mt={5}>
+                          <Text fontWeight={500} justifyContent={'center'} color={'#101130'} fontSize={'35px'} mt={5}>
                             " {slider.HeadFont}"
                           </Text>{' '}
                         </Heading>
-                        <Text color={'#606176'} fontSize={'18px'}>
+                        <Text color={'#606176'} fontSize={20}>
                           "A RetPro helped me realize that my aspirations were leaning more towards Data sciences than
                           what I am currently doing"
                         </Text>
                         <Flex align={'center'} mr={8} direction={'row'}>
-                          <Avatar width={'70px'} height={'70px'} spacing={20} src={slider.UserDp} alt='name' m={5} />
+                          <Avatar width={'80px'} height={'70px'} spacing={20} src={slider.UserDp} alt='name' m={5} />
                           <Stack align={'center'}>
-                            <Text color={'#101130'} fontWeight={1000}>
+                            <Text fontSize={20} color={'#101130'} fontWeight={1000}>
                               Milena Belmar
                             </Text>
-                            <Text mt={'-10px'} fontSize={'sm'} color={'#606176'}>
+                            <Text fontSize={14} mt={'-10px'} color={'#606176'}>
                               Argentina
                             </Text>
                           </Stack>

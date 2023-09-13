@@ -1,42 +1,53 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-//create action
-export const createUser = createAsyncThunk('createUser', async (data, { rejectWithValue }) => {
-  console.log('data', data);
-  const response = await fetch('https://64ba58205e0670a501d605be.mockapi.io/crud', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data),
-  });
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { logoutUser } from 'features';
+import { getAllPostsOfUserFromServer, getUser } from 'services';
+
+export const loadUserDetails = createAsyncThunk('/profile/loadUserDetails', async (username, { rejectWithValue }) => {
   try {
-    const result = await response.json();
-    return result;
+    const response = await getUser(username);
+    return response.data.user;
   } catch (error) {
-    return rejectWithValue(error);
+    console.error(error.response.data);
+    return rejectWithValue(error.response.data);
   }
 });
 
-export const userDetail = createSlice({
-  name: 'userDetail',
+export const loadUserPosts = createAsyncThunk('/profile/loadUserPosts', async (username, { rejectWithValue }) => {
+  try {
+    const response = await getAllPostsOfUserFromServer(username);
+    return response.data.posts;
+  } catch (error) {
+    console.error(error.response.data);
+    return rejectWithValue(error.response.data);
+  }
+});
+
+const profileSlice = createSlice({
+  name: 'profile',
   initialState: {
-    users: [],
-    loading: false,
-    error: null,
+    profileDetails: null,
+    postsDetails: [],
   },
+  reducers: {},
   extraReducers: {
-    [createUser.pending]: (state) => {
-      state.loading = true;
+    [logoutUser]: (state) => {
+      state.profileDetails = null;
+      state.postsDetails = [];
     },
-    [createUser.fulfilled]: (state, action) => {
-      state.loading = false;
-      state.users.push(action.payload);
+    [loadUserDetails.fulfilled]: (state, action) => {
+      state.profileDetails = action.payload;
     },
-    [createUser.rejected]: (state, action) => {
-      state.loading = false;
-      state.users = action.payload;
+    [loadUserDetails.rejected]: (state, action) => {
+      console.error(action.payload);
+    },
+    [loadUserPosts.fulfilled]: (state, action) => {
+      state.postsDetails = action.payload;
+    },
+    [loadUserPosts.rejected]: (state, action) => {
+      console.error(action.payload);
     },
   },
 });
 
-export default userDetail.reducer;
+export const profileReducer = profileSlice.reducer;
+export const { resetProfile } = profileSlice.actions;

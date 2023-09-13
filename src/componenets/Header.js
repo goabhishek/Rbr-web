@@ -28,7 +28,7 @@ const Header = () => {
       >
         <Flex h={16} alignItems={'center'} justifyContent={'space-around'}>
           <Link display={{ md: 'flex' }} href={'/'} m={'20px'}>
-            <img style={{ width: '120px', marginTop: '50px' }} src='Images/RBR Logo 1.png' alt='logo' />
+            <img style={{ width: '160px', marginTop: '50px' }} src='Images/RBR Logo 1.png' alt='logo' />
           </Link>
           <Stack display={{ base: 'none', md: 'flex' }} mt={5} direction={'row'}>
             <InputGroup border={''}>
@@ -70,13 +70,13 @@ const Header = () => {
                     <Link href='/Register'>
                       <Button width={'155px'} color={'B668D3'} bgColor={'#D5C9E8'}>
                         {' '}
-                        Retpro
+                        RetPro
                       </Button>
                     </Link>
                   </Flex>
                   <Link href='/Register'>
                     <Button width={'155px'} color={'B668D3'} bgColor={'#C7E2BC'}>
-                      Junpro
+                      JunPro
                     </Button>
                   </Link>
                 </MenuList>

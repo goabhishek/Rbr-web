@@ -15,49 +15,49 @@ const Footer = () => {
     <Box bg={'#EDEBF1'} color={useColorModeValue('gray.700', 'gray.200')}>
       <Container as={Stack} maxW={'7xl'} py={10}>
         <SimpleGrid columns={{ base: 1, sm: 2, md: 5 }} spacing={8}>
-          <Stack align={'center'}>
+          <Stack align={'start'}>
             <Link href='/'>
               <img src='Images/RBR Logo 1.png' alt='logo' />
             </Link>
-            <Text fontSize={'m'} fontWeight={'500'} justifyContent={'center'}>
-              Our mission is to create economic & engagement opportunity for our people around the world - age no bar.
+            <Text width={64} align={'left'} fontSize={'20px'}>
+              Our mission is to create economic and engagement opportunity for our people around the world - age no bar.
             </Text>
           </Stack>
 
           <Stack align={'center'}>
             <ListHeader>About</ListHeader>
-            <Box color={'#606176'} fontSize={'16px'} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
+            <Box color={'#606176'} fontSize={20} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
               About Us
             </Box>
-            <Box color={'#606176'} fontSize={'16px'} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
+            <Box color={'#606176'} fontSize={20} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
               Features
             </Box>
-            <Box color={'#606176'} fontSize={'16px'} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
+            <Box color={'#606176'} fontSize={20} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
               News
             </Box>
-            <Box color={'#606176'} fontSize={'16px'} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
+            <Box color={'#606176'} fontSize={20} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
               Careers
             </Box>
-            <Box color={'#606176'} fontSize={'16px'} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
+            <Box color={'#606176'} fontSize={20} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
               FAQ
             </Box>
           </Stack>
 
           <Stack align={'center'}>
             <ListHeader>Support</ListHeader>
-            <Box color={'#606176'} fontSize={'16px'} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
+            <Box color={'#606176'} fontSize={20} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
               Account
             </Box>
-            <Box color={'#606176'} fontSize={'16px'} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
+            <Box color={'#606176'} fontSize={20} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
               Support Center
             </Box>
-            <Box color={'#606176'} fontSize={'16px'} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
+            <Box color={'#606176'} fontSize={20} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
               Feedback
             </Box>
-            <Box color={'#606176'} fontSize={'16px'} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
+            <Box color={'#606176'} fontSize={20} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
               Contact Us
             </Box>
-            <Box color={'#606176'} fontSize={'16px'} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
+            <Box color={'#606176'} fontSize={20} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
               Accesbility
             </Box>
           </Stack>
@@ -66,6 +66,7 @@ const Footer = () => {
             <ListHeader>Get Our App</ListHeader>
 
             <Button
+              maxW={80}
               colorScheme='black'
               variant='outline'
               _hover={{
@@ -87,6 +88,7 @@ const Footer = () => {
               Get It On app store
             </Button>
             <Button
+              maxW={60}
               colorScheme='black'
               variant='outline'
               _hover={{
