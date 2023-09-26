@@ -13,11 +13,15 @@ import HeroContent from './pages/profile-walls/HeroContent';
 import { NotFound } from './componenets/NotFound';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
+// import i18n from 'i18next';
+// import { useTranslation, initReactI18next } from 'react-i18next';
+import { withNamespaces } from 'react-i18next';
 
-function App() {
+function App({ t }) {
   return (
     <div className='App'>
       <Header />
+
       <Routes>
         <Route path='/' element={<Home />} /> {/* 👈 Renders at /app/ */}
         <Route path='/Register' element={<Register />} />
@@ -36,4 +40,4 @@ function App() {
   );
 }
 
-export default App;
+export default withNamespaces()(App);

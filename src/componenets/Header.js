@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Search2Icon, TriangleDownIcon } from '@chakra-ui/icons';
 import {
   Box,
@@ -12,16 +12,21 @@ import {
   InputGroup,
   InputLeftElement,
   Link,
+  Tooltip,
 } from '@chakra-ui/react';
 
 const Header = () => {
+  //   const [isHovering, setIsHovering] = useState(false);
+  //   function handleMouseEnter(e) {
+  //     console.log(e.target);
+  //   }
   return (
     <>
       <Box
         position={'sticky'}
         top={0}
         zIndex={999}
-        height={'90px'}
+        height={'100px'}
         justifyContent={'space-between'}
         width={'100%'}
         backgroundColor={'#EDEBF1'}
@@ -68,16 +73,33 @@ const Header = () => {
                   {/* <MenuDivider /> */}
                   <Flex mb={2}>
                     <Link href='/Register'>
-                      <Button width={'155px'} color={'B668D3'} bgColor={'#D5C9E8'}>
-                        {' '}
-                        RetPro
-                      </Button>
+                      <Tooltip label='Welcome the Retired pro!' placement='left'>
+                        <Button width={'155px'} color={'B668D3'} bgColor={'#D5C9E8'}>
+                          {' '}
+                          RetPro
+                        </Button>
+                      </Tooltip>
                     </Link>
                   </Flex>
                   <Link href='/Register'>
-                    <Button width={'155px'} color={'B668D3'} bgColor={'#C7E2BC'}>
-                      JunPro
-                    </Button>
+                    <Tooltip
+                      width={'130px'}
+                      bgColor={'#D5C9E8'}
+                      color={'B668D3'}
+                      label='Our Junior Pro is Coming soon'
+                      placement='bottom'
+                    >
+                      <Button
+                        //   onMouseEnter={handleMouseEnter}
+
+                        isDisabled
+                        width={'155px'}
+                        color={'B668D3'}
+                        bgColor={'#C7E2BC'}
+                      >
+                        JunPro
+                      </Button>
+                    </Tooltip>
                   </Link>
                 </MenuList>
               </Menu>

@@ -19,45 +19,45 @@ const Footer = () => {
             <Link href='/'>
               <img src='Images/RBR Logo 1.png' alt='logo' />
             </Link>
-            <Text width={64} align={'left'} fontSize={'20px'}>
+            <Text color={'#2F327D'} width={64} align={'left'} fontSize={'20px'}>
               Our mission is to create economic and engagement opportunity for our people around the world - age no bar.
             </Text>
           </Stack>
 
           <Stack align={'center'}>
-            <ListHeader>About</ListHeader>
-            <Box color={'#606176'} fontSize={20} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
+            <ListHeader color={'#2F327D'}>About</ListHeader>
+            <Box color={'#2F327D'} fontSize={20} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
               About Us
             </Box>
-            <Box color={'#606176'} fontSize={20} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
+            <Box color={'#2F327D'} fontSize={20} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
               Features
             </Box>
-            <Box color={'#606176'} fontSize={20} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
+            <Box color={'#2F327D'} fontSize={20} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
               News
             </Box>
-            <Box color={'#606176'} fontSize={20} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
+            <Box color={'#2F327D'} fontSize={20} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
               Careers
             </Box>
-            <Box color={'#606176'} fontSize={20} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
+            <Box color={'#2F327D'} fontSize={20} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
               FAQ
             </Box>
           </Stack>
 
           <Stack align={'center'}>
             <ListHeader>Support</ListHeader>
-            <Box color={'#606176'} fontSize={20} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
+            <Box color={'#2F327D'} fontSize={20} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
               Account
             </Box>
-            <Box color={'#606176'} fontSize={20} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
+            <Box color={'#2F327D'} fontSize={20} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
               Support Center
             </Box>
-            <Box color={'#606176'} fontSize={20} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
+            <Box color={'#2F327D'} fontSize={20} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
               Feedback
             </Box>
-            <Box color={'#606176'} fontSize={20} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
+            <Box color={'#2F327D'} fontSize={20} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
               Contact Us
             </Box>
-            <Box color={'#606176'} fontSize={20} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
+            <Box color={'#2F327D'} fontSize={20} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
               Accesbility
             </Box>
           </Stack>

@@ -516,28 +516,13 @@ const ProfileFirst = () => {
     { value: 'Education', label: 'Education' },
     { value: 'Defence', label: 'Defence' },
   ];
-  const expertise = [
-    { value: 'MKT', label: '	Marketing' },
-    { value: 'ADV', label: 'Advertising' },
-    { value: 'FBK', label: 'Finance & Banking' },
-    { value: 'SAL', label: 'Sales' },
-    { value: 'MAN', label: 'Manufacturing' },
-    { value: 'MED', label: 'Healthcare' },
-    { value: 'HLT', label: 'Law ' },
-    { value: 'LAW', label: 'Accounting' },
-    { value: 'ACC', label: 'Social Work' },
-    { value: 'SCW', label: 'Photography' },
-    { value: 'PHO', label: 'Defence' },
-    { value: 'IBZ', label: 'Defence' },
-    { value: 'HRD', label: 'Defence' },
-    { value: 'HLT', label: 'Defence' },
-    { value: 'SFW', label: 'Defence' },
-    { value: 'SFW', label: 'Defence' },
-    { value: 'APP', label: 'Defence' },
-    { value: 'APP', label: 'Defence' },
+  const countries = [
+    { name: 'India', value: 'IN', citis: ['Mumbai', 'dehli'] },
+    { name: 'PAKIS', value: 'PAK', citis: ['Larachi', 'Lahor'] },
+    { name: 'BAngla', value: 'BAN', citis: ['DHaka', 'Chittagong'] },
   ];
   const Form3 = () => {
-    const [professional, setProfessional] = useState({ Professional_Field: '', ID: '', value: [] });
+    const [country, setCountry] = useState({ name: '', value: '', citis: [] });
     return (
       <Container maxW={'850px'}>
         <Text
@@ -625,30 +610,28 @@ const ProfileFirst = () => {
               ( Before Retirement )
             </span>
           </FormLabel>
-          <Select
-            value={professional}
+          {/* <select
+            value={country}
             onChange={(e) => {
               console.log(e.target.value);
-              setProfessional(e.target.value);
+              setCountry(e.target.value);
             }}
-            // isMulti
+            isMulti
             type='text'
             name='retirement'
             id='retirement'
             focusBorderColor='#808184'
             shadow='sm'
             size='sm'
-            options={field.map((item, index) => {
-              return <option value={index}>{item.label}</option>;
-            })}
+
             w='full'
             rounded='md'
             closeMenuOnSelect={false}
           >
-            {/* {field.map((item, index) => {
-              return <option value={item.value}>{item.label}</option>;
-            })} */}
-          </Select>
+            {countries.map((item, index) => {
+              return <option value={index}>{item.name}</option>;
+            })}
+          </select> */}
         </FormControl>
         <FormControl as={GridItem} colSpan={6}>
           <FormLabel
@@ -667,8 +650,11 @@ const ProfileFirst = () => {
               ( Before Retirement )
             </span>
           </FormLabel>
-          <Select
-            isMulti
+          {/* <select
+            value={country}
+            onChange={(e) => {
+              console.log(e.target.value);
+            }}
             type='text'
             name='retirement'
             id='retirement'
@@ -678,8 +664,12 @@ const ProfileFirst = () => {
             options={expertise}
             w='full'
             rounded='md'
-            closeMenuOnSelect={false}
-          ></Select>
+            closeMenuOnSelect={false}	
+          >
+            {countries[country].map((item, index) => {
+              return <option value={index}>{item}</option>;
+            })}
+          </select> */}
         </FormControl>
 
         <Heading mt={10} lineHeight={'24px'} fontWeight={500} fontSize={'24px'} color={'#000000'}>

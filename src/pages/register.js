@@ -33,7 +33,7 @@ const initialState = {
 };
 const Register = () => {
   const dispatch = useDispatch();
-  //   const location = useLocation();
+
   const navigate = useNavigate();
   const [modalIsOpen, setShowPopup] = useState(false);
   const setModalIsOpenToTrue = () => {
@@ -69,6 +69,7 @@ const Register = () => {
       fname,
       email,
       password,
+      number,
     };
     // setIsLoading(true);
     try {
