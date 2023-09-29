@@ -115,14 +115,12 @@ const Home = () => {
             <Flex
               display={{ base: 'inline', md: 'none' }}
               className='main_header'
-              border={'2px solid red'}
               position={'relative'}
               flexWrap={'wrap'}
               justify={'center'}
               align={'flex-end'}
             >
               <Heading
-                border={'2px solid red'}
                 color={'#2F327D'}
                 fontWeight={1000}
                 fontSize={{ base: '4xl', sm: '3xl', md: '5xl' }}
@@ -243,8 +241,8 @@ const Home = () => {
               >
                 <Flex flexWrap={'wrap'}>
                   <Stack
-                    ml={'1000px'}
-                    mt={'150px'}
+                    ml={'850px'}
+                    mt={'100px'}
                     height={'100px'}
                     width={'100px'}
                     roundedLeft={'full'}
@@ -252,10 +250,10 @@ const Home = () => {
                     backgroundColor={'#46B40F40'}
                   ></Stack>
                   <Stack
-                    mt={'480px'}
+                    mt={'400px'}
                     zIndex={'99'}
                     position={'absolute'}
-                    ml={'400px'}
+                    ml={'300px'}
                     style={{
                       height: '10vh',
 
@@ -457,7 +455,7 @@ const Home = () => {
                 <Heading fontSize={44} fontWeight='700' color={'#2F327D'}>
                   Introducing
                 </Heading>
-                <Heading fontSize={112} fontWeight='1000' color={'#773FC6'}>
+                <Heading fontSize={{ base: '94', sm: '94', md: '112' }} fontWeight='1000' color={'#773FC6'}>
                   RetPro
                 </Heading>
                 <Text align={'center'} color={'#2F327D'} fontSize={44} fontWeight={'700'}>
@@ -571,10 +569,10 @@ const Home = () => {
             </GridItem>
           </Grid>
         </Container>
-        <Container position={'relative'} overflow={'hidden'} height={'554px'} maxW={'7xl'} mt={64}>
+        <Container position={'relative'} overflow={'hidden'} height={'554px'} maxW={'7xl'} mt={'300px'}>
           <Grid
             templateColumns={{
-              base: 'repeat(1, 1fr)',
+              base: 'repeat(1, 2fr)',
               sm: 'repeat(2, 1fr)',
               md: 'repeat(2, 1fr)',
             }}
@@ -636,7 +634,7 @@ const Home = () => {
           </Grid>
         </Container>{' '} */}
         <Container overflow={'hidden'} align={'center'} maxW={'9xl'} mt={20}>
-          <Heading display={'inline-block'} align={'center'} color={'#2F327D'} width={'608px'}>
+          <Heading display={'inline-block'} align={'center'} color={'#2F327D'}>
             Meet the <span style={{ color: '#773FC6', fontSize: '55px' }}>RetPro </span>
             area experts
           </Heading>
@@ -715,15 +713,15 @@ const Home = () => {
             Explore all
           </Button>
         </Center>
-        <Container mt={20} position={'relative'} borderRadius={'md'} maxW={'9xl'}>
+        <Container maxW={'7xl'} mt={20} position={'relative'} borderRadius={'md'}>
           <Center>
             <Heading align={'center'} width={'700px'} lineHeight={'56px'} fontSize={'44px'} color={'#2F327D'}>
               Creating impact for retired and working professionals
             </Heading>
           </Center>
-          <Stack minH={'504px'} direction={{ base: 'column', md: 'row' }}>
-            <Flex p={10} flex={1} justify={'center'}>
-              <Stack background={'#EDF3FF'} width={'504px'} height={'411px'} spacing={5} w={'70%'}>
+          <Stack spacing={8} mt={20} direction={{ base: 'column', md: 'row' }}>
+            <Flex flex={1} justify={'center'}>
+              <Stack background={'#EDF3FF'} maxW={'400px'} spacing={5} w={'100%'}>
                 <Heading borderTopRadius={'20px'} height={20} align={'center'} background={'#773FC6'}>
                   {' '}
                   <Text justifyContent={'center'} color={'#fff'} mt={5}>
@@ -740,8 +738,8 @@ const Home = () => {
                 </Text>
               </Stack>
             </Flex>
-            <Flex p={10} flex={1} justify={'center'}>
-              <Stack background={'#EFFFE7'} width={'504px'} height={'411px'} spacing={5} w={'70%'}>
+            <Flex flex={1} justify={'center'}>
+              <Stack background={'#EFFFE7'} maxW={'400px'} height={'450px'} spacing={5} w={'100%'}>
                 <Heading borderTopRadius={'20px'} height={20} align={'center'} background={'#46B40F'}>
                   {' '}
                   <Text justifyContent={'center'} color={'#fff'} mt={5}>
