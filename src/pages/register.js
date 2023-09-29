@@ -94,27 +94,29 @@ const Register = () => {
       <ToastContainer />
       <LoginPopup modalIsOpen={modalIsOpen} showPopup={setShowPopup} />
       <Stack align={'center'} backgroundColor={'#EDEBF1'} minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
-        <Flex width={'700px'} direction={'column'} p={8} flex={1} align={'center'} justify={'center'}>
-          <Heading mb={10} fontWeight={700} fontSize={'40px'}>
+        <Flex direction={'column'} p={8} flex={1} align={'center'}>
+          <Heading mb={8} fontWeight={700} fontSize={'60px'}>
             Create an account
           </Heading>
-          <Box shadow={'2xl'} as='form' onSubmit={register}>
+          <Box width={'80%'} as='form' onSubmit={register}>
             {/* <form style={{ width: '100%' }} onSubmit={register} noValidate> */}
-            <Stack as='form' borderRadius={'10px'} border={'1px solid #773FC640'} spacing={3} w={'full'} maxW={'md'}>
-              <FormControl p={5} id='name' isRequired>
+            <Stack as='form' borderRadius={'10px'} border={'2px solid #773FC640'} w={'full'}>
+              <FormControl p={8} id='name' isRequired>
                 <Input
-                  opacity={'0.5'}
+                  height={'50px'}
+                  //   opacity={'0.5'}
                   name='fname'
-                  border={'1px solid #B4B3B3'}
+                  border={'2px solid #B4B3B3'}
                   placeholder='full name*'
                   value={fname}
                   onChange={handleInputChange}
                 />
               </FormControl>
-              <FormControl p={5} id='email' isRequired>
+              <FormControl p={8} id='email' isRequired>
                 <Input
-                  opacity={'0.5'}
-                  border={'1px solid #B4B3B3'}
+                  height={'50px'}
+                  //   opacity={'0.5'}
+                  border={'2px solid #B4B3B3'}
                   name='email'
                   value={email}
                   onChange={handleInputChange}
@@ -122,10 +124,11 @@ const Register = () => {
                   type='email'
                 />
               </FormControl>
-              <FormControl p={5} isRequired>
+              <FormControl p={8} isRequired>
                 <Input
-                  opacity={'0.5'}
-                  border={'1px solid #B4B3B3'}
+                  height={'50px'}
+                  //   opacity={'0.5'}
+                  border={'2px solid #B4B3B3'}
                   name='password'
                   value={password}
                   type='password'
@@ -133,10 +136,11 @@ const Register = () => {
                   placeholder='enter a password*'
                 />
               </FormControl>
-              <FormControl p={5} isRequired>
+              <FormControl p={8} isRequired>
                 <Input
-                  opacity={'0.5'}
-                  border={'1px solid #B4B3B3'}
+                  height={'50px'}
+                  //   opacity={'0.5'}
+                  border={'2px solid #B4B3B3'}
                   name='number'
                   value={number}
                   onChange={handleInputChange}
@@ -144,11 +148,18 @@ const Register = () => {
                   type='number'
                 />
               </FormControl>
-              <FormControl p={5} id='verify' isRequired>
-                <Input opacity={'0.5'} type='text' border={'1px solid #B4B3B3'} placeholder='tap to verify' />
+              <FormControl p={8} id='verify' isRequired>
+                <Input
+                  height={'50px'}
+                  //  opacity={'0.5'}
+                  type='text'
+                  border={'2px solid #B4B3B3'}
+                  placeholder='tap to verify'
+                />
               </FormControl>
-              <Stack p={2} spacing={6}>
+              <Stack p={8}>
                 <Button
+                  height={'50px'}
                   //   onSubmit={handleSubmit}
 
                   backgroundColor={'#773FC6'}

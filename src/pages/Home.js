@@ -1,5 +1,4 @@
 import React, { useRef } from 'react';
-import { BsPerson } from 'react-icons/bs';
 import '../global.css';
 import {
   Stack,
@@ -92,28 +91,57 @@ const Home = () => {
         onSwiper={(swiper) => console.log(swiper)}
       >
         <SwiperSlide>
-          <SimpleGrid height={'100vh'} backgroundColor={'#F8F8F88A'} m={8} columns={{ base: 1, md: 2 }}>
-            <Flex justifyContent={'center'} position={'relative'} flexWrap={'wrap'} justify={'center'} align={'center'}>
-              <Heading mt={-14} color={'#2F327D'} fontSize={74}>
+          <SimpleGrid height={'100vh'} backgroundColor={'#F8F8F88A'} m={6} columns={{ base: 1, md: 2 }}>
+            <Flex
+              display={{ base: 'none', md: 'flex' }}
+              className='main_header'
+              width={'140%'}
+              position={'relative'}
+              flexWrap={'wrap'}
+              justify={'center'}
+              align={'flex-end'}
+            >
+              <Heading
+                ml={24}
+                color={'#2F327D'}
+                fontWeight={1000}
+                fontSize={{ base: '4xl', sm: '3xl', md: '5xl' }}
+                lineHeight={'120%'}
+              >
                 The world's only platform and community for retired professionals
               </Heading>
+              <Heading color={'#2F327D'} fontSize={64}></Heading>
             </Flex>
-            {/* <Center width={'1000px'} border={'2px solid red'}>
-              <Stack>
-                <Heading
-                  flexWrap={'wrap'}
-                  position={'relative'}
-                  fontSize={'64px'}
-                  lineHeight={'70px'}
-                  fontWeight={'700'}
-                  color={'#101130'}
-                >
-                  The world's only platform and community for retired professionals
-                </Heading>
-              </Stack>
-            </Center> */}
-            <Flex position={'relative'} flexWrap={'wrap'}>
-              <Stack display={{ base: 'none', md: 'flex' }} align={'center'}>
+            <Flex
+              display={{ base: 'inline', md: 'none' }}
+              className='main_header'
+              border={'2px solid red'}
+              position={'relative'}
+              flexWrap={'wrap'}
+              justify={'center'}
+              align={'flex-end'}
+            >
+              <Heading
+                border={'2px solid red'}
+                color={'#2F327D'}
+                fontWeight={1000}
+                fontSize={{ base: '4xl', sm: '3xl', md: '5xl' }}
+                lineHeight={'120%'}
+              >
+                The world's only platform and community for retired professionals
+              </Heading>
+              <Heading color={'#2F327D'} fontSize={64}></Heading>
+            </Flex>
+
+            <Flex position={'relative'} align={'center'} justifyContent={'center'} flexWrap={'wrap'}>
+              <Stack
+                display={{ base: 'none', md: 'flex' }}
+                style={{
+                  height: '100vh',
+                  objectFit: 'cover',
+                  filter: 'brightness(1)',
+                }}
+              >
                 <Flex flexWrap={'wrap'}>
                   <Stack
                     ml={'500px'}
@@ -129,7 +157,6 @@ const Home = () => {
                     zIndex={'99'}
                     position={'absolute'}
                     ml={'120px'}
-                    // className='image'
                     style={{
                       height: '20vh',
 
@@ -142,7 +169,6 @@ const Home = () => {
                       py={'5'}
                       ml={4}
                       shadow={'xl'}
-                      //   borderColor={useColorModeValue('gray.800', 'gray.500')}
                       backgroundColor={'#FFFFFF'}
                       rounded={'2xl'}
                     >
@@ -199,7 +225,105 @@ const Home = () => {
                     className='image'
                     style={{
                       height: '85vh',
+                      objectFit: 'cover',
+                      filter: 'brightness(1)',
+                    }}
+                    src='Images/13.png'
+                    alt='slides'
+                  />
+                </Flex>
+              </Stack>
+              <Stack
+                display={{ base: 'inline', md: 'none' }}
+                style={{
+                  height: '100vh',
+                  objectFit: 'cover',
+                  filter: 'brightness(1)',
+                }}
+              >
+                <Flex flexWrap={'wrap'}>
+                  <Stack
+                    ml={'1000px'}
+                    mt={'150px'}
+                    height={'100px'}
+                    width={'100px'}
+                    roundedLeft={'full'}
+                    position={'relative'}
+                    backgroundColor={'#46B40F40'}
+                  ></Stack>
+                  <Stack
+                    mt={'480px'}
+                    zIndex={'99'}
+                    position={'absolute'}
+                    ml={'400px'}
+                    style={{
+                      height: '10vh',
 
+                      objectFit: 'cover',
+                      filter: 'brightness(1)',
+                    }}
+                  >
+                    <Stat
+                      px={{ base: 2, md: 4 }}
+                      py={'5'}
+                      ml={4}
+                      shadow={'xl'}
+                      backgroundColor={'#FFFFFF'}
+                      rounded={'2xl'}
+                    >
+                      <Flex ml={4} justifyContent={'space-between'}>
+                        <Box
+                          height={12}
+                          width={12}
+                          rounded={'3xl'}
+                          my={'auto'}
+                          backgroundColor={'#F9AE34'}
+                          alignContent={'center'}
+                        >
+                          <Image height={12} width={12} src='/Images/Outline.png'></Image>
+                          {/* {<BsPerson size={'3em'} />} */}
+                        </Box>
+                        <Box pl={{ base: 2, md: 4 }}>
+                          <StatLabel fontSize={'2xl'} fontWeight={'medium'}>
+                            100,000+
+                          </StatLabel>
+                          <StatNumber fontSize={'2xm'} fontWeight={'medium'} isTruncated>
+                            Connections
+                          </StatNumber>
+                        </Box>
+                      </Flex>
+                    </Stat>
+                    <Box
+                      //   position={'relative'}
+                      mt={-6}
+                      width={14}
+                      backgroundColor={'#B8DCFF'}
+                      height={14}
+                      rounded={'full'}
+                    ></Box>
+                  </Stack>
+                  <Image
+                    mt={8}
+                    position={'absolute'}
+                    ml={56}
+                    className='image'
+                    style={{
+                      height: '10vh',
+
+                      objectFit: 'cover',
+                      filter: 'brightness(1)',
+                    }}
+                    src='Images/14.png'
+                    alt='slides'
+                  />
+
+                  <Image
+                    mt={14}
+                    ml={36}
+                    position={'absolute'}
+                    className='image'
+                    style={{
+                      height: '85vh',
                       objectFit: 'cover',
                       filter: 'brightness(1)',
                     }}
@@ -213,9 +337,8 @@ const Home = () => {
           </SimpleGrid>
         </SwiperSlide>
         <SwiperSlide>
-          <Stack m={2} borderRadius={'10%'}>
+          <Stack position={'relative'} m={2} borderRadius={'10%'}>
             <img
-              className='image'
               style={{
                 height: '85vh',
                 objectFit: 'cover',
@@ -448,7 +571,7 @@ const Home = () => {
             </GridItem>
           </Grid>
         </Container>
-        <Container position={'relative'} overflow={'hidden'} height={'554px'} maxW={'7xl'} mt={44}>
+        <Container position={'relative'} overflow={'hidden'} height={'554px'} maxW={'7xl'} mt={64}>
           <Grid
             templateColumns={{
               base: 'repeat(1, 1fr)',
@@ -480,7 +603,7 @@ const Home = () => {
             </Flex>
           </Grid>
         </Container>
-        <Container overflow={'hidden'} height={'554px'} maxW={'6xl'} mt={20}>
+        {/* <Container overflow={'hidden'} height={'554px'} maxW={'6xl'} mt={20}>
           <Grid
             templateColumns={{
               base: 'repeat(1, 1fr)',
@@ -511,7 +634,7 @@ const Home = () => {
               <Image src='Images/How-it-works.png' alt='oldman' />
             </GridItem>
           </Grid>
-        </Container>{' '}
+        </Container>{' '} */}
         <Container overflow={'hidden'} align={'center'} maxW={'9xl'} mt={20}>
           <Heading display={'inline-block'} align={'center'} color={'#2F327D'} width={'608px'}>
             Meet the <span style={{ color: '#773FC6', fontSize: '55px' }}>RetPro </span>
@@ -592,7 +715,7 @@ const Home = () => {
             Explore all
           </Button>
         </Center>
-        <Container mt={20} position={'relative'} borderRadius={'md'} maxW={'8xl'}>
+        <Container mt={20} position={'relative'} borderRadius={'md'} maxW={'9xl'}>
           <Center>
             <Heading align={'center'} width={'700px'} lineHeight={'56px'} fontSize={'44px'} color={'#2F327D'}>
               Creating impact for retired and working professionals

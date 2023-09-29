@@ -153,6 +153,9 @@
   .stapper-login {
     display: none;
   }
+  .image {
+    align-content: center;
+  }
 }
 @media screen and (max-width: 400px) {
   .popup-content > h1 {
@@ -161,6 +164,9 @@
   }
   .stapper-login {
     display: none;
+  }
+  .image {
+    align-content: center;
   }
 }
 
