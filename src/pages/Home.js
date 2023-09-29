@@ -92,15 +92,9 @@ const Home = () => {
         onSwiper={(swiper) => console.log(swiper)}
       >
         <SwiperSlide>
-          <SimpleGrid
-            height={'94vh'}
-            border={'2px solid red'}
-            backgroundColor={'#fff'}
-            m={8}
-            columns={{ base: 1, md: 2 }}
-          >
-            <Flex position={'relative'} flexWrap={'wrap'} align={'center'}>
-              <Heading color={'#2F327D'} fontSize={58}>
+          <SimpleGrid height={'100vh'} backgroundColor={'#F8F8F88A'} m={8} columns={{ base: 1, md: 2 }}>
+            <Flex justifyContent={'center'} position={'relative'} flexWrap={'wrap'} justify={'center'} align={'center'}>
+              <Heading mt={-14} color={'#2F327D'} fontSize={74}>
                 The world's only platform and community for retired professionals
               </Heading>
             </Flex>
@@ -118,8 +112,8 @@ const Home = () => {
                 </Heading>
               </Stack>
             </Center> */}
-            <Flex position={'relative'} border={'2px solid red'} flexWrap={'wrap'}>
-              <Stack align={'center'}>
+            <Flex position={'relative'} flexWrap={'wrap'}>
+              <Stack display={{ base: 'none', md: 'flex' }} align={'center'}>
                 <Flex flexWrap={'wrap'}>
                   <Stack
                     ml={'500px'}
@@ -148,20 +142,27 @@ const Home = () => {
                       py={'5'}
                       ml={4}
                       shadow={'xl'}
-                      border={'1px solid'}
                       //   borderColor={useColorModeValue('gray.800', 'gray.500')}
-                      backgroundColor={'white'}
-                      rounded={'lg'}
+                      backgroundColor={'#FFFFFF'}
+                      rounded={'2xl'}
                     >
                       <Flex ml={4} justifyContent={'space-between'}>
-                        <Box my={'auto'} color={useColorModeValue('gray.800', 'gray.200')} alignContent={'center'}>
-                          {<BsPerson size={'3em'} />}
+                        <Box
+                          height={12}
+                          width={12}
+                          rounded={'3xl'}
+                          my={'auto'}
+                          backgroundColor={'#F9AE34'}
+                          alignContent={'center'}
+                        >
+                          <Image height={12} width={12} src='/Images/Outline.png'></Image>
+                          {/* {<BsPerson size={'3em'} />} */}
                         </Box>
                         <Box pl={{ base: 2, md: 4 }}>
-                          <StatLabel fontWeight={'medium'} isTruncated>
-                            100,000
+                          <StatLabel fontSize={'2xl'} fontWeight={'medium'}>
+                            100,000+
                           </StatLabel>
-                          <StatNumber fontSize={'2xl'} fontWeight={'medium'}>
+                          <StatNumber fontSize={'2xm'} fontWeight={'medium'} isTruncated>
                             Connections
                           </StatNumber>
                         </Box>
@@ -169,7 +170,7 @@ const Home = () => {
                     </Stat>
                     <Box
                       //   position={'relative'}
-                      mt={-5}
+                      mt={-6}
                       width={14}
                       backgroundColor={'#B8DCFF'}
                       height={14}
@@ -212,7 +213,7 @@ const Home = () => {
           </SimpleGrid>
         </SwiperSlide>
         <SwiperSlide>
-          <Stack m={5} borderRadius={'10%'}>
+          <Stack m={2} borderRadius={'10%'}>
             <img
               className='image'
               style={{
@@ -227,7 +228,7 @@ const Home = () => {
         </SwiperSlide>
         ...
       </Swiper>
-      <Stack mt={-14} border={'2px solid red'} backgroundColor={'#EDEBF1'}>
+      <Stack mt={-14} backgroundColor={'#EDEBF1'}>
         <Container maxW={'7xl'} mb={10} mt={28}>
           <SimpleGrid columns={{ base: 1, md: 2 }} spacing={2}>
             <Stack spacing={10}>
@@ -268,24 +269,68 @@ const Home = () => {
           </SimpleGrid>
         </Container>
         <div className='semi-circle'></div>
-        <Container
+        {/* <Container
           backgroundColor={'#6300FF0F'}
           borderRadius={'md'}
           border={'1px solid #6300FF0F'}
-          height={'654px'}
+          height={'600px'}
           maxW={'8xl'}
           mt={24}
         >
-          <Grid
-            className='retpro_spsl'
-            templateColumns={{
-              base: 'repeat(1, 1fr)',
-              //   sm: 'repeat(2, 1fr)',
-              md: 'repeat(2, 2fr)',
-            }}
-          >
-            <GridItem colSpan={1}>
-              <VStack spacing={4}>
+          <Flex align={'center'} justify={'center'}>
+            <Grid
+              // className='retpro_spsl'
+              templateColumns={{
+                base: 'repeat(1, 1fr)',
+                // sm: 'repeat(2, 1fr)',
+                md: 'repeat(2, 1fr)',
+              }}
+            >
+              <GridItem colSpan={1}>
+                <VStack spacing={4}>
+                  <Heading fontSize={44} fontWeight='700' color={'#2F327D'}>
+                    Introducing
+                  </Heading>
+                  <Heading fontSize={112} fontWeight='1000' color={'#773FC6'}>
+                    RetPro
+                  </Heading>
+                  <Text align={'center'} color={'#2F327D'} fontSize={44} fontWeight={'700'}>
+                    for retired professionals
+                  </Text>
+                </VStack>
+              </GridItem>
+              <GridItem>
+                <Center>
+                  <Link href='/Register'>
+                    <Button
+                      height={'90px'}
+                      width={'292px'}
+                      rounded={'2xl'}
+                      colorScheme={''}
+                      bg={'#773FC6'}
+                      fontSize={'30px'}
+                      fontWeight={'700'}
+                    >
+                      Start your journey
+                    </Button>
+                  </Link>
+                </Center>
+              </GridItem>
+            </Grid>
+          </Flex>
+        </Container> */}
+        <Stack
+          ml={'30px'}
+          marginRight={4}
+          mt={20}
+          backgroundColor={'#6300FF0F'}
+          maxW={'full'}
+          minH={'90vh'}
+          direction={{ base: 'column', md: 'row' }}
+        >
+          <Flex p={6} flexWrap={'wrap'} flex={1} align={'center'} justify={'center'}>
+            <Stack spacing={2} w={'90%'} maxW={'lg'}>
+              <VStack spacing={6}>
                 <Heading fontSize={44} fontWeight='700' color={'#2F327D'}>
                   Introducing
                 </Heading>
@@ -296,26 +341,26 @@ const Home = () => {
                   for retired professionals
                 </Text>
               </VStack>
-            </GridItem>
-            <GridItem>
-              <Center mt={'80px'}>
-                <Link href='/Register'>
-                  <Button
-                    height={'90px'}
-                    width={'292px'}
-                    rounded={'2xl'}
-                    colorScheme={''}
-                    bg={'#773FC6'}
-                    fontSize={'30px'}
-                    fontWeight={'700'}
-                  >
-                    Start your journey
-                  </Button>
-                </Link>
-              </Center>
-            </GridItem>
-          </Grid>
-        </Container>
+            </Stack>
+          </Flex>
+          <Flex justify={'center'} flex={1}>
+            <Center>
+              <Link href='/Register'>
+                <Button
+                  height={'90px'}
+                  width={'292px'}
+                  rounded={'2xl'}
+                  colorScheme={''}
+                  bg={'#773FC6'}
+                  fontSize={'30px'}
+                  fontWeight={'700'}
+                >
+                  Start your journey
+                </Button>
+              </Link>
+            </Center>
+          </Flex>
+        </Stack>
         {/* <Container
         backgroundColor={'#55FF001F'}
         borderRadius={'md'}
@@ -403,7 +448,7 @@ const Home = () => {
             </GridItem>
           </Grid>
         </Container>
-        <Container position={'relative'} overflow={'hidden'} height={'554px'} maxW={'7xl'} mt={28}>
+        <Container position={'relative'} overflow={'hidden'} height={'554px'} maxW={'7xl'} mt={44}>
           <Grid
             templateColumns={{
               base: 'repeat(1, 1fr)',
