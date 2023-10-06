@@ -19,12 +19,12 @@ const Footer = () => {
             <Link href='/'>
               <img src='Images/RBR Logo 1.png' alt='logo' />
             </Link>
-            <Text color={'#2F327D'} width={64} align={'left'} fontSize={'20px'}>
+            <Text color={'#2F327D'} width={64} fontFamily={'inter'} align={'left'} fontSize={'20px'}>
               Our mission is to create economic and engagement opportunity for our people around the world - age no bar.
             </Text>
           </Stack>
 
-          <Stack align={'center'}>
+          <Stack fontFamily={'inter'} align={'center'}>
             <ListHeader color={'#2F327D'}>About</ListHeader>
             <Box color={'#2F327D'} fontSize={20} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
               About Us
@@ -43,7 +43,7 @@ const Footer = () => {
             </Box>
           </Stack>
 
-          <Stack align={'center'}>
+          <Stack fontFamily={'inter'} align={'center'}>
             <ListHeader>Support</ListHeader>
             <Box color={'#2F327D'} fontSize={20} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
               Account
@@ -62,7 +62,7 @@ const Footer = () => {
             </Box>
           </Stack>
 
-          <Stack align={'center'}>
+          <Stack fontFamily={'inter'} align={'center'}>
             <ListHeader>Get Our App</ListHeader>
 
             <Button

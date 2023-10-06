@@ -44,6 +44,7 @@ const Header = () => {
                 fontSize={'24px'}
                 borderRadius={'2xl'}
                 border={'1px solid #B668D3'}
+                fontFamily={'inder'}
                 type='tel'
                 placeholder='Looking for...'
               />
@@ -52,14 +53,20 @@ const Header = () => {
           <Flex mt={5} alignItems={'center'} justifyContent={'space-evenly'}>
             <Stack display={{ base: 'none', md: 'flex' }} mr={15}>
               <Link href='/'>
-                <Button fontSize={'24px'} bg={'transparent'}>
+                <Button fontFamily={'inder'} fontSize={'24px'} bg={'transparent'}>
                   {' '}
                   Home
                 </Button>
               </Link>
             </Stack>
 
-            <Button fontSize={'24px'} display={{ base: 'none', md: 'flex' }} bg={'transparent'} mr={15}>
+            <Button
+              fontFamily={'inder'}
+              fontSize={'24px'}
+              display={{ base: 'none', md: 'flex' }}
+              bg={'transparent'}
+              mr={15}
+            >
               EN+ <TriangleDownIcon />
             </Button>
             <Stack direction={'row'} spacing={3}>
@@ -74,6 +81,7 @@ const Header = () => {
                   minW={160}
                   fontSize={'24px'}
                   height={53}
+                  fontFamily={'inder'}
                 >
                   Login
                   <TriangleDownIcon />
@@ -89,7 +97,13 @@ const Header = () => {
                         label='Welcome the Retired pro!'
                         placement='left'
                       >
-                        <Button width={'155px'} color={'B668D3'} bgColor={'#D5C9E8'} fontSize={'24px'}>
+                        <Button
+                          width={'155px'}
+                          color={'B668D3'}
+                          bgColor={'#D5C9E8'}
+                          fontSize={'24px'}
+                          fontFamily={'inder'}
+                        >
                           {' '}
                           RetPro
                         </Button>
@@ -111,6 +125,7 @@ const Header = () => {
                         width={'155px'}
                         color={'B668D3'}
                         bgColor={'#C7E2BC'}
+                        fontFamily={'inder'}
                       >
                         JunPro
                       </Button>

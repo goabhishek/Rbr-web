@@ -19,7 +19,7 @@ import { FaFacebook } from 'react-icons/fa';
 import LoginPopup from '../componenets/LoginPopup';
 import { SET_LOGIN, SET_NAME } from '../features/authSlice';
 import { registerUser, validateEmail } from '../services/authServices';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import { ToastContainer, toast } from 'react-toastify';
@@ -77,9 +77,9 @@ const Register = () => {
       //   dispatch(showLoading());
       console.log(data);
       await dispatch(SET_LOGIN(true));
-      await dispatch(SET_NAME(data.name));
+      //   await dispatch(SET_NAME(data.fname));
       //     dispatch(hideLoading());
-      navigate('/login');
+      navigate(setModalIsOpenToTrue());
       //     setIsLoading(false);
     } catch (error) {
       //     setIsLoading(false);
@@ -90,19 +90,33 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <>
       <ToastContainer />
       <LoginPopup modalIsOpen={modalIsOpen} showPopup={setShowPopup} />
       <Stack align={'center'} backgroundColor={'#EDEBF1'} minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
-        <Flex direction={'column'} p={8} flex={1} align={'center'}>
-          <Heading mb={8} fontWeight={700} fontSize={'60px'}>
+        <Flex flexWrap={'wrap'} direction={'column'} p={8} flex={1} align={'center'}>
+          <Heading
+            mb={8}
+            color={'#2F327D'}
+            fontWeight={1000}
+            fontSize={{ base: '4xl', sm: '3xl', md: '6xl' }}
+            lineHeight={'120%'}
+            fontFamily={'Ubantu'}
+          >
             Create an account
           </Heading>
-          <Box width={'80%'} as='form' onSubmit={register}>
+          <Box as='form' onSubmit={register}>
             {/* <form style={{ width: '100%' }} onSubmit={register} noValidate> */}
-            <Stack as='form' borderRadius={'10px'} border={'2px solid #773FC640'} w={'full'}>
+            <Stack
+              maxW={{ base: '350px', sm: '150px', md: '550px' }}
+              as='form'
+              borderRadius={'10px'}
+              border={'2px solid #773FC640'}
+              //   w={'full'}
+            >
               <FormControl p={8} id='name' isRequired>
                 <Input
+                  fontSize={24}
                   height={'50px'}
                   //   opacity={'0.5'}
                   name='fname'
@@ -114,6 +128,7 @@ const Register = () => {
               </FormControl>
               <FormControl p={8} id='email' isRequired>
                 <Input
+                  fontSize={24}
                   height={'50px'}
                   //   opacity={'0.5'}
                   border={'2px solid #B4B3B3'}
@@ -126,6 +141,7 @@ const Register = () => {
               </FormControl>
               <FormControl p={8} isRequired>
                 <Input
+                  fontSize={24}
                   height={'50px'}
                   //   opacity={'0.5'}
                   border={'2px solid #B4B3B3'}
@@ -138,6 +154,7 @@ const Register = () => {
               </FormControl>
               <FormControl p={8} isRequired>
                 <Input
+                  fontSize={24}
                   height={'50px'}
                   //   opacity={'0.5'}
                   border={'2px solid #B4B3B3'}
@@ -150,6 +167,7 @@ const Register = () => {
               </FormControl>
               <FormControl p={8} id='verify' isRequired>
                 <Input
+                  fontSize={24}
                   height={'50px'}
                   //  opacity={'0.5'}
                   type='text'
@@ -161,13 +179,19 @@ const Register = () => {
                 <Button
                   height={'50px'}
                   //   onSubmit={handleSubmit}
-
+                  fontSize={24}
                   backgroundColor={'#773FC6'}
                   color={'#fff'}
                   variant={'solid'}
                 >
                   <Flex width={'552px'} direction={'column'} p={8} flex={1} align={'center'} justify={'center'}>
-                    <button type='submit' onSubmit={register} className='btn btn-primary' ata-dismiss='modal'>
+                    <button
+                      //   type='submit'
+                      //  onSubmit={register}
+                      className='btn btn-primary'
+                      ata-dismiss='modal'
+                      onClick={register}
+                    >
                       <i className='fa fa-user-plus' aria-hidden='true'></i> Create account
                     </button>
                   </Flex>
@@ -194,6 +218,7 @@ const Register = () => {
 
         <Flex direction={'column'} mt={40} flex={1}>
           <Image
+            padding={5}
             shadow={'dark-lg'}
             width={'450px'}
             height={'284px'}
@@ -257,7 +282,7 @@ const Register = () => {
           </Stack>
         </Flex>
       </Stack>
-    </div>
+    </>
   );
 };
 

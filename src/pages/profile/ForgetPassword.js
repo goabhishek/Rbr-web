@@ -11,8 +11,16 @@ const ForgetPassword = () => {
       </Flex>
       <Flex p={8} flex={1} align={'center'} justify={'center'}>
         <Stack p={5} bg={'#FFFFFF'} spacing={10} w={'540px'}>
-          <Heading fontSize={'2xl'}>Forgot Password</Heading>
-          <textarea name='text'>Please enter your email address to reset your password</textarea>
+          <Heading
+            color={'#2F327D'}
+            fontWeight={1000}
+            fontSize={{ base: '4xl', sm: '3xl', md: '6xl' }}
+            lineHeight={'120%'}
+            fontFamily={'Ubantu'}
+          >
+            Forgot Password
+          </Heading>
+          <Text fontSize={24}>Please enter your email address to reset your password</Text>
           <FormControl id='email'>
             <Input placeholder='Johnraymonds@gmail.com' type='email' />
           </FormControl>

@@ -36,6 +36,7 @@ import 'swiper/css/scrollbar';
 
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons';
+import { CiMedal } from 'react-icons/ci';
 
 const Home = () => {
   //   const handleNext = () => {
@@ -105,8 +106,9 @@ const Home = () => {
                 ml={24}
                 color={'#2F327D'}
                 fontWeight={1000}
-                fontSize={{ base: '4xl', sm: '3xl', md: '5xl' }}
+                fontSize={{ base: '4xl', sm: '3xl', md: '6xl' }}
                 lineHeight={'120%'}
+                fontFamily={'Ubantu'}
               >
                 The world's only platform and community for retired professionals
               </Heading>
@@ -125,6 +127,7 @@ const Home = () => {
                 fontWeight={1000}
                 fontSize={{ base: '4xl', sm: '3xl', md: '5xl' }}
                 lineHeight={'120%'}
+                fontFamily={'Ubantu'}
               >
                 The world's only platform and community for retired professionals
               </Heading>
@@ -170,23 +173,24 @@ const Home = () => {
                       backgroundColor={'#FFFFFF'}
                       rounded={'2xl'}
                     >
-                      <Flex ml={4} justifyContent={'space-between'}>
+                      <Flex ml={3} justifyContent={'space-between'}>
                         <Box
                           height={12}
                           width={12}
                           rounded={'3xl'}
                           my={'auto'}
                           backgroundColor={'#F9AE34'}
-                          alignContent={'center'}
+                          align={'center'}
                         >
-                          <Image height={12} width={12} src='/Images/Outline.png'></Image>
+                          {/* <Image  src='/Images/Outline.png'></Image> */}
+                          <CiMedal mt={2} size={'39px'} color={'#fff'} />
                           {/* {<BsPerson size={'3em'} />} */}
                         </Box>
                         <Box pl={{ base: 2, md: 4 }}>
-                          <StatLabel fontSize={'2xl'} fontWeight={'medium'}>
+                          <StatLabel fontSize={'2xl'} fontWeight={'medium'} fontFamily={'inter'}>
                             100,000+
                           </StatLabel>
-                          <StatNumber fontSize={'2xm'} fontWeight={'medium'} isTruncated>
+                          <StatNumber fontSize={'2xm'} fontWeight={800} isTruncated fontFamily={'Ubantu'}>
                             Connections
                           </StatNumber>
                         </Box>
@@ -353,7 +357,7 @@ const Home = () => {
         <Container maxW={'7xl'} mb={10} mt={28}>
           <SimpleGrid columns={{ base: 1, md: 2 }} spacing={2}>
             <Stack spacing={10}>
-              <Heading fontSize={42} color={'#2F327D'}>
+              <Heading fontSize={44} color={'#2F327D'} fontFamily={'Ubantu'}>
                 Where young minds meet industrious retirees
               </Heading>
 
@@ -361,18 +365,19 @@ const Home = () => {
                 maxWidth={'499px'}
                 divider={<StackDivider borderColor={useColorModeValue('#606176', 'gray.700')} />}
               >
-                <Text align={'justify'} fontSize={20}>
+                <Text align={'justify'} fontSize={24} fontFamily={'Ubantu'}>
                   Retired professionals have a wealth of knowledge, wisdom and skills that can be beneficial to
                   currently employed professionals. Retired But Ready is where this juncture is made possible.
                 </Text>
               </Stack>
               <Link href='/Register'>
                 <Button
-                  width={'220px'}
+                  fontFamily={'Ubantu'}
+                  width={'320px'}
                   rounded={'full'}
                   height={'70px'}
                   // px={6}
-                  fontSize={'18px'}
+                  fontSize={'34px'}
                   colorScheme={'orange'}
                   bg={'orange.400'}
                   _hover={{ bg: 'orange.500' }}
@@ -382,7 +387,7 @@ const Home = () => {
               </Link>
             </Stack>
 
-            <Flex>
+            <Flex height={350}>
               <video autoPlay controls poster='Images/Mask-group.png'>
                 <source src='<https://ruttl.com/assets/video/index-hero.webm>' type='video/mp4' />
               </video>
@@ -451,16 +456,16 @@ const Home = () => {
         >
           <Flex p={6} flexWrap={'wrap'} flex={1} align={'center'} justify={'center'}>
             <Stack spacing={2} w={'90%'} maxW={'lg'}>
-              <VStack spacing={6}>
-                <Heading fontSize={44} fontWeight='700' color={'#2F327D'}>
+              <VStack spacing={8}>
+                <Heading fontSize={44} color={'#2F327D'} fontFamily={'Ubantu'}>
                   Introducing
                 </Heading>
                 <Heading fontSize={{ base: '94', sm: '94', md: '112' }} fontWeight='1000' color={'#773FC6'}>
                   RetPro
                 </Heading>
-                <Text align={'center'} color={'#2F327D'} fontSize={44} fontWeight={'700'}>
+                <Heading align={'center'} color={'#2F327D'} fontSize={44} fontWeight={'700'} fontFamily={'Ubantu'}>
                   for retired professionals
-                </Text>
+                </Heading>
               </VStack>
             </Stack>
           </Flex>
@@ -473,8 +478,9 @@ const Home = () => {
                   rounded={'2xl'}
                   colorScheme={''}
                   bg={'#773FC6'}
-                  fontSize={'30px'}
+                  fontSize={'34px'}
                   fontWeight={'700'}
+                  fontFamily={'Ubantu'}
                 >
                   Start your journey
                 </Button>
@@ -540,62 +546,64 @@ const Home = () => {
             }}
           >
             <GridItem align={'start'} colSpan={1}>
-              <Text fontWeight={'bold'} fontSize={44} color={'#2F327D'}>
+              <Text fontWeight={'bold'} fontSize={44} color={'#2F327D'} fontFamily={'Ubantu'}>
                 Ask us how we are transforming lives.
               </Text>
             </GridItem>
             <GridItem align={'center'}>
               <Button
                 m={2}
-                fontSize={'20px'}
+                fontSize={'24px'}
                 border={'1px solid #2F327D'}
                 borderRadius={'3xl'}
                 height={'48px'}
                 width={'250px'}
+                fontFamily={'Ubantu'}
               >
                 Let's Chat
               </Button>
               <Button
                 m={2}
-                fontSize={'20px'}
+                fontSize={'24px'}
                 // ml={'30px'}
                 border={'1px solid #46B40F'}
                 borderRadius={'3xl'}
                 height={'48px'}
                 width={'250px'}
+                fontFamily={'Ubantu'}
               >
                 Request Callback
               </Button>
             </GridItem>
           </Grid>
         </Container>
-        <Container position={'relative'} overflow={'hidden'} height={'554px'} maxW={'7xl'} mt={'300px'}>
+        <Container position={'relative'} overflow={'hidden'} height={'554px'} maxW={'7xl'} mt={'235px'}>
           <Grid
             templateColumns={{
               base: 'repeat(1, 2fr)',
               sm: 'repeat(2, 1fr)',
               md: 'repeat(2, 1fr)',
             }}
-            mt={'50px'}
+            // mt={'50px'}
           >
-            <GridItem colSpan={1} justifyContent={'center'}>
+            <GridItem colSpan={1} mt={'30px'} ml={4} justifyContent={'center'}>
               <Image src='Images/Group-114.png' alt='oldman' />
             </GridItem>
-            <Flex align={'center'} direction={'column'}>
-              <Heading mr={20} color={'#2F327D'} fontWeight={'bold'} fontSize={44}>
+            <Flex width={490} align={'center'} direction={'column'}>
+              <Heading color={'#2F327D'} fontWeight={'bold'} fontFamily={'Ubantu'} fontSize={44}>
                 So much you can do with{' '}
               </Heading>
 
               <br />
-              <GridItem mr={20} height={'64px'} width={'140px'}>
+              <GridItem height={'64px'} width={'140px'}>
                 <img src='Images/Ret-pro-logo 2.png' alt='' />
               </GridItem>
-              <GridItem mr={20}>
-                <Text fontSize={20} color={'#2F327D'}>
+              <GridItem>
+                <Text fontSize={24} color={'#2F327D'} fontFamily={'Ubantu'}>
                   (your skills are all you need to begin)
                 </Text>
               </GridItem>
-              <GridItem flexWrap={'wrap'} width={700} mt={12} justifyContent={'start'}>
+              <GridItem align={'center'} flexWrap={'wrap'} width={700} mt={12} justifyContent={'start'}>
                 <img src='Images/Group-626024.png' alt='' />
               </GridItem>
             </Flex>
@@ -634,8 +642,8 @@ const Home = () => {
           </Grid>
         </Container>{' '} */}
         <Container overflow={'hidden'} align={'center'} maxW={'9xl'} mt={20}>
-          <Heading display={'inline-block'} align={'center'} color={'#2F327D'}>
-            Meet the <span style={{ color: '#773FC6', fontSize: '55px' }}>RetPro </span>
+          <Heading fontSize={44} display={'inline-block'} align={'center'} fontFamily={'Ubantu'} color={'#2F327D'}>
+            Meet the <span style={{ color: '#773FC6', fontSize: '64px' }}>RetPro </span>
             area experts
           </Heading>
           <Flex flexWrap={'wrap'} justifyContent={'space-evenly'} mt={8}>
@@ -649,7 +657,7 @@ const Home = () => {
             >
               <Avatar src='Images/Business-1.png' alt='name' p={2} mb={4} width={130} height={32} />
               <Stack spacing={-1} align={'center'}>
-                <Text fontSize='24px' fontWeight={800} maxW={190} color={'#2F327D'} mb={4}>
+                <Text fontSize={24} fontWeight={800} maxW={190} fontFamily={'Ubantu'} color={'#2F327D'} mb={4}>
                   Frontend
                 </Text>
               </Stack>
@@ -664,7 +672,7 @@ const Home = () => {
             >
               <Avatar p={2} src='Images/Entertainment-1.png' alt='name' mb={4} width={130} height={32} />
               <Stack spacing={-1} align={'center'}>
-                <Text fontSize='24px' fontWeight={800} maxW={190} color={'#2F327D'} mb={4}>
+                <Text fontSize={24} fontWeight={800} maxW={190} color={'#2F327D'} mb={4} fontFamily={'Ubantu'}>
                   Professors
                 </Text>
               </Stack>
@@ -679,7 +687,7 @@ const Home = () => {
             >
               <Avatar p={2} src='Images/Law-&-Order-1.png' alt='name' mb={4} width={130} height={32} />
               <Stack spacing={-1} align={'center'}>
-                <Text fontSize='24px' fontWeight={800} maxW={190} color={'#2F327D'} mb={4}>
+                <Text fontSize={24} fontWeight={800} maxW={190} color={'#2F327D'} mb={4} fontFamily={'Ubantu'}>
                   Mentors
                 </Text>
               </Stack>
@@ -694,7 +702,7 @@ const Home = () => {
             >
               <Avatar p={2} src='Images/110.png' alt='name' mb={4} width={130} height={32} />
               <Stack spacing={-1} align={'center'}>
-                <Text fontSize='24px' fontWeight={800} maxW={190} color={'#2F327D'} mb={4}>
+                <Text fontSize={24} fontWeight={800} maxW={190} color={'#2F327D'} mb={4} fontFamily={'Ubantu'}>
                   Consultants
                 </Text>
               </Stack>
@@ -703,19 +711,27 @@ const Home = () => {
         </Container>
         <Center mt={20}>
           <Button
-            fontSize={'20px'}
+            fontSize={24}
             color={'#773FC6'}
             border={'1px solid #773FC6'}
             borderRadius={'3xl'}
             height={'48px'}
             width={'250px'}
+            fontFamily={'Ubantu'}
           >
             Explore all
           </Button>
         </Center>
         <Container maxW={'7xl'} mt={20} position={'relative'} borderRadius={'md'}>
           <Center>
-            <Heading align={'center'} width={'700px'} lineHeight={'56px'} fontSize={'44px'} color={'#2F327D'}>
+            <Heading
+              align={'center'}
+              width={'700px'}
+              lineHeight={'56px'}
+              fontSize={44}
+              color={'#2F327D'}
+              fontFamily={'Ubantu'}
+            >
               Creating impact for retired and working professionals
             </Heading>
           </Center>
@@ -724,12 +740,12 @@ const Home = () => {
               <Stack background={'#EDF3FF'} maxW={'400px'} spacing={5} w={'100%'}>
                 <Heading borderTopRadius={'20px'} height={20} align={'center'} background={'#773FC6'}>
                   {' '}
-                  <Text justifyContent={'center'} color={'#fff'} mt={5}>
+                  <Text fontSize={44} justifyContent={'center'} color={'#fff'} mt={3} fontFamily={'Ubantu'}>
                     Why RetPro?
                   </Text>{' '}
                 </Heading>
-                <Text fontSize={20} color={'#773FC6'}>
-                  <UnorderedList ml={10} spacing={6}>
+                <Text color={'#773FC6'}>
+                  <UnorderedList ml={10} fontSize={24} spacing={6} fontFamily={'Ubantu'}>
                     <ListItem>work from the comfort of your home</ListItem>
                     <ListItem>offer virtual/in-person mentoring & guidance</ListItem>
                     <ListItem> connect & socialize with other RetPros & JunPros </ListItem>
@@ -742,12 +758,12 @@ const Home = () => {
               <Stack background={'#EFFFE7'} maxW={'400px'} height={'450px'} spacing={5} w={'100%'}>
                 <Heading borderTopRadius={'20px'} height={20} align={'center'} background={'#46B40F'}>
                   {' '}
-                  <Text justifyContent={'center'} color={'#fff'} mt={5}>
+                  <Text justifyContent={'center'} color={'#fff'} mt={3} fontSize={44} fontFamily={'Ubantu'}>
                     Why JunPro?
                   </Text>{' '}
                 </Heading>
-                <Text fontSize={20} color={'#773FC6'}>
-                  <UnorderedList ml={10} spacing={6}>
+                <Text color={'#773FC6'}>
+                  <UnorderedList ml={10} fontSize={24} spacing={2} fontFamily={'Ubantu'}>
                     <ListItem>work from the comfort of your homehire retired experts short or long-term</ListItem>
                     <ListItem>receive top notch mentorship & wisdom</ListItem>
                     <ListItem>pocket-friendly services that work for you</ListItem>
@@ -759,12 +775,12 @@ const Home = () => {
           </Stack>
         </Container>
         <div>
-          <Container overflow={'hidden'} maxW={'6xl'} position={'relative'} mt={20}>
+          <Container overflow={'hidden'} maxW={'7xl'} position={'relative'} mt={20}>
             <Flex justifyContent={'space-between'} flex={1}>
-              <Heading color={'#2F327D'} fontSize={44}>
+              <Heading color={'#2F327D'} fontSize={44} fontFamily={'Ubantu'}>
                 Some real-life success stories to get inspired by
               </Heading>
-              <Flex gap={30}>
+              <Flex gap={12}>
                 <ArrowBackIcon
                   cursor={'pointer'}
                   color={'#2F327D'}
@@ -784,7 +800,7 @@ const Home = () => {
             <Swiper
               modules={[Navigation, Pagination, Scrollbar, A11y]}
               spaceBetween={70}
-              slidesPerView={2}
+              slidesPerView={window.innerWidth <= 550 ? 1 : window.innerWidth <= 720 ? 2 : 0}
               navigation={false}
               className={'mySwiper'}
               ref={SlideRef}
@@ -799,18 +815,25 @@ const Home = () => {
                         <Stack spacing={10} w={'90%'}>
                           <Heading lineHeight={'40px'} align={'start'}>
                             {' '}
-                            <Text fontWeight={500} justifyContent={'center'} color={'#2F327D'} fontSize={'35px'} mt={5}>
+                            <Text
+                              fontFamily={'Ubantu'}
+                              fontWeight={500}
+                              justifyContent={'center'}
+                              color={'#2F327D'}
+                              fontSize={'35px'}
+                              mt={5}
+                            >
                               " {slider.HeadFont}"
                             </Text>{' '}
                           </Heading>
-                          <Text color={'#606176'} fontSize={20}>
+                          <Text fontFamily={'Ubantu'} color={'#606176'} fontSize={20}>
                             "A RetPro helped me realize that my aspirations were leaning more towards Data sciences than
                             what I am currently doing"
                           </Text>
                           <Flex align={'center'} mr={8} direction={'row'}>
                             <Avatar width={'80px'} height={'70px'} spacing={20} src={slider.UserDp} alt='name' m={5} />
                             <Stack align={'center'}>
-                              <Text fontSize={20} color={'#2F327D'} fontWeight={1000}>
+                              <Text fontFamily={'Ubantu'} fontSize={20} color={'#2F327D'} fontWeight={1000}>
                                 Milena Belmar
                               </Text>
                               <Text fontSize={14} mt={'-10px'} color={'#606176'}>

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import { ChakraProvider } from '@chakra-ui/react';
-import { store } from './App/store';
+import store from './App/store';
 import { Provider } from 'react-redux';
 import './i18n';
 import { I18nextProvider } from 'react-i18next';
