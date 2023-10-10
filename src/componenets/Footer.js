@@ -1,10 +1,21 @@
 import React from 'react';
 import '../global.css';
-import { Box, Container, Link, Button, SimpleGrid, Stack, Text, useColorModeValue, Image } from '@chakra-ui/react';
+import {
+  Box,
+  Container,
+  Link,
+  Button,
+  SimpleGrid,
+  Stack,
+  Text,
+  useColorModeValue,
+  Image,
+  Heading,
+} from '@chakra-ui/react';
 
 const ListHeader = ({ children }) => {
   return (
-    <Text fontWeight={'500'} fontSize={'lg'} mb={2}>
+    <Text fontWeight={'700'} fontFamily={'Inter'} fontSize={'lg'} mb={2}>
       {children}
     </Text>
   );
@@ -25,8 +36,18 @@ const Footer = () => {
           </Stack>
 
           <Stack fontFamily={'inter'} align={'center'}>
-            <ListHeader color={'#2F327D'}>About</ListHeader>
-            <Box color={'#2F327D'} fontSize={20} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
+            <Heading fontWeight={'600'} color={'#101130'}>
+              About
+            </Heading>
+            <Box
+              color={'#606176'}
+              fontFamily={'Inter'}
+              fontSize={20}
+              lineHeight={'30px'}
+              fontWeight={400}
+              as='a'
+              href={'#'}
+            >
               About Us
             </Box>
             <Box color={'#2F327D'} fontSize={20} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
@@ -44,7 +65,9 @@ const Footer = () => {
           </Stack>
 
           <Stack fontFamily={'inter'} align={'center'}>
-            <ListHeader>Support</ListHeader>
+            <Heading fontWeight={'600'} color={'#101130'}>
+              Support
+            </Heading>
             <Box color={'#2F327D'} fontSize={20} lineHeight={'30px'} fontWeight={400} as='a' href={'#'}>
               Account
             </Box>
@@ -63,9 +86,13 @@ const Footer = () => {
           </Stack>
 
           <Stack fontFamily={'inter'} align={'center'}>
-            <ListHeader>Get Our App</ListHeader>
+            <Heading fontWeight={'600'} color={'#101130'}>
+              Get Our App
+            </Heading>
 
             <Button
+              p={5}
+              mt={4}
               maxW={80}
               colorScheme='black'
               variant='outline'
@@ -75,8 +102,6 @@ const Footer = () => {
                 bg: 'gray.900',
               }}
               as={'a'}
-              pr={7}
-              pl={3}
               href={'https://itunes.apple.com/us/app/all-of-the-lights/id959389722?mt=8'}
             >
               <Image
@@ -97,8 +122,6 @@ const Footer = () => {
                 bg: 'gray.900',
               }}
               as={'a'}
-              pr={7}
-              pl={3}
               href={'https://itunes.apple.com/us/app/all-of-the-lights/id959389722?mt=8'}
             >
               <Image

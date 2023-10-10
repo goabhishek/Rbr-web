@@ -13,6 +13,7 @@ import {
   Container,
   Grid,
   GridItem,
+  Textarea,
 } from '@chakra-ui/react';
 import { FcFeedback, FcGoogle, FcTabletAndroid } from 'react-icons/fc';
 import { FaFacebook } from 'react-icons/fa';
@@ -24,6 +25,7 @@ import { useDispatch } from 'react-redux';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { AddIcon, RepeatClockIcon } from '@chakra-ui/icons';
 
 const initialState = {
   name: '',
@@ -32,6 +34,26 @@ const initialState = {
   number: '',
 };
 const Register = () => {
+  //for captcha
+  const randomString = Math.random().toString(36).slice(8);
+  const [captcha, setCaptcha] = useState(randomString);
+  const refreshString = () => {
+    setCaptcha(Math.random().toString(36).slice(8));
+  };
+  const [text, setText] = useState('');
+  const [valid, setValid] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const matchCaptcha = (e) => {
+    // e.preventDefault();
+    if (text === captcha) {
+      setValid(false);
+      setSuccess(true);
+    } else {
+      setValid(true);
+      setSuccess(false);
+    }
+  };
+
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
@@ -60,7 +82,9 @@ const Register = () => {
     if (!validateEmail(email)) {
       return toast.error('Please enter a valid email');
     }
-
+    if (matchCaptcha(success)) {
+      return toast.error('please enter valid captcha');
+    }
     if (password.length < 6) {
       return toast.error('Passwords must be up to 6 characters');
     }
@@ -116,6 +140,7 @@ const Register = () => {
             >
               <FormControl p={8} id='name' isRequired>
                 <Input
+                  fontFamily={'Ubantu'}
                   fontSize={24}
                   height={'50px'}
                   //   opacity={'0.5'}
@@ -128,6 +153,7 @@ const Register = () => {
               </FormControl>
               <FormControl p={8} id='email' isRequired>
                 <Input
+                  fontFamily={'Ubantu'}
                   fontSize={24}
                   height={'50px'}
                   //   opacity={'0.5'}
@@ -141,6 +167,7 @@ const Register = () => {
               </FormControl>
               <FormControl p={8} isRequired>
                 <Input
+                  fontFamily={'Ubantu'}
                   fontSize={24}
                   height={'50px'}
                   //   opacity={'0.5'}
@@ -154,6 +181,7 @@ const Register = () => {
               </FormControl>
               <FormControl p={8} isRequired>
                 <Input
+                  fontFamily={'Ubantu'}
                   fontSize={24}
                   height={'50px'}
                   //   opacity={'0.5'}
@@ -165,15 +193,37 @@ const Register = () => {
                   type='number'
                 />
               </FormControl>
+
               <FormControl p={8} id='verify' isRequired>
                 <Input
+                  fontFamily={'Ubantu'}
                   fontSize={24}
                   height={'50px'}
                   //  opacity={'0.5'}
                   type='text'
                   border={'2px solid #B4B3B3'}
                   placeholder='tap to verify'
+                  value={text}
+                  onChange={(e) => setText(e.target.value)}
+                  error={valid}
                 />
+                <Flex m={4} direction={'row'}>
+                  <Text
+                    align={'center'}
+                    width={'24'}
+                    fontSize={24}
+                    fontFamily={'Ubantu'}
+                    color={'#FFFFFF'}
+                    backgroundColor={'#773FC6'}
+                    m={4}
+                  >
+                    {captcha}
+                  </Text>
+                  <Button color={'#FFFFFF'} backgroundColor={'#773FC6'} m={4} onClick={() => refreshString()}>
+                    {' '}
+                    <RepeatClockIcon m={2} boxSize={4} />
+                  </Button>
+                </Flex>
               </FormControl>
               <Stack p={8}>
                 <Button
