@@ -1,30 +1,21 @@
-import i18n from 'i18next';
+import i18next from 'i18next';
+
 import { reactI18nextModule } from 'react-i18next';
+import Backend from 'i18next-http-backend';
+import LanguageDetector from 'i18next-browser-languagedetector';
 
-// import translationEN from '../public/locales/en/translation.json';
-// import translationFR from '../public/locales/fr/translation.json';
-
-// the translations
-const resources = {
-  //   en: {
-  //     translation: translationEN,
-  //   },
-  //   fr: {
-  //     translation: translationFR,
-  //   },
-};
-
-i18n
-  .use(reactI18nextModule) // passes i18n down to react-i18next
+i18next
+  .use(Backend)
+  .use(LanguageDetector)
+  .use(reactI18nextModule)
   .init({
-    resources,
-    lng: 'en',
-
-    keySeparator: false, // we do not use keys in form messages.welcome
-
-    interpolation: {
-      escapeValue: false, // react already safes from xss
+    fallbackLng: 'en',
+    debug: true,
+    whitelist: ['en', 'hi', 'ru'], // add language codes that you want.
+    detection: {
+      order: ['navigator', 'htmlTag', 'path', 'subdomain'],
+      checkWhiteList: true,
     },
   });
 
-export default i18n;
+export default i18next;

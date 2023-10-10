@@ -187,9 +187,7 @@ const Home = () => {
                           backgroundColor={'#F9AE34'}
                           align={'center'}
                         >
-                          {/* <Image  src='/Images/Outline.png'></Image> */}
-                          <CiMedal mt={2} size={'39px'} color={'#fff'} />
-                          {/* {<BsPerson size={'3em'} />} */}
+                          <Image mt={2} height={8} width={8} src='/Images/Vector.png'></Image>
                         </Box>
                         <Box pl={{ base: 2, md: 4 }}>
                           <StatLabel color={'#111231'} fontSize={'2xl'} fontWeight={'medium'} fontFamily={'Inter'}>
@@ -284,15 +282,8 @@ const Home = () => {
                       rounded={'2xl'}
                     >
                       <Flex ml={4} justifyContent={'space-between'}>
-                        <Box
-                          height={12}
-                          width={12}
-                          rounded={'3xl'}
-                          my={'auto'}
-                          backgroundColor={'#F9AE34'}
-                          alignContent={'center'}
-                        >
-                          <Image height={12} width={12} src='/Images/Outline.png'></Image>
+                        <Box height={12} width={12} rounded={'3xl'} my={'auto'} backgroundColor={'#F9AE34'}>
+                          <Image ml={2} mt={2} height={8} width={8} src='/Images/Vector.png'></Image>
                           {/* {<BsPerson size={'3em'} />} */}
                         </Box>
                         <Box pl={{ base: 2, md: 4 }}>
@@ -318,13 +309,17 @@ const Home = () => {
                     mt={8}
                     position={'absolute'}
                     ml={56}
+                    height={'53.25px'}
+                    width={'53.58'}
                     className='image'
-                    style={{
-                      height: '10vh',
-
-                      objectFit: 'cover',
-                      filter: 'brightness(1)',
-                    }}
+                    style={
+                      {
+                        //   height: '53.25px',
+                        //   width: '53.58',
+                        //   objectFit: 'cover',
+                        //   filter: 'brightness(1)',
+                      }
+                    }
                     src='Images/14.png'
                     alt='slides'
                   />
@@ -337,7 +332,7 @@ const Home = () => {
                     style={{
                       height: '85vh',
                       objectFit: 'cover',
-                      filter: 'brightness(1)',
+                      //   filter: 'brightness(1)',
                     }}
                     src='Images/13.png'
                     alt='slides'
@@ -363,7 +358,7 @@ const Home = () => {
         </SwiperSlide>
         ...
       </Swiper>
-      <Stack mt={-14} backgroundColor={'#EDEBF1'}>
+      <Stack mt={-24} backgroundColor={'#EDEBF1'}>
         <Container maxW={'7xl'} mb={10} mt={28}>
           <SimpleGrid columns={{ base: 1, md: 2 }} spacing={2}>
             <Stack spacing={10}>
@@ -842,12 +837,12 @@ const Home = () => {
                             what I am currently doing"
                           </Text>
                           <Flex align={'center'} mr={8} direction={'row'}>
-                            <Avatar width={'80px'} height={'70px'} spacing={20} src={slider.UserDp} alt='name' m={5} />
+                            <Avatar width={'60px'} height={'60px'} spacing={20} src={slider.UserDp} alt='name' m={5} />
                             <Stack align={'center'}>
-                              <Text fontFamily={'Inter'} fontSize={20} color={'#2F327D'} fontWeight={1000}>
+                              <Text fontFamily={'Inter'} fontSize={24} color={'#2F327D'} fontWeight={1000}>
                                 Milena Belmar
                               </Text>
-                              <Text fontSize={14} mt={'-10px'} color={'#606176'}>
+                              <Text fontSize={18} mt={'-10px'} color={'#606176'}>
                                 Argentina
                               </Text>
                             </Stack>

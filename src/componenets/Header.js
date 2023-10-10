@@ -15,7 +15,7 @@ import {
   Tooltip,
 } from '@chakra-ui/react';
 
-const Header = () => {
+const Header = (props) => {
   //   const [isHovering, setIsHovering] = useState(false);
   //   function handleMouseEnter(e) {
   //     console.log(e.target);
@@ -59,7 +59,18 @@ const Header = () => {
                 </Button>
               </Link>
             </Stack>
-
+            {/* <select name='' id='' onChange={(e) => props.setLang(e.target.value)}>
+              <option key={''}>Languages</option>
+              <option key={'en'} value='en'>
+                English
+              </option>
+              <option key={'hi'} value='hi'>
+                Hindi
+              </option>
+              <option key={'ru'} value='ru'>
+                Russian
+              </option>
+            </select> */}
             <Button
               fontFamily={'inder'}
               fontSize={'24px'}

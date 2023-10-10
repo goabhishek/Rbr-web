@@ -20,10 +20,24 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { getLoginStatus } from './services/authServices';
 import { SET_LOGIN } from './features/authSlice';
+import i18next from 'i18next';
+
 // import UserHeader from './user/Header/UserHeader';
 // import EditProfile from './user/EditProfile';
 
 function App({ t }) {
+  //   const { t } = useTranslation();
+  useEffect(() => {
+    const lang = localStorage.getItem('language');
+    i18next.changeLanguage(lang);
+  }, []);
+
+  const setLang = (data) => {
+    console.log(data);
+    localStorage.setItem('language', data);
+    window.location.reload();
+  };
+
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.alerts);
   useEffect(() => {
@@ -36,8 +50,8 @@ function App({ t }) {
   //   const toast = useToast();
   return (
     <div className='App'>
-      <Header />
-
+      <Header setLang={setLang} />
+      {/* <h1>{t('Hello')}</h1> */}
       <Routes>
         <Route path='/' element={<Home />} /> {/* 👈 Renders at /app/ */}
         <Route path='/Register' element={<Register />} />
