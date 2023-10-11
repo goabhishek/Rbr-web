@@ -42,14 +42,14 @@ const LoginPopup = (props) => {
             <AiOutlineCloseSquare className='CloseFontSize' onClick={() => props.showPopup(false)} />
           </div> */}
           <div className='popup-content'>
-            <Heading color={'#5B5B5E'} mt={-4} fontSize={44}>
+            <Heading color={'#5B5B5E'} mt={-6} fontSize={44}>
               Kudos! <br />
               <span style={{ color: '#5B5B5E', fontSize: '20px', marginTop: '10px' }}>
                 You have just begun your journey to greatness
               </span>
             </Heading>
 
-            <Link width={64} fontSize={24} mt={10} color={'white'} className='pop-btn' href='/Login'>
+            <Link width={64} fontSize={24} mt={8} color={'white'} className='pop-btn' href='/Login'>
               Login
             </Link>
 

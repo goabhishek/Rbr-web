@@ -36,16 +36,9 @@ import 'swiper/css/scrollbar';
 
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons';
-import { CiMedal } from 'react-icons/ci';
 
 const Home = () => {
-  //   const handleNext = () => {
-  //     SlideRef.current.swiper.SlideNext();
-  //   };
   const SlideRef = useRef();
-  //   const handlePrev = () => {
-  //     SlideRef.current.swiper.SlidePrev();
-  //   };
 
   const StoriesSliderData = [
     {
@@ -796,7 +789,7 @@ const Home = () => {
         <div>
           <Container overflow={'hidden'} maxW={'7xl'} position={'relative'} mt={20}>
             <Flex justifyContent={'space-between'} flex={1}>
-              <Heading color={'#2F327D'} fontSize={44} fontFamily={'Inter'}>
+              <Heading color={'#2F327D'} fontSize={{ base: '4xl', sm: '3xl', md: '6xl' }} fontFamily={'Inter'}>
                 Some real-life success stories to get inspired by
               </Heading>
               <Flex gap={12}>
@@ -817,10 +810,21 @@ const Home = () => {
               </Flex>
             </Flex>
             <Swiper
+              breakpoints={{
+                576: {
+                  // width: 576,
+                  slidesPerView: 1,
+                },
+                768: {
+                  // width: 768,
+                  slidesPerView: 2,
+                },
+              }}
               modules={[Navigation, Pagination, Scrollbar, A11y]}
               spaceBetween={70}
-              //   slidesPerView={window.innerWidth <= 550 ? 1 : window.innerWidth <= 720 ? 2 : 0}
-              slidesPerView={2}
+              //   slidesPerView={window.innerWidth <= 550 ? 1 : window.innerWidth <= 720 ? 2 : 1}
+              //   slidesPerView={2}
+              //   slidesPerView={1}
               navigation={false}
               className={'mySwiper'}
               ref={SlideRef}
@@ -831,7 +835,7 @@ const Home = () => {
                 return (
                   <SwiperSlide key={indexs}>
                     <Stack direction={{ base: 'row', md: 'row' }}>
-                      <Flex pt={10} flex={1} justify={'start'}>
+                      <Flex flexWrap={'wrap'} pt={10} flex={1} justify={'start'}>
                         <Stack spacing={10} w={'90%'}>
                           <Heading lineHeight={'40px'} align={'start'}>
                             {' '}
@@ -850,7 +854,7 @@ const Home = () => {
                             "A RetPro helped me realize that my aspirations were leaning more towards Data sciences than
                             what I am currently doing"
                           </Text>
-                          <Flex align={'center'} mr={8} direction={'row'}>
+                          <Flex flexWrap={'wrap'} align={'center'} mr={8} direction={'row'}>
                             <Avatar width={'60px'} height={'60px'} spacing={20} src={slider.UserDp} alt='name' m={5} />
                             <Stack align={'center'}>
                               <Text fontFamily={'Inter'} fontSize={24} color={'#2F327D'} fontWeight={1000}>

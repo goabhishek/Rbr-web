@@ -12,7 +12,7 @@ export const validateEmail = (email) => {
 // Register User
 export const registerUser = async (userData) => {
   try {
-    const response = await axios.post(`${BACKEND_URL}/users`, userData, { withCredentials: true });
+    const response = await axios.post(`${BACKEND_URL}/users/`, userData);
     if (response.statusText === 'OK') {
       toast.success('User Registered successfully');
     }
@@ -77,7 +77,7 @@ export const resetPassword = async (userData, resetToken) => {
 // Get Login Status
 export const getLoginStatus = async () => {
   try {
-    const response = await axios.get(`${BACKEND_URL}/api/users/loggedin`);
+    const response = await axios.get(`${BACKEND_URL}/users/loggedin`);
     return response.data;
   } catch (error) {
     const message =

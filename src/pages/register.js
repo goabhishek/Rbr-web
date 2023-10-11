@@ -13,7 +13,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { RepeatClockIcon } from '@chakra-ui/icons';
 
 const initialState = {
-  name: '',
+  fname: '',
   email: '',
   password: '',
   number: '',
@@ -86,7 +86,7 @@ const Register = () => {
       //   dispatch(showLoading());
       console.log(data);
       await dispatch(SET_LOGIN(true));
-      //   await dispatch(SET_NAME(data.fname));
+      await dispatch(SET_NAME(data.fname));
       //     dispatch(hideLoading());
       navigate(setModalIsOpenToTrue());
       //     setIsLoading(false);
