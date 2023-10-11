@@ -26,12 +26,15 @@ const Footer = () => {
   return (
     <Box bg={'#EDEBF1'} color={useColorModeValue('gray.700', 'gray.200')}>
       <Container as={Stack} maxW={'7xl'} py={10}>
-        <SimpleGrid columns={{ base: 1, sm: 2, md: 5 }} spacing={8}>
-          <Stack align={'start'}>
+        <SimpleGrid columns={{ base: 1, sm: 2, md: 5 }} spacing={6}>
+          <Stack
+            //    align={'start'}
+            align={{ base: 'center', sm: 'center', md: 'start' }}
+          >
             <Link href='/'>
               <img src='Images/RBR Logo 1.png' alt='logo' />
             </Link>
-            <Text color={'#2F327D'} width={64} fontFamily={'inter'} align={'left'} fontSize={'20px'}>
+            <Text color={'#2F327D'} width={'220px'} fontFamily={'inter'} fontSize={24} lineHeight={'26px'}>
               Our mission is to create economic and engagement opportunity for our people around the world - age no bar.
             </Text>
           </Stack>
@@ -184,6 +187,7 @@ const Footer = () => {
                     fontSize={{ base: '4xl', sm: '3xl', md: '5xl' }}
                     // marginLeft={24}
                     marginLeft={{ base: '2px', sm: '2px', md: '60px' }}
+                    mt={{ base: '32px', sm: '20px', md: '2px' }}
                     height={400}
                     position={'relative'}
                     borderRadius='lg'

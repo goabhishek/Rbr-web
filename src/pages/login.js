@@ -62,16 +62,16 @@ const Login = () => {
       <ToastContainer />
       <ProfilePop modalIsOpen={modalIsOpen} showPopup={setShowPopup} />
       <Stack backgroundColor={'#EDEBF1'} minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
-        <Flex transition={'linear'} align={'center'} direction={'column'} mt={40} flex={1}>
+        <Flex overflow={'hidden'} transition={'linear'} align={'center'} direction={'column'} mt={36} flex={1}>
           <Image
             shadow={'dark-lg'}
-            width={'450px'}
+            width={{ base: '400px', sm: '250px', md: '450px' }}
             height={'284px'}
             alt={'Login Image'}
             src={'Images/Group-626217.png'}
           />
-          <Stack mt={12} width={'450px'} borderTop={'1px solid #9CA3AF'}>
-            <Center ml={40} width={40} backgroundColor={'#EDEBF1'} mt={-3}>
+          <Stack mt={12} width={{ base: '350px', sm: '250px', md: '450px' }} borderTop={'1px solid #9CA3AF'}>
+            <Center ml={{ base: '100px', sm: '40px', md: '140px' }} width={40} backgroundColor={'#EDEBF1'} mt={-3}>
               <Text>or login through</Text>
             </Center>
 
@@ -135,6 +135,7 @@ const Login = () => {
           justifyContent={'space-between'}
         >
           <Heading
+            b
             mt={37}
             color={'#2F327D'}
             fontWeight={1000}

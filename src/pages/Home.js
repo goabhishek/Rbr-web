@@ -551,15 +551,19 @@ const Home = () => {
             }}
           >
             <GridItem align={'start'} colSpan={1}>
-              <Text fontWeight={'bold'} fontSize={44} color={'#2F327D'} fontFamily={'Ubuntu'}>
+              <Text fontSize={44} color={'#2F327D'} fontWeight={500} fontFamily={'Ubuntu'}>
                 Ask us how we are transforming lives.
               </Text>
             </GridItem>
             <GridItem align={'center'}>
               <Button
                 m={2}
+                _hover={{
+                  color: 'white',
+                  backgroundColor: '#2F327D',
+                }}
                 fontSize={'24px'}
-                border={'1px solid #2F327D'}
+                border={'2px solid #2F327D'}
                 borderRadius={'3xl'}
                 height={'48px'}
                 width={'250px'}
@@ -567,18 +571,24 @@ const Home = () => {
               >
                 Let's Chat
               </Button>
-              <Button
-                m={2}
-                fontSize={'24px'}
-                // ml={'30px'}
-                border={'1px solid #46B40F'}
-                borderRadius={'3xl'}
-                height={'48px'}
-                width={'250px'}
-                fontFamily={'Ubuntu'}
-              >
-                Request Callback
-              </Button>
+              <Link href='/Callme'>
+                <Button
+                  _hover={{
+                    color: 'white',
+                    backgroundColor: '#46B40F',
+                  }}
+                  m={2}
+                  fontSize={'24px'}
+                  // ml={'30px'}
+                  border={'2px solid #46B40F'}
+                  borderRadius={'3xl'}
+                  height={'48px'}
+                  width={'250px'}
+                  fontFamily={'Ubuntu'}
+                >
+                  Request Callback
+                </Button>
+              </Link>
             </GridItem>
           </Grid>
         </Container>
@@ -716,6 +726,10 @@ const Home = () => {
         </Container>
         <Center mt={20}>
           <Button
+            _hover={{
+              color: 'white',
+              backgroundColor: '#2F327D',
+            }}
             fontSize={24}
             color={'#773FC6'}
             border={'1px solid #773FC6'}

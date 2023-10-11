@@ -18,18 +18,37 @@ const Callme = () => {
         </Flex>
         <Flex p={8} flex={1} align={'center'} justify={'center'}>
           <Stack p={5} bg={'#FFFFFF'} spacing={10} w={'540px'}>
-            <Heading fontSize={'2xl'}>Call me back !</Heading>
+            <Heading
+              color={'#2F327D'}
+              fontWeight={700}
+              fontSize={{ base: '4xl', sm: '3xl', md: '6xl' }}
+              lineHeight={'120%'}
+              fontFamily={'Ubuntu'}
+            >
+              Call me back !
+            </Heading>
 
             <FormControl id='email'>
-              <FormLabel>Name</FormLabel>
-              <Input type='name' />
+              <FormLabel fontFamily={'Ubuntu'} fontSize={24}>
+                Name
+              </FormLabel>
+              <Input fontFamily={'Ubuntu'} fontSize={24} type='name' />
             </FormControl>
             <FormControl id='email'>
-              <FormLabel>Mobile Number</FormLabel>
-              <Input type='number' />
+              <FormLabel fontFamily={'Ubuntu'} fontSize={24}>
+                Mobile Number
+              </FormLabel>
+              <Input fontFamily={'Ubuntu'} fontSize={24} type='number' />
             </FormControl>
 
-            <Button onClick={setModalIsOpenToTrue} colorScheme={'blue'} background={'#773FC6'} variant={'solid'}>
+            <Button
+              onClick={setModalIsOpenToTrue}
+              colorScheme={'blue'}
+              background={'#773FC6'}
+              fontFamily={'Ubuntu'}
+              fontSize={24}
+              variant={'solid'}
+            >
               Submit
             </Button>
           </Stack>

@@ -1,20 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {
-  Button,
-  Flex,
-  FormControl,
-  Heading,
-  Input,
-  Stack,
-  Image,
-  Center,
-  Text,
-  Box,
-  Container,
-  Grid,
-  GridItem,
-  Textarea,
-} from '@chakra-ui/react';
+import { Button, Flex, FormControl, Heading, Input, Stack, Image, Center, Text, Box } from '@chakra-ui/react';
 import { FcFeedback, FcGoogle, FcTabletAndroid } from 'react-icons/fc';
 import { FaFacebook } from 'react-icons/fa';
 import LoginPopup from '../componenets/LoginPopup';
@@ -25,7 +10,7 @@ import { useDispatch } from 'react-redux';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { AddIcon, RepeatClockIcon } from '@chakra-ui/icons';
+import { RepeatClockIcon } from '@chakra-ui/icons';
 
 const initialState = {
   name: '',
@@ -43,16 +28,10 @@ const Register = () => {
   const [text, setText] = useState('');
   const [valid, setValid] = useState(false);
   const [success, setSuccess] = useState(false);
-  const matchCaptcha = (e) => {
-    // e.preventDefault();
-    if (text === captcha) {
-      setValid(false);
-      setSuccess(true);
-    } else {
-      setValid(true);
-      setSuccess(false);
-    }
-  };
+  //   const matchCaptcha = (event) => {
+  //     event.preventDefault();
+
+  //   };
 
   const dispatch = useDispatch();
 
@@ -73,7 +52,7 @@ const Register = () => {
   const register = async (e) => {
     e.preventDefault();
 
-    if (!fname || !email || !password) {
+    if (!fname || !email || !password || !captcha) {
       return toast.error('All fields are required');
     }
     if (fname.length < 4) {
@@ -82,11 +61,17 @@ const Register = () => {
     if (!validateEmail(email)) {
       return toast.error('Please enter a valid email');
     }
-    if (matchCaptcha(success)) {
-      return toast.error('please enter valid captcha');
-    }
+
     if (password.length < 6) {
       return toast.error('Passwords must be up to 6 characters');
+    }
+    if (text === captcha) {
+      setValid(false);
+      setSuccess(true);
+    } else {
+      setValid(true);
+      setSuccess(false);
+      return toast.error('please enter valid captcha');
     }
 
     const userData = {
@@ -266,18 +251,17 @@ const Register = () => {
           </Box>
         </Flex>
 
-        <Flex direction={'column'} mt={40} flex={1}>
+        <Flex overflow={'hidden'} flexWrap={'wrap'} direction={'column'} mt={30} flex={1}>
           <Image
-            padding={5}
             shadow={'dark-lg'}
-            width={'450px'}
+            width={{ base: '400px', sm: '250px', md: '450px' }}
             height={'284px'}
             alt={'Login Image'}
             src={'Images/Group-626217.png'}
           />
-          <Stack mt={12} width={'450px'} borderTop={'1px solid #9CA3AF'}>
-            <Center ml={40} width={40} backgroundColor={'#EDEBF1'} mt={-3}>
-              <Text>or login through</Text>
+          <Stack mt={12} width={{ base: '350px', sm: '250px', md: '450px' }} borderTop={'1px solid #9CA3AF'}>
+            <Center ml={{ base: '100px', sm: '40px', md: '140px' }} width={40} backgroundColor={'#EDEBF1'} mt={-3}>
+              <Text fontSize={18}>or login through</Text>
             </Center>
 
             <Flex gap={20}>
