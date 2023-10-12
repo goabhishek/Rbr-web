@@ -24,7 +24,7 @@ import {
 
 const Footer = () => {
   return (
-    <Box bg={'#EDEBF1'} color={useColorModeValue('gray.700', 'gray.200')}>
+    <Box overflow={'hidden'} bg={'#EDEBF1'} color={useColorModeValue('gray.700', 'gray.200')}>
       <Container as={Stack} maxW={'7xl'} py={10}>
         <SimpleGrid columns={{ base: 1, sm: 2, md: 5 }} spacing={6}>
           <Stack
@@ -179,6 +179,7 @@ const Footer = () => {
                     height={'500px'}
                     width={'500px'}
                     //   roundedLeft={'full'}
+
                     rounded={'full'}
                     position={'absolute'}
                     backgroundColor={'#46B40F40'}

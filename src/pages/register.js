@@ -13,7 +13,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { RepeatClockIcon } from '@chakra-ui/icons';
 
 const initialState = {
-  fname: '',
+  name: '',
   email: '',
   password: '',
   number: '',
@@ -41,7 +41,7 @@ const Register = () => {
     setShowPopup(true);
   };
   const [formData, setformData] = useState(initialState);
-  const { fname, email, password, number } = formData;
+  const { name, email, password, number } = formData;
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -52,10 +52,10 @@ const Register = () => {
   const register = async (e) => {
     e.preventDefault();
 
-    if (!fname || !email || !password || !captcha) {
+    if (!name || !email || !password || !captcha) {
       return toast.error('All fields are required');
     }
-    if (fname.length < 4) {
+    if (name.length < 4) {
       return toast.error('Please enter a valid Name');
     }
     if (!validateEmail(email)) {
@@ -75,7 +75,7 @@ const Register = () => {
     }
 
     const userData = {
-      fname,
+      name,
       email,
       password,
       number,
@@ -86,7 +86,7 @@ const Register = () => {
       //   dispatch(showLoading());
       console.log(data);
       await dispatch(SET_LOGIN(true));
-      await dispatch(SET_NAME(data.fname));
+      //   await dispatch(SET_NAME(data.name));
       //     dispatch(hideLoading());
       navigate(setModalIsOpenToTrue());
       //     setIsLoading(false);
@@ -129,10 +129,10 @@ const Register = () => {
                   fontSize={24}
                   height={'50px'}
                   //   opacity={'0.5'}
-                  name='fname'
+                  name='name'
                   border={'2px solid #B4B3B3'}
                   placeholder='full name*'
-                  value={fname}
+                  value={name}
                   onChange={handleInputChange}
                 />
               </FormControl>

@@ -1,4 +1,5 @@
 import { Flex, Button, Box, Heading, useColorModeValue, Divider, filter } from '@chakra-ui/react';
+import Sidebar from '../../componenets/Sidebar';
 // import { NewPost, DisplayPost, Suggestions } from 'features';
 // import { flexMiddleContainerStyle, flexMiddleOuterContainerStyle, sortButtonsContainerStyle } from 'styles';
 // import { Navigation, Footer, Sidebar } from 'components';
@@ -38,7 +39,7 @@ function HeroContent() {
       <Flex
       //   {...flexMiddleOuterContainerStyle}
       >
-        {/* <Sidebar /> */}
+        <Sidebar />
         <Flex
         // {...flexMiddleContainerStyle}
         >

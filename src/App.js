@@ -18,6 +18,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { getLoginStatus } from './services/authServices';
 import { SET_LOGIN } from './features/authSlice';
+import HeroSidebar from './pages/profile-walls/HeroSidebar';
 
 // import UserHeader from './user/Header/UserHeader';
 // import EditProfile from './user/EditProfile';
@@ -25,13 +26,13 @@ import { SET_LOGIN } from './features/authSlice';
 function App({ t }) {
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.alerts);
-  useEffect(() => {
-    async function loginStatus() {
-      const status = await getLoginStatus();
-      dispatch(SET_LOGIN(status));
-    }
-    loginStatus();
-  }, [dispatch]);
+  //   useEffect(() => {
+  //     async function loginStatus() {
+  //       const status = await getLoginStatus();
+  //       dispatch(SET_LOGIN(status));
+  //     }
+  //     loginStatus();
+  //   }, [dispatch]);
   //   const toast = useToast();
   return (
     <div className='App'>
@@ -48,10 +49,10 @@ function App({ t }) {
         <Route path='/Callme' element={<Callme />} />
         <Route path='/HeroContent' element={<HeroContent />} />
         <Route path='*' element={<NotFound />} />
+        <Route path='/HeroSidebar' element={<HeroSidebar />} />
         {/* <Route path='/UserHeader' element={<UserHeader />} /> */}
         {/* <Route path='/EditProfile' element={<EditProfile />} /> */}
       </Routes>
-
       <Footer />
     </div>
   );

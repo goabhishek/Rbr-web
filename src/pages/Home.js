@@ -345,13 +345,13 @@ const Home = () => {
           </SimpleGrid>
         </SwiperSlide>
         <SwiperSlide>
-          <Stack position={'relative'} m={0} borderRadius={'10%'}>
+          <Stack borderRadius={'20%'} position={'relative'} m={4}>
             <video
               autoPlay
               loop
               muted
               style={{
-                height: '90vh',
+                height: '86vh',
                 objectFit: 'fill',
                 filter: 'brightness(1)',
               }}

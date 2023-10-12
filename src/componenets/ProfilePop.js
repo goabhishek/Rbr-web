@@ -32,7 +32,7 @@ const ProfilePop = (props) => {
             </span>
 
             <Button width={80} mt={6} className='pop-btn' color={'#fff'} backgroundColor={'#773FC6'}>
-              <a style={{ fontSize: '24px' }} href='/ProfileFirst'>
+              <a style={{ fontSize: '24px' }} href='/HeroSidebar'>
                 Enter profile details
               </a>
             </Button>
