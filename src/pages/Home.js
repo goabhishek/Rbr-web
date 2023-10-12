@@ -1,5 +1,7 @@
 import React, { useRef } from 'react';
 import '../global.css';
+
+import ReactPlayer from 'react-player';
 import {
   Stack,
   Flex,
@@ -23,6 +25,7 @@ import {
   StatNumber,
   StatLabel,
   Stat,
+  border,
 } from '@chakra-ui/react';
 
 import {} from '@chakra-ui/react';
@@ -34,7 +37,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
 import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons';
 
 const Home = () => {
@@ -78,19 +81,28 @@ const Home = () => {
   return (
     <div>
       <Swiper
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        modules={[Autoplay, Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={2}
         slidesPerView={1}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
+        autoplay={{
+          delay: 2000,
+          pauseOnMouseEnter: true,
+          disableOnInteraction: true,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        // onSlideChange={() => console.log('slide change')}
+        // onSwiper={(swiper) => console.log(swiper)}
       >
         <SwiperSlide>
-          <SimpleGrid height={'100vh'} backgroundColor={'#F8F8F88A'} m={6} columns={{ base: 1, md: 2 }}>
+          <SimpleGrid height={'100vh'} backgroundColor={'#F8F8F88A'} columns={{ base: 1, md: 2 }}>
             <Flex
               display={{ base: 'none', md: 'flex' }}
               className='main_header'
               width={'140%'}
-              position={'relative'}
+              //   position={'relative'}
               flexWrap={'wrap'}
               justify={'center'}
               align={'flex-end'}
@@ -127,14 +139,9 @@ const Home = () => {
               <Heading color={'#2F327D'} fontSize={64}></Heading>
             </Flex>
 
-            <Flex
-              //   overflow={'hidden'}
-              position={'relative'}
-              align={'center'}
-              justifyContent={'center'}
-              flexWrap={'wrap'}
-            >
+            <Flex mt={-4} position={'relative'} align={'center'} justifyContent={'center'} flexWrap={'wrap'}>
               <Stack
+                mt={-4}
                 display={{ base: 'none', md: 'flex' }}
                 style={{
                   height: '100vh',
@@ -144,8 +151,8 @@ const Home = () => {
               >
                 <Flex flexWrap={'wrap'}>
                   <Stack
-                    ml={'500px'}
-                    mt={'240px'}
+                    ml={'520px'}
+                    mt={'220px'}
                     height={'550px'}
                     width={'250px'}
                     roundedLeft={'full'}
@@ -156,9 +163,9 @@ const Home = () => {
                     mt={'480px'}
                     zIndex={'99'}
                     position={'absolute'}
-                    ml={'120px'}
+                    ml={'100px'}
                     style={{
-                      height: '20vh',
+                      //   height: '20vh',
                       objectFit: 'cover',
                       filter: 'brightness(1)',
                     }}
@@ -259,9 +266,9 @@ const Home = () => {
                     mt={'400px'}
                     zIndex={'99'}
                     position={'absolute'}
-                    ml={'300px'}
+                    ml={'250px'}
                     style={{
-                      height: '10vh',
+                      //   height: '10vh',
                       objectFit: 'cover',
                       filter: 'brightness(1)',
                     }}
@@ -300,6 +307,7 @@ const Home = () => {
                   </Stack>
                   <Image
                     mt={8}
+                    overflow={'hidden'}
                     position={'absolute'}
                     ml={56}
                     height={'53.25px'}
@@ -337,14 +345,17 @@ const Home = () => {
           </SimpleGrid>
         </SwiperSlide>
         <SwiperSlide>
-          <Stack position={'relative'} m={2} borderRadius={'10%'}>
-            <img
+          <Stack position={'relative'} m={0} borderRadius={'10%'}>
+            <video
+              autoPlay
+              loop
+              muted
               style={{
-                height: '85vh',
-                objectFit: 'cover',
+                height: '90vh',
+                objectFit: 'fill',
                 filter: 'brightness(1)',
               }}
-              src='Images/Mask-group.png'
+              src='Images/RBR V4 WhatsApp.mp4'
               alt='slides'
             />
           </Stack>
@@ -386,8 +397,16 @@ const Home = () => {
             </Stack>
 
             <Flex height={350}>
+              {/* <ReactPlayer
+                className={'react-player'}
+                playing={true}
+                playIcon={true}
+                playbackRate={1}
+                controls={true}
+                url={'Images/RBR V4 WhatsApp.mp4'}
+              /> */}
               <video autoPlay controls poster='Images/Mask-group.png'>
-                <source src='<https://ruttl.com/assets/video/index-hero.webm>' type='video/mp4' />
+                <source style={{ borderRadius: '20%' }} src='Images/RBR V4 WhatsApp.mp4' type='video/mp4' />
               </video>
             </Flex>
           </SimpleGrid>
@@ -461,7 +480,7 @@ const Home = () => {
                 <Heading fontSize={{ base: '94', sm: '94', md: '112' }} fontWeight='1000' color={'#773FC6'}>
                   RetPro
                 </Heading>
-                <Heading align={'center'} color={'#2F327D'} fontSize={44} fontWeight={'700'} fontFamily={'Ubuntu'}>
+                <Heading align={'center'} fontSize={44} color={'#2F327D'} fontFamily={'Ubuntu'}>
                   for retired professionals
                 </Heading>
               </VStack>
@@ -544,9 +563,9 @@ const Home = () => {
             }}
           >
             <GridItem align={'start'} colSpan={1}>
-              <Text fontSize={44} color={'#2F327D'} fontWeight={500} fontFamily={'Ubuntu'}>
+              <Heading fontSize={44} color={'#2F327D'} fontFamily={'Ubuntu'}>
                 Ask us how we are transforming lives.
-              </Text>
+              </Heading>
             </GridItem>
             <GridItem align={'center'}>
               <Button
@@ -839,7 +858,7 @@ const Home = () => {
                         <Stack spacing={10} w={'90%'}>
                           <Heading lineHeight={'40px'} align={'start'}>
                             {' '}
-                            <Text
+                            <Heading
                               fontFamily={'Inter'}
                               fontWeight={500}
                               justifyContent={'center'}
@@ -848,9 +867,9 @@ const Home = () => {
                               mt={5}
                             >
                               " {slider.HeadFont}"
-                            </Text>{' '}
+                            </Heading>{' '}
                           </Heading>
-                          <Text fontFamily={'Roboto'} color={'#606176'} fontSize={20}>
+                          <Text fontFamily={'Roboto'} fontSize={24}>
                             "A RetPro helped me realize that my aspirations were leaning more towards Data sciences than
                             what I am currently doing"
                           </Text>

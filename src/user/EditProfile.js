@@ -7,6 +7,7 @@ import { selectUser } from '../redux/auth/authSlice';
 import './Header/header.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { updateUser } from '../services/authServices';
 // import { updateUser } from '../services/authService';
 
 // import ChangePassword from '../../components/changePassword/ChangePassword';
