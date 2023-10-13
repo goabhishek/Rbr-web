@@ -1,5 +1,21 @@
-import { Flex, Button, Box, Heading, useColorModeValue, Divider, filter } from '@chakra-ui/react';
+import {
+  Flex,
+  Button,
+  Box,
+  Heading,
+  useColorModeValue,
+  Divider,
+  filter,
+  Container,
+  Text,
+  Stack,
+  Avatar,
+  Image,
+  Center,
+} from '@chakra-ui/react';
 import Sidebar from '../../componenets/Sidebar';
+import { AvatarBsFillQuestionCircleFill, BsFillQuestionCircleFill } from 'react-icons/bs';
+import HeroSidebar from './HeroSidebar';
 // import { NewPost, DisplayPost, Suggestions } from 'features';
 // import { flexMiddleContainerStyle, flexMiddleOuterContainerStyle, sortButtonsContainerStyle } from 'styles';
 // import { Navigation, Footer, Sidebar } from 'components';
@@ -34,66 +50,96 @@ function HeroContent() {
   //     }
   //   }, [authUser, posts, postSorting]);
   return (
-    <>
+    <Container maxW={'10*l'} width={'full'} backgroundColor={'#EDEBF1'}>
       {/* <Navigation /> */}
-      <Flex
-      //   {...flexMiddleOuterContainerStyle}
-      >
-        <Sidebar />
-        <Flex
-        // {...flexMiddleContainerStyle}
-        >
-          <Box
-            display={{ base: 'none', md: 'block' }}
-            width={{ md: '85%', lg: '30rem' }}
-            alignSelf='center'
-            p='0'
-            m='0'
-          >
-            {/* <NewPost width={{ base: '90vw', md: '100%', lg: '30rem' }} boxShadow='rgb(0 0 0 / 5%) 0px 0px 10px 4px' /> */}
-          </Box>
+      <Flex border={'2px solid red'} flexDirection={'row'}>
+        <Flex flexDirection={'column'}>
+          <HeroSidebar />
+          <Box>
+            <Center mt={24} py={6}>
+              <Box
+                maxW={'270px'}
+                w={'full'}
+                // bg={useColorModeValue('white', 'gray.800')}
+                // boxShadow={'2xl'}
+                rounded={'md'}
+                overflow={'hidden'}
+              >
+                <Image
+                  borderRadius={16}
+                  h={'270px'}
+                  w={'300px'}
+                  position={'absolute'}
+                  src={'Images/white-curved1.png'}
+                  objectFit='cover'
+                  alt='#'
+                />
+                <Flex m={4} ml={4}>
+                  <Avatar
+                    size={'xl'}
+                    color={'#67748E80'}
+                    backgroundColor={'#fff'}
+                    icon={<BsFillQuestionCircleFill />}
+                    // src={'Images/questionIcon.png'}
+                    // css={{
+                    //   border: '2px solid white',
+                    // }}
+                  />
+                </Flex>
 
-          <Flex
-            // {...sortButtonsContainerStyle}
-            backgroundColor={useColorModeValue('white.900', 'gray.900')}
-            borderColor={useColorModeValue('gray.300', 'gray.700')}
-          >
-            <Button
-              variant='outline'
-              border='none'
-              width='50%'
-              //   backgroundColor={postSorting === 'trending' ? '#69def' : 'none'}
-              backgroundColor={'#69def'}
-              //   onClick={() => dispatch(changeSorting('trending'))}
-            >
-              {/* <FontAwesomeIcon icon='fire' style={{ paddingRight: '5px' }} /> */}
-              Trending
-            </Button>
-            <Divider orientation='vertical' color={useColorModeValue('gray.300', 'gray.700')} />
-            <Button
-              variant='outline'
-              border='none'
-              width='50%'
-              //   backgroundColor={postSorting === 'latest' ? '69def' : 'none'}
-              backgroundColor={'#69def'}
-              //   onClick={() => dispatch(changeSorting('latest'))}
-            >
-              {/* <FontAwesomeIcon icon='sort' style={{ paddingRight: '5px' }} /> */}
-              Latest
-            </Button>
-          </Flex>
-          {/* {followingPosts.length > 0 ? (
-            followingPosts.map((post) => <DisplayPost key={post._id} post={post} />)
-          ) : ( */}
-          <Heading fontSize='lg' width='80%' mt='16'>
-            No Posts to Display! Start Following and Liking your Friends Post to get updates on your Feed.
-          </Heading>
-          {/* )} */}
+                <Box>
+                  <Stack align={'center'} mb={5}>
+                    <Heading color={'#FFFFFF'} fontSize={24} fontWeight={700} fontFamily={'Abhaya Libre'}>
+                      Download now to
+                    </Heading>
+                  </Stack>
+
+                  <Stack direction={'row'} justify={'center'} spacing={6}></Stack>
+
+                  <Button
+                    ml={4}
+                    w={'full'}
+                    fontFamily={'Abhaya Libre'}
+                    mt={2}
+                    fontSize={24}
+                    fontWeight={700}
+                    lineHeight={15}
+                    bg={'#FFFFFF'}
+                    color={'#2D3748'}
+                    rounded={'md'}
+                    _hover={{
+                      transform: 'translateY(-2px)',
+                      boxShadow: 'lg',
+                      color: '#fff',
+                      backgroundColor: '#2F327D',
+                    }}
+                  >
+                    DOWNLOAD NOW
+                  </Button>
+                </Box>
+              </Box>
+            </Center>
+          </Box>
         </Flex>
-        {/* <Suggestions /> */}
+
+        <Flex w={'90%'} right={0} maxW={'6xl'} flex={1} border={'2px solid red'}>
+          <Box
+            m={4}
+            // align={'center'}
+            borderRadius={18}
+            opacity={'60%'}
+            border={'2px solid red'}
+            w={'100%'}
+            h='300px'
+            bgGradient='linear(to-l, #FF0080, #7928CA)'
+          >
+            <Text fontSize={24} fontWeight={500} color={'#fff'} m={4} fontFamily={'Ubuntu'} alignItems={'start'}>
+              My walls
+            </Text>
+          </Box>
+        </Flex>
       </Flex>
-      {/* <Footer /> */}
-    </>
+    </Container>
   );
 }
 export default HeroContent;

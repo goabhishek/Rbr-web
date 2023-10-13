@@ -5,7 +5,7 @@ import { FaFacebook } from 'react-icons/fa';
 import LoginPopup from '../componenets/LoginPopup';
 import { SET_LOGIN, SET_NAME } from '../features/authSlice';
 import { registerUser, validateEmail } from '../services/authServices';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import { ToastContainer, toast } from 'react-toastify';
@@ -233,17 +233,19 @@ const Register = () => {
                 </Button>
                 <Flex m={11}>
                   <span>Already have an account?</span>
-                  <Button
-                    color={'#EF8062'}
-                    variant='link'
-                    display='inline'
-                    ml='2'
-                    textDecoration='underline'
-                    fontSize='1.1rem'
-                    // onClick={() => navigate('/login', { state: location.state, replace: true })}
-                  >
-                    Log In here
-                  </Button>
+                  <Link to={'/login'}>
+                    <Button
+                      color={'#EF8062'}
+                      variant='link'
+                      display='inline'
+                      ml='2'
+                      textDecoration='underline'
+                      fontSize='1.1rem'
+                      // onClick={() => navigate('/login', { state: location.state, replace: true })}
+                    >
+                      Log In here
+                    </Button>
+                  </Link>
                 </Flex>
               </Stack>
             </Stack>

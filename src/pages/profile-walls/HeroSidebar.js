@@ -17,20 +17,18 @@ import { RiInformationFill } from 'react-icons/ri';
 
 const LinkItems = [
   //   { icon: FiHome },
-  { icon: FiFile },
-  { icon: FiStar },
-  { icon: FiFile },
-  { icon: FiShoppingCart },
-  { icon: FaRocket },
-  { icon: RiInformationFill },
-
-  //   { icon: faBuild },
-  { icon: FiSettings },
+  { name: 'My Wall', icon: FiFile },
+  { name: 'My Contracts', icon: FiStar },
+  { name: 'My Connections', icon: FiFile },
+  { name: 'My Wallet', icon: FiShoppingCart },
+  { name: 'Basic', icon: FaRocket },
+  { name: 'Settings', icon: FiSettings },
+  { name: 'About Us', icon: RiInformationFill },
 ];
 export default function HeroSidebar({ children }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <Box mt={5} minH='100vh' backgroundColor={'#eceaf0'}>
+    <Box mt={20} minH='100vh' backgroundColor={'#eceaf0'}>
       <SidebarContent onClose={() => onClose} display={{ base: 'none', md: 'block' }} />
       <Drawer
         autoFocus={false}
@@ -39,7 +37,7 @@ export default function HeroSidebar({ children }) {
         onClose={onClose}
         returnFocusOnClose={false}
         onOverlayClick={onClose}
-        size='70%'
+        size='full'
       >
         <DrawerContent>
           <SidebarContent onClose={onClose} />
@@ -66,24 +64,46 @@ const SidebarContent = ({ onClose, ...rest }) => {
       backgroundColor={'#F4F4F4B2'}
       //   borderRight='1px'
       //   borderRightColor={useColorModeValue('gray.200', 'gray.700')}
-      w={{ base: '50%', md: '100px' }}
+      w={{ base: '70%', md: '300px' }}
       pos='relative'
-      h='full'
-      ml={20}
-      p={1}
+      h='120vh'
+      ml={10}
+      //   p={1}
       {...rest}
     >
-      <NavItem key='name' icon={FiHome}>
-        {/* Name  */}
+      <NavItem
+        fontWeight={700}
+        fontFamily={'Ubuntu'}
+        fontSize={24}
+        w={'90%'}
+        backgroundColor={'#fff'}
+        color={'#2D3748'}
+        key={'name'}
+        m={4}
+        height={16}
+        icon={FiHome}
+      >
+        Dashboard
       </NavItem>
-      <Flex h='20px' alignItems='center' m={2} justifyContent='space-between'>
-        <Text fontSize='18px' fontFamily='monospace' fontWeight='bold'>
+      <Flex>
+        <Text display={{ base: 'none', md: 'flex' }} ml={8} fontSize='24px' fontFamily='Ubuntu' fontWeight='bold'>
           My Tabs
         </Text>
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (
-        <NavItem key={link.name} icon={link.icon}>
+        <NavItem
+          fontWeight={400}
+          fontFamily={'Ubuntu'}
+          fontSize={'18px'}
+          w={'90%'}
+          backgroundColor={'#fff'}
+          color={'#A0AEC0'}
+          m={4}
+          height={14}
+          key={link.name}
+          icon={link.icon}
+        >
           {link.name}
         </NavItem>
       ))}
@@ -126,21 +146,25 @@ const NavItem = ({ icon, children, ...rest }) => {
 const MobileNav = ({ onOpen, ...rest }) => {
   return (
     <Flex
-      ml={{ base: 0, md: 60 }}
-      px={{ base: 4, md: 24 }}
-      height='20'
+      ml={4}
+      //   px={{ base: 4, md: 24 }}
+      _hover={{
+        bg: '#8146C8',
+        color: 'white',
+      }}
+      height='20px'
+      w={'35px'}
       alignItems='center'
-      bg={useColorModeValue('white', 'gray.900')}
       borderBottomWidth='1px'
       borderBottomColor={useColorModeValue('gray.200', 'gray.700')}
       justifyContent='flex-start'
       {...rest}
     >
-      <IconButton variant='outline' onClick={onOpen} aria-label='open menu' icon={<FiMenu />} />
+      <IconButton bg={'#773FC633'} variant='outline' onClick={onOpen} aria-label='open menu' icon={<FiMenu />} />
 
-      <Text fontSize='2xl' ml='8' fontFamily='monospace' fontWeight='bold'>
+      {/* <Text fontSize='2xl' ml='8' fontFamily='monospace' fontWeight='bold'>
         MY TABS
-      </Text>
+      </Text> */}
     </Flex>
   );
 };
