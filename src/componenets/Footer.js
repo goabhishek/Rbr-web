@@ -32,20 +32,35 @@ const Footer = () => {
             align={{ base: 'center', sm: 'center', md: 'start' }}
           >
             <Link href='/'>
-              <img src='Images/RBR Logo 1.png' alt='logo' />
+              <Image w={'140px'} src='Images/RBR Logo 1.png' alt='logo' />
             </Link>
-            <Text color={'#2F327D'} width={'220px'} fontFamily={'inter'} fontSize={24} lineHeight={'26px'}>
+            <Text
+              color={'#2F327D'}
+              width={'220px'}
+              style={{
+                fontFamily: 'Inter,sans-serif',
+              }}
+              fontSize={24}
+              lineHeight={'26px'}
+            >
               Our mission is to create economic and engagement opportunity for our people around the world - age no bar.
             </Text>
           </Stack>
 
-          <Stack fontFamily={'inter'} align={'center'}>
+          <Stack
+            style={{
+              fontFamily: 'Inter,sans-serif',
+            }}
+            align={'center'}
+          >
             <Heading fontWeight={'600'} color={'#101130'}>
               About
             </Heading>
             <Box
               color={'#2F327D'}
-              fontFamily={'Inter'}
+              style={{
+                fontFamily: 'Inter,sans-serif',
+              }}
               fontSize={24}
               mt={2}
               lineHeight={'40px'}
@@ -69,7 +84,12 @@ const Footer = () => {
             </Box>
           </Stack>
 
-          <Stack fontFamily={'inter'} align={'center'}>
+          <Stack
+            style={{
+              fontFamily: 'Inter,sans-serif',
+            }}
+            align={'center'}
+          >
             <Heading fontWeight={'600'} color={'#101130'}>
               Support
             </Heading>
@@ -90,7 +110,12 @@ const Footer = () => {
             </Box>
           </Stack>
 
-          <Stack fontFamily={'inter'} align={'center'}>
+          <Stack
+            style={{
+              fontFamily: 'Inter,sans-serif',
+            }}
+            align={'center'}
+          >
             <Heading fontWeight={'600'} color={'#101130'}>
               Get Our App
             </Heading>
@@ -136,10 +161,22 @@ const Footer = () => {
             >
               <Image m={2} width={8} height={'auto'} alt='IOS STORE' src='Images/Subtract.png' />
               <Flex direction={'column'}>
-                <Text fontSize={14} fontFamily={'Inter'} color={'#606176'}>
+                <Text
+                  fontSize={14}
+                  style={{
+                    fontFamily: 'Inter,sans-serif',
+                  }}
+                  color={'#606176'}
+                >
                   Get it on
                 </Text>
-                <Text fontSize={24} fontFamily={'Inter'} color={'#606176'}>
+                <Text
+                  fontSize={24}
+                  style={{
+                    fontFamily: 'Inter,sans-serif',
+                  }}
+                  color={'#606176'}
+                >
                   Google Play
                 </Text>
               </Flex>
@@ -160,10 +197,22 @@ const Footer = () => {
             >
               <Image m={2} width={8} height={'auto'} alt='IOS STORE' src='Images/Applelogo.png' />
               <Flex direction={'column'}>
-                <Text fontSize={14} fontFamily={'Inter'} color={'#606176'}>
+                <Text
+                  fontSize={14}
+                  style={{
+                    fontFamily: 'Inter,sans-serif',
+                  }}
+                  color={'#606176'}
+                >
                   Download on the
                 </Text>
-                <Text fontSize={24} fontFamily={'Inter'} color={'#606176'}>
+                <Text
+                  fontSize={24}
+                  style={{
+                    fontFamily: 'Inter,sans-serif',
+                  }}
+                  color={'#606176'}
+                >
                   App Store
                 </Text>
               </Flex>

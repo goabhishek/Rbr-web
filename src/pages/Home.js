@@ -108,10 +108,10 @@ const Home = () => {
               align={'flex-end'}
             >
               <Heading
-                ml={24}
+                ml={28}
                 color={'#2F327D'}
                 fontWeight={700}
-                fontSize={{ base: '4xl', sm: '3xl', md: '6xl' }}
+                fontSize={{ base: '34px', sm: '34px', md: '54px' }}
                 lineHeight={'120%'}
                 fontFamily={'Ubuntu'}
               >
@@ -190,15 +190,23 @@ const Home = () => {
                           <Image mt={2} height={8} width={8} src='/Images/Vector.png'></Image>
                         </Box>
                         <Box pl={{ base: 2, md: 4 }}>
-                          <StatLabel color={'#111231'} fontSize={'2xl'} fontWeight={'medium'} fontFamily={'Inter'}>
+                          <StatLabel
+                            color={'#111231'}
+                            fontSize={'2xl'}
+                            fontWeight={'medium'}
+                            style={{
+                              fontFamily: 'Inter,sans-serif',
+                            }}
+                          >
                             100,000+
                           </StatLabel>
                           <StatNumber
                             fontSize={'2xm'}
                             fontWeight={500}
                             isTruncated
-                            fontFamily={'Inter'}
-                            color={'Inter'}
+                            style={{
+                              fontFamily: 'Inter,sans-serif',
+                            }}
                           >
                             Connections
                           </StatNumber>
@@ -366,7 +374,7 @@ const Home = () => {
         <Container maxW={'7xl'} mb={10} mt={28}>
           <SimpleGrid columns={{ base: 1, md: 2 }} spacing={2}>
             <Stack spacing={10}>
-              <Heading fontSize={44} color={'#2F327D'} fontFamily={'Ubuntu'}>
+              <Heading fontSize={{ base: '34px', sm: '34px', md: '44px' }} color={'#2F327D'} fontFamily={'Ubuntu'}>
                 Where young minds meet industrious retirees
               </Heading>
 
@@ -374,7 +382,7 @@ const Home = () => {
                 maxWidth={'499px'}
                 divider={<StackDivider borderColor={useColorModeValue('#606176', 'gray.700')} />}
               >
-                <Text align={'justify'} fontSize={24} fontFamily={'Ubuntu'}>
+                <Text align={'justify'} fontSize={22} fontFamily={'Ubuntu'} color={'#606176'} fontWeight={400}>
                   Retired professionals have a wealth of knowledge, wisdom and skills that can be beneficial to
                   currently employed professionals. Retired But Ready is where this juncture is made possible.
                 </Text>
@@ -382,7 +390,7 @@ const Home = () => {
               <Link href='/Register'>
                 <Button
                   fontFamily={'Ubuntu'}
-                  width={'320px'}
+                  width={'350px'}
                   rounded={'full'}
                   height={'70px'}
                   // px={6}
@@ -491,7 +499,7 @@ const Home = () => {
               <Link href='/Register'>
                 <Button
                   height={'90px'}
-                  width={'292px'}
+                  width={'322px'}
                   rounded={'2xl'}
                   colorScheme={''}
                   bg={'#773FC6'}
@@ -563,18 +571,19 @@ const Home = () => {
             }}
           >
             <GridItem align={'start'} colSpan={1}>
-              <Heading fontSize={44} color={'#2F327D'} fontFamily={'Ubuntu'}>
+              <Heading fontSize={{ base: '34px', sm: '34px', md: '44px' }} color={'#2F327D'} fontFamily={'Ubuntu'}>
                 Ask us how we are transforming lives.
               </Heading>
             </GridItem>
             <GridItem align={'center'}>
               <Button
                 m={2}
+                color={'#606176'}
                 _hover={{
                   color: 'white',
                   backgroundColor: '#2F327D',
                 }}
-                fontSize={'24px'}
+                fontSize={'22px'}
                 border={'2px solid #2F327D'}
                 borderRadius={'3xl'}
                 height={'48px'}
@@ -590,13 +599,14 @@ const Home = () => {
                     backgroundColor: '#46B40F',
                   }}
                   m={2}
-                  fontSize={'24px'}
+                  fontSize={'22px'}
                   // ml={'30px'}
                   border={'2px solid #46B40F'}
                   borderRadius={'3xl'}
                   height={'48px'}
                   width={'250px'}
                   fontFamily={'Ubuntu'}
+                  color={'#606176'}
                 >
                   Request Callback
                 </Button>
@@ -613,11 +623,11 @@ const Home = () => {
             }}
             // mt={'50px'}
           >
-            <GridItem colSpan={1} mt={'30px'} ml={4} justifyContent={'center'}>
+            <GridItem colSpan={1} mt={'35px'} ml={4} justifyContent={'center'}>
               <Image src='Images/Group-114.png' alt='oldman' />
             </GridItem>
-            <Flex width={490} align={'center'} direction={'column'}>
-              <Heading color={'#2F327D'} fontWeight={'bold'} fontFamily={'Ubuntu'} fontSize={44}>
+            <Flex width={500} align={'center'} direction={'column'}>
+              <Heading color={'#2F327D'} fontFamily={'Ubuntu'} fontSize={44}>
                 So much you can do with{' '}
               </Heading>
 
@@ -626,7 +636,7 @@ const Home = () => {
                 <img src='Images/Ret-pro-logo 2.png' alt='' />
               </GridItem>
               <GridItem>
-                <Text fontSize={24} color={'#2F327D'} fontFamily={'Ubuntu'}>
+                <Text fontSize={22} color={'#606176'} fontFamily={'Ubuntu'}>
                   (your skills are all you need to begin)
                 </Text>
               </GridItem>
@@ -761,22 +771,39 @@ const Home = () => {
               lineHeight={'56px'}
               fontSize={44}
               color={'#2F327D'}
-              fontFamily={'Inter'}
+              style={{
+                fontFamily: 'Inter,sans-serif',
+              }}
             >
               Creating impact for retired and working professionals
             </Heading>
           </Center>
           <Stack spacing={8} mt={20} direction={{ base: 'column', md: 'row' }}>
             <Flex flex={1} justify={'center'}>
-              <Stack background={'#EDF3FF'} maxW={'400px'} spacing={5} w={'100%'}>
+              <Stack background={'#EDF3FF'} maxW={'500px'} spacing={5} w={'100%'}>
                 <Heading borderTopRadius={'20px'} height={20} align={'center'} background={'#773FC6'}>
                   {' '}
-                  <Text fontSize={44} justifyContent={'center'} color={'#fff'} mt={3} fontFamily={'Inter'}>
+                  <Text
+                    fontSize={44}
+                    justifyContent={'center'}
+                    color={'#fff'}
+                    mt={3}
+                    style={{
+                      fontFamily: 'Inter,sans-serif',
+                    }}
+                  >
                     Why RetPro?
                   </Text>{' '}
                 </Heading>
                 <Text color={'#773FC6'}>
-                  <UnorderedList ml={10} fontSize={24} spacing={6} fontFamily={'Inter'}>
+                  <UnorderedList
+                    ml={10}
+                    fontSize={24}
+                    spacing={6}
+                    style={{
+                      fontFamily: 'Inter,sans-serif',
+                    }}
+                  >
                     <ListItem>work from the comfort of your home</ListItem>
                     <ListItem>offer virtual/in-person mentoring & guidance</ListItem>
                     <ListItem> connect & socialize with other RetPros & JunPros </ListItem>
@@ -785,7 +812,7 @@ const Home = () => {
                 </Text>
               </Stack>
             </Flex>
-            <Flex flex={1} justify={'center'}>
+            {/* <Flex flex={1} justify={'center'}>
               <Stack background={'#EFFFE7'} maxW={'400px'} height={'450px'} spacing={5} w={'100%'}>
                 <Heading borderTopRadius={'20px'} height={20} align={'center'} background={'#46B40F'}>
                   {' '}
@@ -802,13 +829,19 @@ const Home = () => {
                   </UnorderedList>
                 </Text>
               </Stack>
-            </Flex>
+            </Flex> */}
           </Stack>
         </Container>
         <div>
           <Container overflow={'hidden'} maxW={'7xl'} position={'relative'} mt={20}>
             <Flex justifyContent={'space-between'} flex={1}>
-              <Heading color={'#2F327D'} fontSize={{ base: '4xl', sm: '3xl', md: '6xl' }} fontFamily={'Inter'}>
+              <Heading
+                color={'#2F327D'}
+                fontSize={{ base: '34px', sm: '34px', md: '54px' }}
+                style={{
+                  fontFamily: 'Inter,sans-serif',
+                }}
+              >
                 Some real-life success stories to get inspired by
               </Heading>
               <Flex gap={12}>
@@ -859,7 +892,9 @@ const Home = () => {
                           <Heading lineHeight={'40px'} align={'start'}>
                             {' '}
                             <Heading
-                              fontFamily={'Inter'}
+                              style={{
+                                fontFamily: 'Inter,sans-serif',
+                              }}
                               fontWeight={500}
                               justifyContent={'center'}
                               color={'#2F327D'}
@@ -876,7 +911,14 @@ const Home = () => {
                           <Flex flexWrap={'wrap'} align={'center'} mr={8} direction={'row'}>
                             <Avatar width={'60px'} height={'60px'} spacing={20} src={slider.UserDp} alt='name' m={5} />
                             <Stack align={'center'}>
-                              <Text fontFamily={'Inter'} fontSize={24} color={'#2F327D'} fontWeight={1000}>
+                              <Text
+                                style={{
+                                  fontFamily: 'Inter,sans-serif',
+                                }}
+                                fontSize={24}
+                                color={'#2F327D'}
+                                fontWeight={1000}
+                              >
                                 Milena Belmar
                               </Text>
                               <Text fontSize={18} mt={'-10px'} color={'#606176'}>

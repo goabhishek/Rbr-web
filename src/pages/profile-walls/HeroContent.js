@@ -181,8 +181,8 @@ function HeroContent() {
                 >
                   <Button
                     as={'a'}
-                    fontSize={'18px'}
-                    fontWeight={700}
+                    fontSize={'16px'}
+                    fontWeight={600}
                     color={'rgba(45, 55, 72, 1)'}
                     bg={'transparent'}
                     fontFamily={'Ubuntu'}
@@ -192,14 +192,14 @@ function HeroContent() {
                     }}
                     // href={'#'}
                   >
-                    <Image m={2} w={6} src='Images/hexagon.png' />
+                    <Image m={2} w={4} src='Images/hexagon.png' />
                     OVERVIEW
                   </Button>
                   <Button
                     as={'a'}
                     // display={{ base: 'inline-flex', md: 'none' }}
-                    fontSize={'18px'}
-                    fontWeight={700}
+                    fontSize={'16px'}
+                    fontWeight={600}
                     color={'rgba(45, 55, 72, 1)'}
                     bg={'transparent'}
                     fontFamily={'Ubuntu'}
@@ -208,14 +208,14 @@ function HeroContent() {
                       bg: 'rgba(255, 255, 255, 1)',
                     }}
                   >
-                    <Image m={2} w={6} src='Images/file.png' />
+                    <Image m={2} w={4} src='Images/file.png' />
                     TEAMS
                   </Button>
                   <Button
                     as={'a'}
                     // display={{ base: 'inline-flex', md: 'none' }}
-                    fontSize={'18px'}
-                    fontWeight={700}
+                    fontSize={'16px'}
+                    fontWeight={600}
                     color={'rgba(45, 55, 72, 1)'}
                     bg={'transparent'}
                     fontFamily={'Ubuntu'}
@@ -224,7 +224,7 @@ function HeroContent() {
                       bg: 'rgba(255, 255, 255, 1)',
                     }}
                   >
-                    <Image m={2} w={6} src='Images/settings.png' />
+                    <Image m={2} w={4} src='Images/settings.png' />
                     PROJECTS
                   </Button>
                 </Stack>

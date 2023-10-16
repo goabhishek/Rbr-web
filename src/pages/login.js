@@ -135,13 +135,14 @@ const Login = () => {
           justifyContent={'space-between'}
         >
           <Heading
-            b
-            mt={37}
+            ml={2}
+            mb={4}
             color={'#2F327D'}
-            fontWeight={1000}
-            fontSize={{ base: '4xl', sm: '3xl', md: '6xl' }}
+            fontWeight={700}
+            fontSize={{ base: '34px', sm: '34px', md: '54px' }}
             lineHeight={'120%'}
-            fontFamily={'Ubantu'}
+            fontFamily={'Ubuntu'}
+            mt={37}
           >
             Login
           </Heading>
@@ -211,7 +212,7 @@ const Login = () => {
                 variant={'solid'}
               >
                 <Flex width={'552px'} direction={'column'} p={8} flex={1} align={'center'} justify={'center'}>
-                  <Text fontWeight={700} fontSize={'18px'}>
+                  <Text fontFamily={'Ubuntu'} fontWeight={700} fontSize={'24px'}>
                     Login
                   </Text>
                 </Flex>

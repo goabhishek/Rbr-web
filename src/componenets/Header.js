@@ -35,17 +35,21 @@ const Header = (props) => {
           <Link display={{ md: 'flex' }} href={'/'} m={'20px'}>
             <img style={{ width: '160px', marginTop: '50px' }} src='Images/RBR Logo 1.png' alt='logo' />
           </Link>
-          <Stack display={{ base: 'none', md: 'flex' }} mt={5} direction={'row'}>
-            <InputGroup border={''}>
+          <Stack ml={24} display={{ base: 'none', md: 'flex' }} mt={5} direction={'row'}>
+            <InputGroup>
               <InputLeftElement pointerEvents='none'>
                 <Search2Icon color='gray.700' />
               </InputLeftElement>
               <Input
-                fontSize={'24px'}
+                fontSize={'20px'}
                 borderRadius={'2xl'}
                 border={'1px solid #B668D3'}
-                fontFamily={'inder'}
-                type='tel'
+                color={'rgba(160, 174, 192, 1)'}
+                fontWeight={400}
+                lineHeight={'14px'}
+                style={{
+                  fontFamily: 'Inter,sans-serif',
+                }}
                 placeholder='Looking for...'
               />
             </InputGroup>
@@ -53,7 +57,15 @@ const Header = (props) => {
           <Flex mt={5} alignItems={'center'} justifyContent={'space-evenly'}>
             <Stack display={{ base: 'none', md: 'flex' }} mr={15}>
               <Link href='/'>
-                <Button fontFamily={'inder'} fontSize={'24px'} bg={'transparent'}>
+                <Button
+                  style={{
+                    fontFamily: 'Inter,sans-serif',
+                  }}
+                  //  fontFamily={'inder'}
+
+                  fontSize={'22px'}
+                  bg={'transparent'}
+                >
                   {' '}
                   Home
                 </Button>
@@ -72,8 +84,10 @@ const Header = (props) => {
               </option>
             </select> */}
             <Button
-              fontFamily={'inder'}
-              fontSize={'24px'}
+              style={{
+                fontFamily: 'Inter,sans-serif',
+              }}
+              fontSize={'22px'}
               display={{ base: 'none', md: 'flex' }}
               bg={'transparent'}
               mr={15}
@@ -90,19 +104,24 @@ const Header = (props) => {
                   //   variant={'link'}
                   cursor={'pointer'}
                   minW={160}
-                  fontSize={'24px'}
+                  fontSize={'22px'}
                   height={53}
-                  fontFamily={'inder'}
+                  style={{
+                    fontFamily: 'Inter,sans-serif',
+                  }}
                 >
                   Login
-                  <TriangleDownIcon />
+                  <TriangleDownIcon color={'#98A0AC'} />
                 </MenuButton>
                 <MenuList width={'80px'} border={'none'} backgroundColor={'transparent'}>
                   {/* <MenuDivider /> */}
                   <Flex mb={2}>
                     <Link href='/Register'>
                       <Tooltip
-                        fontSize={'24px'}
+                        fontSize={'22px'}
+                        style={{
+                          fontFamily: 'Inter,sans-serif',
+                        }}
                         color={'B668D3'}
                         backgroundColor={'#D5C9E8'}
                         label='Welcome the Retired pro!'
@@ -112,8 +131,10 @@ const Header = (props) => {
                           width={'155px'}
                           color={'B668D3'}
                           bgColor={'#D5C9E8'}
-                          fontSize={'24px'}
-                          fontFamily={'inder'}
+                          fontSize={'22px'}
+                          style={{
+                            fontFamily: 'Inter,sans-serif',
+                          }}
                         >
                           {' '}
                           RetPro
@@ -123,7 +144,10 @@ const Header = (props) => {
                   </Flex>
                   <Link href='/Register'>
                     <Tooltip
-                      fontSize={'24px'}
+                      style={{
+                        fontFamily: 'Inter,sans-serif',
+                      }}
+                      fontSize={'22px'}
                       bgColor={'#D5C9E8'}
                       color={'B668D3'}
                       label='Our Junior Pro is Coming soon'
@@ -131,12 +155,14 @@ const Header = (props) => {
                     >
                       <Button
                         //   onMouseEnter={handleMouseEnter}
-                        fontSize={'24px'}
+                        fontSize={'22px'}
                         isDisabled
                         width={'155px'}
                         color={'B668D3'}
                         bgColor={'#C7E2BC'}
-                        fontFamily={'inder'}
+                        style={{
+                          fontFamily: 'Inter,sans-serif',
+                        }}
                       >
                         JunPro
                       </Button>

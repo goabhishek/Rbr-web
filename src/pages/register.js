@@ -105,12 +105,13 @@ const Register = () => {
       <Stack align={'center'} backgroundColor={'#EDEBF1'} minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
         <Flex flexWrap={'wrap'} direction={'column'} p={8} flex={1} align={'center'}>
           <Heading
-            mb={8}
+            ml={2}
+            mb={4}
             color={'#2F327D'}
-            fontWeight={1000}
-            fontSize={{ base: '4xl', sm: '3xl', md: '6xl' }}
+            fontWeight={700}
+            fontSize={{ base: '34px', sm: '34px', md: '54px' }}
             lineHeight={'120%'}
-            fontFamily={'Ubantu'}
+            fontFamily={'Ubuntu'}
           >
             Create an account
           </Heading>
@@ -126,8 +127,9 @@ const Register = () => {
               <FormControl p={8} id='name' isRequired>
                 <Input
                   fontFamily={'Ubantu'}
-                  fontSize={24}
+                  fontSize={22}
                   height={'50px'}
+                  color={'#CCCBCB'}
                   //   opacity={'0.5'}
                   name='name'
                   border={'2px solid #B4B3B3'}
@@ -139,7 +141,7 @@ const Register = () => {
               <FormControl p={8} id='email' isRequired>
                 <Input
                   fontFamily={'Ubantu'}
-                  fontSize={24}
+                  fontSize={22}
                   height={'50px'}
                   //   opacity={'0.5'}
                   border={'2px solid #B4B3B3'}
@@ -153,7 +155,7 @@ const Register = () => {
               <FormControl p={8} isRequired>
                 <Input
                   fontFamily={'Ubantu'}
-                  fontSize={24}
+                  fontSize={22}
                   height={'50px'}
                   //   opacity={'0.5'}
                   border={'2px solid #B4B3B3'}
@@ -167,14 +169,14 @@ const Register = () => {
               <FormControl p={8} isRequired>
                 <Input
                   fontFamily={'Ubantu'}
-                  fontSize={24}
+                  fontSize={22}
                   height={'50px'}
                   //   opacity={'0.5'}
                   border={'2px solid #B4B3B3'}
                   name='number'
                   value={number}
                   onChange={handleInputChange}
-                  placeholder='mobile number'
+                  placeholder='mobile number*'
                   type='number'
                 />
               </FormControl>
@@ -182,12 +184,12 @@ const Register = () => {
               <FormControl p={8} id='verify' isRequired>
                 <Input
                   fontFamily={'Ubantu'}
-                  fontSize={24}
+                  fontSize={22}
                   height={'50px'}
                   //  opacity={'0.5'}
                   type='text'
                   border={'2px solid #B4B3B3'}
-                  placeholder='tap to verify'
+                  placeholder='type to verify'
                   value={text}
                   onChange={(e) => setText(e.target.value)}
                   error={valid}
@@ -226,6 +228,7 @@ const Register = () => {
                       className='btn btn-primary'
                       ata-dismiss='modal'
                       onClick={register}
+                      fontFamily={'Ubuntu'}
                     >
                       <i className='fa fa-user-plus' aria-hidden='true'></i> Create account
                     </button>
