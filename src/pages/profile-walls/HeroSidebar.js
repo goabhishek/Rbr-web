@@ -20,7 +20,7 @@ const LinkItems = [
   { name: 'My Wall', icon: FiFile },
   { name: 'My Contracts', icon: FiStar },
   { name: 'My Connections', icon: FiFile },
-  { name: 'My Wallet', icon: FiShoppingCart },
+  //   { name: 'My Wallet', icon: FiShoppingCart },
   { name: 'Basic', icon: FaRocket },
   { name: 'Settings', icon: FiSettings },
   { name: 'About Us', icon: RiInformationFill },

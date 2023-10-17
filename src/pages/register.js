@@ -1,5 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Flex, FormControl, Heading, Input, Stack, Image, Center, Text, Box } from '@chakra-ui/react';
+import {
+  Button,
+  Flex,
+  FormControl,
+  Heading,
+  Input,
+  Stack,
+  Image,
+  Center,
+  Text,
+  Box,
+  InputRightElement,
+  InputGroup,
+} from '@chakra-ui/react';
 import { FcFeedback, FcGoogle, FcTabletAndroid } from 'react-icons/fc';
 import { FaFacebook } from 'react-icons/fa';
 import LoginPopup from '../componenets/LoginPopup';
@@ -10,7 +23,7 @@ import { useDispatch } from 'react-redux';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { RepeatClockIcon } from '@chakra-ui/icons';
+import { RepeatClockIcon, ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 
 const initialState = {
   name: '',
@@ -20,6 +33,7 @@ const initialState = {
 };
 const Register = () => {
   //for captcha
+  const [showPassword, setShowPassword] = useState(false);
   const randomString = Math.random().toString(36).slice(8);
   const [captcha, setCaptcha] = useState(randomString);
   const refreshString = () => {
@@ -124,10 +138,10 @@ const Register = () => {
               border={'2px solid #773FC640'}
               //   w={'full'}
             >
-              <FormControl p={8} id='name' isRequired>
+              <FormControl fontFamily={'Ubuntu'} p={8} id='name' isRequired>
                 <Input
-                  fontFamily={'Ubantu'}
-                  fontSize={22}
+                  fontSize={{ base: '18px', sm: '18px', md: '18px' }}
+                  fontFamily={'Ubuntu'}
                   height={'50px'}
                   color={'#CCCBCB'}
                   //   opacity={'0.5'}
@@ -140,8 +154,8 @@ const Register = () => {
               </FormControl>
               <FormControl p={8} id='email' isRequired>
                 <Input
-                  fontFamily={'Ubantu'}
-                  fontSize={22}
+                  fontSize={{ base: '18px', sm: '18px', md: '18px' }}
+                  fontFamily={'Ubuntu'}
                   height={'50px'}
                   //   opacity={'0.5'}
                   border={'2px solid #B4B3B3'}
@@ -154,8 +168,8 @@ const Register = () => {
               </FormControl>
               <FormControl p={8} isRequired>
                 <Input
-                  fontFamily={'Ubantu'}
-                  fontSize={22}
+                  fontSize={{ base: '18px', sm: '18px', md: '18px' }}
+                  fontFamily={'Ubuntu'}
                   height={'50px'}
                   //   opacity={'0.5'}
                   border={'2px solid #B4B3B3'}
@@ -167,9 +181,30 @@ const Register = () => {
                 />
               </FormControl>
               <FormControl p={8} isRequired>
+                <InputGroup>
+                  <Input
+                    fontSize={{ base: '18px', sm: '18px', md: '18px' }}
+                    fontFamily={'Ubuntu'}
+                    height={'50px'}
+                    //   opacity={'0.5'}
+                    border={'2px solid #B4B3B3'}
+                    name='password'
+                    value={password}
+                    type={showPassword ? 'text' : 'password'}
+                    onChange={handleInputChange}
+                    placeholder='Re enter  password*'
+                  />
+                  <InputRightElement h={'full'}>
+                    <Button variant={'ghost'} onClick={() => setShowPassword((showPassword) => !showPassword)}>
+                      {showPassword ? <ViewIcon /> : <ViewOffIcon />}
+                    </Button>
+                  </InputRightElement>
+                </InputGroup>
+              </FormControl>
+              <FormControl p={8} isRequired>
                 <Input
-                  fontFamily={'Ubantu'}
-                  fontSize={22}
+                  fontSize={{ base: '18px', sm: '18px', md: '18px' }}
+                  fontFamily={'Ubuntu'}
                   height={'50px'}
                   //   opacity={'0.5'}
                   border={'2px solid #B4B3B3'}
@@ -183,8 +218,8 @@ const Register = () => {
 
               <FormControl p={8} id='verify' isRequired>
                 <Input
-                  fontFamily={'Ubantu'}
-                  fontSize={22}
+                  fontSize={{ base: '18px', sm: '18px', md: '18px' }}
+                  fontFamily={'Ubuntu'}
                   height={'50px'}
                   //  opacity={'0.5'}
                   type='text'
@@ -199,7 +234,7 @@ const Register = () => {
                     align={'center'}
                     width={'24'}
                     fontSize={24}
-                    fontFamily={'Ubantu'}
+                    fontFamily={'Ubuntu'}
                     color={'#FFFFFF'}
                     backgroundColor={'#773FC6'}
                     m={4}
@@ -212,30 +247,40 @@ const Register = () => {
                   </Button>
                 </Flex>
               </FormControl>
-              <Stack p={8}>
+              <Stack p={8} mt={-8}>
                 <Button
                   height={'50px'}
                   //   onSubmit={handleSubmit}
-                  fontSize={24}
+
                   backgroundColor={'#773FC6'}
                   color={'#fff'}
                   variant={'solid'}
                 >
-                  <Flex width={'552px'} direction={'column'} p={8} flex={1} align={'center'} justify={'center'}>
+                  <Flex
+                    width={'552px'}
+                    direction={'column'}
+                    p={8}
+                    flex={1}
+                    align={'center'}
+                    justify={'center'}
+                    fontSize={{ base: '18px', sm: '18px', md: '24px' }}
+                    fontFamily={'Ubuntu'}
+                  >
                     <button
                       //   type='submit'
                       //  onSubmit={register}
                       className='btn btn-primary'
                       ata-dismiss='modal'
                       onClick={register}
-                      fontFamily={'Ubuntu'}
                     >
                       <i className='fa fa-user-plus' aria-hidden='true'></i> Create account
                     </button>
                   </Flex>
                 </Button>
                 <Flex m={11}>
-                  <span>Already have an account?</span>
+                  <Text fontSize={{ base: '16px', sm: '16px', md: '16px' }} fontFamily={'Ubuntu'}>
+                    Already have an account?
+                  </Text>
                   <Link to={'/login'}>
                     <Button
                       color={'#EF8062'}
@@ -244,6 +289,7 @@ const Register = () => {
                       ml='2'
                       textDecoration='underline'
                       fontSize='1.1rem'
+                      fontFamily={'ubuntu'}
                       // onClick={() => navigate('/login', { state: location.state, replace: true })}
                     >
                       Log In here
@@ -258,7 +304,7 @@ const Register = () => {
 
         <Flex overflow={'hidden'} flexWrap={'wrap'} direction={'column'} mt={30} flex={1}>
           <Image
-            shadow={'dark-lg'}
+            // shadow={'dark-lg'}
             width={{ base: '400px', sm: '250px', md: '450px' }}
             height={'284px'}
             alt={'Login Image'}
@@ -269,7 +315,7 @@ const Register = () => {
               <Text fontSize={18}>or login through</Text>
             </Center>
 
-            <Flex gap={20}>
+            <Flex mt={6} gap={20}>
               <Button
                 border={'1px solid #773FC6'}
                 borderRadius={'7px'}

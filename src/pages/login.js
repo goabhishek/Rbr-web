@@ -64,18 +64,18 @@ const Login = () => {
       <Stack backgroundColor={'#EDEBF1'} minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
         <Flex overflow={'hidden'} transition={'linear'} align={'center'} direction={'column'} mt={36} flex={1}>
           <Image
-            shadow={'dark-lg'}
+            // shadow={'dark-lg'}
             width={{ base: '400px', sm: '250px', md: '450px' }}
             height={'284px'}
             alt={'Login Image'}
             src={'Images/Group-626217.png'}
           />
-          <Stack mt={12} width={{ base: '350px', sm: '250px', md: '450px' }} borderTop={'1px solid #9CA3AF'}>
+          <Stack mt={8} width={{ base: '350px', sm: '250px', md: '450px' }} borderTop={'1px solid #9CA3AF'}>
             <Center ml={{ base: '100px', sm: '40px', md: '140px' }} width={40} backgroundColor={'#EDEBF1'} mt={-3}>
               <Text>or login through</Text>
             </Center>
 
-            <Flex gap={10}>
+            <Flex mt={6} gap={10}>
               <Button
                 border={'1px solid #773FC6'}
                 borderRadius={'7px'}
@@ -139,7 +139,7 @@ const Login = () => {
             mb={4}
             color={'#2F327D'}
             fontWeight={700}
-            fontSize={{ base: '34px', sm: '34px', md: '54px' }}
+            fontSize={{ base: '22px', sm: '22px', md: '44px' }}
             lineHeight={'120%'}
             fontFamily={'Ubuntu'}
             mt={37}
@@ -161,8 +161,8 @@ const Login = () => {
           >
             <FormControl id='email' p={5} isRequired isInvalid={false} my='2'>
               <Input
-                fontSize={24}
-                fontFamily={'ubantu'}
+                fontSize={{ base: '18px', sm: '18px', md: '18px' }}
+                fontFamily={'Ubuntu'}
                 opacity={'0.5'}
                 border={'1px solid #B4B3B3'}
                 id='email'
@@ -179,8 +179,8 @@ const Login = () => {
 
             <FormControl p={5} id='password' isRequired isInvalid={false}>
               <Input
-                fontSize={24}
-                fontFamily={'ubantu'}
+                fontSize={{ base: '18px', sm: '18px', md: '18px' }}
+                fontFamily={'Ubuntu'}
                 opacity={'0.5'}
                 border={'1px solid #B4B3B3'}
                 name='password'
@@ -194,7 +194,12 @@ const Login = () => {
               />
             </FormControl>
             <Stack align={'start'} ml={30}>
-              <Link href='/ForgetPassword' color={'#2F1A31'} fontSize={24} fontFamily={'ubantu'}>
+              <Link
+                href='/ForgetPassword'
+                color={'#2F1A31'}
+                fontSize={{ base: '18px', sm: '18px', md: '16px' }}
+                fontFamily={'Ubuntu'}
+              >
                 Forgot password?
               </Link>
             </Stack>
@@ -218,13 +223,16 @@ const Login = () => {
                 </Flex>
               </Button>
               <Flex justifyContent={'center'}>
-                <span>Dont have an account?</span>
+                <Text fontSize={{ base: '16px', sm: '16px', md: '16px' }} fontFamily={'Ubuntu'}>
+                  Dont have an account?
+                </Text>
                 <Button
                   color={'#EF8062'}
                   variant='link'
                   display='inline'
                   ml='2'
                   textDecoration='underline'
+                  fontFamily={'ubuntu'}
                   fontSize='1.1rem'
                   onClick={() => navigate('/Register')}
                 >
