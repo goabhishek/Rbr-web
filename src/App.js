@@ -19,7 +19,6 @@ import { useEffect } from 'react';
 import { getLoginStatus } from './services/authServices';
 import { SET_LOGIN } from './features/authSlice';
 import HeroSidebar from './pages/profile-walls/HeroSidebar';
-
 // import UserHeader from './user/Header/UserHeader';
 // import EditProfile from './user/EditProfile';
 
@@ -53,6 +52,7 @@ function App({ t }) {
         {/* <Route path='/UserHeader' element={<UserHeader />} /> */}
         {/* <Route path='/EditProfile' element={<EditProfile />} /> */}
       </Routes>
+
       <Footer />
     </div>
   );

@@ -27,20 +27,18 @@ const Footer = () => {
     <Box overflow={'hidden'} bg={'#EDEBF1'} color={useColorModeValue('gray.700', 'gray.200')}>
       <Container as={Stack} maxW={'7xl'} py={10}>
         <SimpleGrid columns={{ base: 1, sm: 2, md: 5 }} spacing={6}>
-          <Stack
-            //    align={'start'}
-            align={{ base: 'center', sm: 'center', md: 'start' }}
-          >
+          <Stack>
             <Link href='/'>
-              <Image w={'140px'} src='Images/RBR Logo 1.png' alt='logo' />
+              <Image w={'120px'} src='Images/RBR Logo 1.png' alt='logo' />
             </Link>
             <Text
               color={'#2F327D'}
-              width={'220px'}
+              width={'250px'}
               style={{
                 fontFamily: 'Inter,sans-serif',
               }}
-              fontSize={24}
+              align={'left'}
+              fontSize={'16px'}
               lineHeight={'26px'}
             >
               Our mission is to create economic and engagement opportunity for our people around the world - age no bar.
@@ -53,7 +51,7 @@ const Footer = () => {
             }}
             align={'center'}
           >
-            <Heading fontWeight={'600'} color={'#101130'}>
+            <Heading fontWeight={'600'} color={'#2F327D'} fontSize={{ base: '22px', sm: '22px', md: '22px' }}>
               About
             </Heading>
             <Box
@@ -61,7 +59,7 @@ const Footer = () => {
               style={{
                 fontFamily: 'Inter,sans-serif',
               }}
-              fontSize={24}
+              fontSize={'18px'}
               mt={2}
               lineHeight={'40px'}
               fontWeight={400}
@@ -70,16 +68,16 @@ const Footer = () => {
             >
               About Us
             </Box>
-            <Box color={'#2F327D'} fontSize={24} mt={2} lineHeight={'40px'} fontWeight={400} as='a' href={'#'}>
+            <Box color={'#2F327D'} fontSize={'18px'} mt={2} lineHeight={'40px'} fontWeight={400} as='a' href={'#'}>
               Features
             </Box>
-            <Box color={'#2F327D'} fontSize={24} mt={2} lineHeight={'40px'} fontWeight={400} as='a' href={'#'}>
+            <Box color={'#2F327D'} fontSize={'18px'} mt={2} lineHeight={'40px'} fontWeight={400} as='a' href={'#'}>
               News
             </Box>
-            <Box color={'#2F327D'} fontSize={24} mt={2} lineHeight={'40px'} fontWeight={400} as='a' href={'#'}>
+            <Box color={'#2F327D'} fontSize={'18px'} mt={2} lineHeight={'40px'} fontWeight={400} as='a' href={'#'}>
               Careers
             </Box>
-            <Box color={'#2F327D'} fontSize={24} mt={2} lineHeight={'40px'} fontWeight={400} as='a' href={'#'}>
+            <Box color={'#2F327D'} fontSize={'18px'} mt={2} lineHeight={'40px'} fontWeight={400} as='a' href={'#'}>
               FAQ
             </Box>
           </Stack>
@@ -90,22 +88,22 @@ const Footer = () => {
             }}
             align={'center'}
           >
-            <Heading fontWeight={'600'} color={'#101130'}>
+            <Heading fontWeight={'600'} color={'#2F327D'} fontSize={{ base: '22px', sm: '22px', md: '22px' }}>
               Support
             </Heading>
-            <Box color={'#2F327D'} fontSize={24} mt={2} lineHeight={'40px'} fontWeight={400} as='a' href={'#'}>
+            <Box color={'#2F327D'} fontSize={'18px'} mt={2} lineHeight={'40px'} fontWeight={400} as='a' href={'#'}>
               Account
             </Box>
-            <Box color={'#2F327D'} fontSize={24} mt={2} lineHeight={'40px'} fontWeight={400} as='a' href={'#'}>
+            <Box color={'#2F327D'} fontSize={'18px'} mt={2} lineHeight={'40px'} fontWeight={400} as='a' href={'#'}>
               Support Center
             </Box>
-            <Box color={'#2F327D'} fontSize={24} mt={2} lineHeight={'40px'} fontWeight={400} as='a' href={'#'}>
+            <Box color={'#2F327D'} fontSize={'18px'} mt={2} lineHeight={'40px'} fontWeight={400} as='a' href={'#'}>
               Feedback
             </Box>
-            <Box color={'#2F327D'} fontSize={24} mt={2} lineHeight={'40px'} fontWeight={400} as='a' href={'#'}>
+            <Box color={'#2F327D'} fontSize={'18px'} mt={2} lineHeight={'40px'} fontWeight={400} as='a' href={'#'}>
               Contact Us
             </Box>
-            <Box color={'#2F327D'} fontSize={24} mt={2} lineHeight={'40px'} fontWeight={400} as='a' href={'#'}>
+            <Box color={'#2F327D'} fontSize={'18px'} mt={2} lineHeight={'40px'} fontWeight={400} as='a' href={'#'}>
               Accesbility
             </Box>
           </Stack>
@@ -116,7 +114,7 @@ const Footer = () => {
             }}
             align={'center'}
           >
-            <Heading fontWeight={'600'} color={'#101130'}>
+            <Heading fontWeight={'600'} color={'#2F327D'} fontSize={{ base: '22px', sm: '22px', md: '22px' }}>
               Get Our App
             </Heading>
 

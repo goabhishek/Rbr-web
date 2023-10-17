@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import '../global.css';
 
-import ReactPlayer from 'react-player';
 import {
   Stack,
   Flex,
@@ -25,7 +24,6 @@ import {
   StatNumber,
   StatLabel,
   Stat,
-  border,
 } from '@chakra-ui/react';
 
 import {} from '@chakra-ui/react';
@@ -92,7 +90,7 @@ const Home = () => {
         pagination={{
           clickable: true,
         }}
-        navigation={true}
+        // navigation={true}
         // onSlideChange={() => console.log('slide change')}
         // onSwiper={(swiper) => console.log(swiper)}
       >
@@ -120,17 +118,19 @@ const Home = () => {
               <Heading color={'#2F327D'} fontSize={64}></Heading>
             </Flex>
             <Flex
+              m={6}
               display={{ base: 'inline', md: 'none' }}
               className='main_header'
               position={'relative'}
               flexWrap={'wrap'}
-              justify={'center'}
-              align={'flex-end'}
+              //   justify={'center'}
+              //   align={'flex-end'}
+              align={'center'}
             >
               <Heading
                 color={'#2F327D'}
                 fontWeight={700}
-                fontSize={{ base: '4xl', sm: '3xl', md: '5xl' }}
+                fontSize={{ base: '24px', sm: '24px', md: '20px' }}
                 lineHeight={'120%'}
                 fontFamily={'Ubuntu'}
               >
@@ -262,8 +262,7 @@ const Home = () => {
               >
                 <Flex flexWrap={'wrap'}>
                   <Stack
-                    ml={'850px'}
-                    mt={'100px'}
+                    ml={'800px'}
                     height={'100px'}
                     width={'100px'}
                     roundedLeft={'full'}
@@ -353,7 +352,7 @@ const Home = () => {
           </SimpleGrid>
         </SwiperSlide>
         <SwiperSlide>
-          <Stack borderRadius={'20%'} position={'relative'} m={4}>
+          <Stack height={'50%'} borderRadius={'20%'} position={'relative'} m={4}>
             <video
               autoPlay
               loop
@@ -371,10 +370,10 @@ const Home = () => {
         ...
       </Swiper>
       <Stack mt={-24} backgroundColor={'#EDEBF1'}>
-        <Container maxW={'7xl'} mb={10} mt={28}>
-          <SimpleGrid columns={{ base: 1, md: 2 }} spacing={2}>
-            <Stack spacing={10}>
-              <Heading fontSize={{ base: '34px', sm: '34px', md: '44px' }} color={'#2F327D'} fontFamily={'Ubuntu'}>
+        <Container maxW={'7xl'} mb={10} mt={32}>
+          <SimpleGrid columns={{ base: 1, md: 2 }}>
+            <Stack spacing={6}>
+              <Heading fontSize={{ base: '24px', sm: '34px', md: '44px' }} color={'#2F327D'} fontFamily={'Ubuntu'}>
                 Where young minds meet industrious retirees
               </Heading>
 
@@ -382,7 +381,13 @@ const Home = () => {
                 maxWidth={'499px'}
                 divider={<StackDivider borderColor={useColorModeValue('#606176', 'gray.700')} />}
               >
-                <Text align={'justify'} fontSize={22} fontFamily={'Ubuntu'} color={'#606176'} fontWeight={400}>
+                <Text
+                  align={'justify'}
+                  fontSize={{ base: '18px', sm: '18px', md: '22px' }}
+                  fontFamily={'Ubuntu'}
+                  color={'#606176'}
+                  fontWeight={400}
+                >
                   Retired professionals have a wealth of knowledge, wisdom and skills that can be beneficial to
                   currently employed professionals. Retired But Ready is where this juncture is made possible.
                 </Text>
@@ -394,10 +399,10 @@ const Home = () => {
                   rounded={'full'}
                   height={'70px'}
                   // px={6}
-                  fontSize={'34px'}
+                  fontSize={'32px'}
                   colorScheme={'orange'}
                   bg={'orange.400'}
-                  _hover={{ bg: 'orange.500' }}
+                  _hover={{ bg: 'orange.500', color: '#2F327D' }}
                 >
                   Start your journey
                 </Button>
@@ -482,13 +487,18 @@ const Home = () => {
           <Flex p={6} flexWrap={'wrap'} flex={1} align={'center'} justify={'center'}>
             <Stack spacing={2} w={'90%'} maxW={'lg'}>
               <VStack spacing={8}>
-                <Heading fontSize={44} color={'#2F327D'} fontFamily={'Ubuntu'}>
+                <Heading fontSize={{ base: '24px', sm: '34px', md: '44px' }} color={'#2F327D'} fontFamily={'Ubuntu'}>
                   Introducing
                 </Heading>
-                <Heading fontSize={{ base: '94', sm: '94', md: '112' }} fontWeight='1000' color={'#773FC6'}>
+                <Heading fontSize={{ base: '74', sm: '94', md: '112' }} fontWeight='1000' color={'#773FC6'}>
                   RetPro
                 </Heading>
-                <Heading align={'center'} fontSize={44} color={'#2F327D'} fontFamily={'Ubuntu'}>
+                <Heading
+                  align={'center'}
+                  fontSize={{ base: '24px', sm: '34px', md: '44px' }}
+                  color={'#2F327D'}
+                  fontFamily={'Ubuntu'}
+                >
                   for retired professionals
                 </Heading>
               </VStack>
@@ -562,7 +572,7 @@ const Home = () => {
           </GridItem>
         </Grid>
       </Container> */}
-        <Container borderRadius={'md'} height={'50px'} maxW={'6xl'} mt={24}>
+        <Container borderRadius={'md'} height={'50px'} maxW={'6xl'} mt={14}>
           <Grid
             templateColumns={{
               base: 'repeat(1, 1fr)',
@@ -570,8 +580,8 @@ const Home = () => {
               //   sm: 'repeat(2, 1fr)',
             }}
           >
-            <GridItem align={'start'} colSpan={1}>
-              <Heading fontSize={{ base: '34px', sm: '34px', md: '44px' }} color={'#2F327D'} fontFamily={'Ubuntu'}>
+            <GridItem m={{ base: '60px', sm: '6px', md: '0px' }} colSpan={1}>
+              <Heading fontSize={{ base: '24px', sm: '24px', md: '44px' }} color={'#2F327D'} fontFamily={'Ubuntu'}>
                 Ask us how we are transforming lives.
               </Heading>
             </GridItem>
@@ -583,7 +593,7 @@ const Home = () => {
                   color: 'white',
                   backgroundColor: '#2F327D',
                 }}
-                fontSize={'22px'}
+                fontSize={'20px'}
                 border={'2px solid #2F327D'}
                 borderRadius={'3xl'}
                 height={'48px'}
@@ -599,7 +609,7 @@ const Home = () => {
                     backgroundColor: '#46B40F',
                   }}
                   m={2}
-                  fontSize={'22px'}
+                  fontSize={'20px'}
                   // ml={'30px'}
                   border={'2px solid #46B40F'}
                   borderRadius={'3xl'}
@@ -627,7 +637,7 @@ const Home = () => {
               <Image src='Images/Group-114.png' alt='oldman' />
             </GridItem>
             <Flex width={500} align={'center'} direction={'column'}>
-              <Heading color={'#2F327D'} fontFamily={'Ubuntu'} fontSize={44}>
+              <Heading color={'#2F327D'} fontFamily={'Ubuntu'} fontSize={{ base: '24px', sm: '24px', md: '44px' }}>
                 So much you can do with{' '}
               </Heading>
 
@@ -636,7 +646,7 @@ const Home = () => {
                 <img src='Images/Ret-pro-logo 2.png' alt='' />
               </GridItem>
               <GridItem>
-                <Text fontSize={22} color={'#606176'} fontFamily={'Ubuntu'}>
+                <Text fontSize={{ base: '18px', sm: '18px', md: '22px' }} color={'#606176'} fontFamily={'Ubuntu'}>
                   (your skills are all you need to begin)
                 </Text>
               </GridItem>
@@ -679,7 +689,13 @@ const Home = () => {
           </Grid>
         </Container>{' '} */}
         <Container overflow={'hidden'} align={'center'} maxW={'9xl'} mt={20}>
-          <Heading fontSize={44} display={'inline-block'} align={'center'} fontFamily={'Poppins'} color={'#2F327D'}>
+          <Heading
+            fontSize={{ base: '24px', sm: '24px', md: '44px' }}
+            display={'inline-block'}
+            align={'center'}
+            fontFamily={'Poppins'}
+            color={'#2F327D'}
+          >
             Meet the <span style={{ color: '#773FC6', fontSize: '64px' }}>RetPro </span>
             area experts
           </Heading>
@@ -752,7 +768,7 @@ const Home = () => {
               color: 'white',
               backgroundColor: '#2F327D',
             }}
-            fontSize={24}
+            fontSize={22}
             color={'#773FC6'}
             border={'1px solid #773FC6'}
             borderRadius={'3xl'}
@@ -769,7 +785,7 @@ const Home = () => {
               align={'center'}
               width={'700px'}
               lineHeight={'56px'}
-              fontSize={44}
+              fontSize={{ base: '24px', sm: '24px', md: '44px' }}
               color={'#2F327D'}
               style={{
                 fontFamily: 'Inter,sans-serif',
@@ -798,7 +814,7 @@ const Home = () => {
                 <Text color={'#773FC6'}>
                   <UnorderedList
                     ml={10}
-                    fontSize={24}
+                    fontSize={22}
                     spacing={6}
                     style={{
                       fontFamily: 'Inter,sans-serif',
@@ -837,7 +853,7 @@ const Home = () => {
             <Flex justifyContent={'space-between'} flex={1}>
               <Heading
                 color={'#2F327D'}
-                fontSize={{ base: '34px', sm: '34px', md: '54px' }}
+                fontSize={{ base: '24px', sm: '24px', md: '44px' }}
                 style={{
                   fontFamily: 'Inter,sans-serif',
                 }}
@@ -898,13 +914,13 @@ const Home = () => {
                               fontWeight={500}
                               justifyContent={'center'}
                               color={'#2F327D'}
-                              fontSize={'35px'}
+                              fontSize={'32px'}
                               mt={5}
                             >
                               " {slider.HeadFont}"
                             </Heading>{' '}
                           </Heading>
-                          <Text fontFamily={'Roboto'} fontSize={24}>
+                          <Text fontFamily={'Roboto'} fontSize={{ base: '18px', sm: '18px', md: '22px' }}>
                             "A RetPro helped me realize that my aspirations were leaning more towards Data sciences than
                             what I am currently doing"
                           </Text>
@@ -915,13 +931,13 @@ const Home = () => {
                                 style={{
                                   fontFamily: 'Inter,sans-serif',
                                 }}
-                                fontSize={24}
+                                fontSize={20}
                                 color={'#2F327D'}
                                 fontWeight={1000}
                               >
                                 Milena Belmar
                               </Text>
-                              <Text fontSize={18} mt={'-10px'} color={'#606176'}>
+                              <Text fontSize={{ base: '16px', sm: '16px', md: '16px' }} mt={'-10px'} color={'#606176'}>
                                 Argentina
                               </Text>
                             </Stack>

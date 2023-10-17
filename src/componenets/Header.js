@@ -33,15 +33,15 @@ const Header = (props) => {
       >
         <Flex h={16} alignItems={'center'} justifyContent={'space-around'}>
           <Link display={{ md: 'flex' }} href={'/'} m={'20px'}>
-            <img style={{ width: '160px', marginTop: '50px' }} src='Images/RBR Logo 1.png' alt='logo' />
+            <img style={{ width: '140px', marginTop: '50px' }} src='Images/RBR Logo 1.png' alt='logo' />
           </Link>
-          <Stack ml={24} display={{ base: 'none', md: 'flex' }} mt={5} direction={'row'}>
+          <Stack ml={24} mr={-20} display={{ base: 'none', md: 'flex' }} mt={5} direction={'row'}>
             <InputGroup>
               <InputLeftElement pointerEvents='none'>
                 <Search2Icon color='gray.700' />
               </InputLeftElement>
               <Input
-                fontSize={'20px'}
+                fontSize={'18px'}
                 borderRadius={'2xl'}
                 border={'1px solid #B668D3'}
                 color={'rgba(160, 174, 192, 1)'}
@@ -55,7 +55,7 @@ const Header = (props) => {
             </InputGroup>
           </Stack>{' '}
           <Flex mt={5} alignItems={'center'} justifyContent={'space-evenly'}>
-            <Stack display={{ base: 'none', md: 'flex' }} mr={15}>
+            <Stack display={{ base: 'none', md: 'flex' }} mr={8}>
               <Link href='/'>
                 <Button
                   style={{
@@ -63,7 +63,7 @@ const Header = (props) => {
                   }}
                   //  fontFamily={'inder'}
 
-                  fontSize={'22px'}
+                  fontSize={'20px'}
                   bg={'transparent'}
                 >
                   {' '}
@@ -87,10 +87,10 @@ const Header = (props) => {
               style={{
                 fontFamily: 'Inter,sans-serif',
               }}
-              fontSize={'22px'}
+              fontSize={'20px'}
               display={{ base: 'none', md: 'flex' }}
               bg={'transparent'}
-              mr={15}
+              mr={20}
             >
               EN+ <TriangleDownIcon />
             </Button>
@@ -104,21 +104,21 @@ const Header = (props) => {
                   //   variant={'link'}
                   cursor={'pointer'}
                   minW={160}
-                  fontSize={'22px'}
+                  fontSize={'20px'}
                   height={53}
                   style={{
                     fontFamily: 'Inter,sans-serif',
                   }}
                 >
                   Login
-                  <TriangleDownIcon color={'#98A0AC'} />
+                  <TriangleDownIcon m={2} color={'#98A0AC'} />
                 </MenuButton>
                 <MenuList width={'80px'} border={'none'} backgroundColor={'transparent'}>
                   {/* <MenuDivider /> */}
                   <Flex mb={2}>
                     <Link href='/Register'>
                       <Tooltip
-                        fontSize={'22px'}
+                        fontSize={'20px'}
                         style={{
                           fontFamily: 'Inter,sans-serif',
                         }}
@@ -131,7 +131,7 @@ const Header = (props) => {
                           width={'155px'}
                           color={'B668D3'}
                           bgColor={'#D5C9E8'}
-                          fontSize={'22px'}
+                          fontSize={'20px'}
                           style={{
                             fontFamily: 'Inter,sans-serif',
                           }}
@@ -147,7 +147,7 @@ const Header = (props) => {
                       style={{
                         fontFamily: 'Inter,sans-serif',
                       }}
-                      fontSize={'22px'}
+                      fontSize={'20px'}
                       bgColor={'#D5C9E8'}
                       color={'B668D3'}
                       label='Our Junior Pro is Coming soon'
@@ -155,7 +155,7 @@ const Header = (props) => {
                     >
                       <Button
                         //   onMouseEnter={handleMouseEnter}
-                        fontSize={'22px'}
+                        fontSize={'20px'}
                         isDisabled
                         width={'155px'}
                         color={'B668D3'}
