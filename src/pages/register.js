@@ -24,7 +24,8 @@ import { useDispatch } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { RepeatClockIcon, ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
-
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
 const initialState = {
   name: '',
   email: '',
@@ -202,6 +203,7 @@ const Register = () => {
                 </InputGroup>
               </FormControl>
               <FormControl p={8} isRequired>
+                {/* <PhoneInput country={'us'} value={this.state.phone} onChange={(phone) => this.setState({ phone })} /> */}
                 <Input
                   fontSize={{ base: '18px', sm: '18px', md: '18px' }}
                   fontFamily={'Ubuntu'}
