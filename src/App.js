@@ -19,6 +19,16 @@ import { useEffect } from 'react';
 import { getLoginStatus } from './services/authServices';
 import { SET_LOGIN } from './features/authSlice';
 import HeroSidebar from './pages/profile-walls/HeroSidebar';
+import AboutUs from './pages/footerPages/AboutUs';
+import Accesbility from './pages/footerPages/Accesbility';
+import Account from './pages/footerPages/Account';
+import Careers from './pages/footerPages/Careers';
+import ContactUs from './pages/footerPages/ContactUs';
+import Faq from './pages/footerPages/Faq';
+import Features from './pages/footerPages/Features';
+import Feedback from './pages/footerPages/Feedback';
+import News from './pages/footerPages/News';
+import SupportCenter from './pages/footerPages/SupportCenter';
 // import UserHeader from './user/Header/UserHeader';
 // import EditProfile from './user/EditProfile';
 
@@ -49,6 +59,16 @@ function App({ t }) {
         <Route path='/HeroContent' element={<HeroContent />} />
         <Route path='*' element={<NotFound />} />
         <Route path='/HeroSidebar' element={<HeroSidebar />} />
+        <Route path='/AboutUs' element={<AboutUs />} />
+        <Route path='/Accesbility' element={<Accesbility />} />
+        <Route path='/Account' element={<Account />} />
+        <Route path='/Careers' element={<Careers />} />
+        <Route path='/ContactUs' element={<ContactUs />} />
+        <Route path='/Faq' element={<Faq />} />
+        <Route path='/Features' element={<Features />} />
+        <Route path='/Feedback' element={<Feedback />} />
+        <Route path='/News' element={<News />} />
+        <Route path='/SupportCenter' element={<SupportCenter />} />
         {/* <Route path='/UserHeader' element={<UserHeader />} /> */}
         {/* <Route path='/EditProfile' element={<EditProfile />} /> */}
       </Routes>

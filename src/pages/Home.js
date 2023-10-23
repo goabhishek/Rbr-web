@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import '../global.css';
-
+import { BsWhatsapp } from 'react-icons/bs';
+import { RiWhatsappFill } from 'react-icons/ri';
 import {
   Stack,
   Flex,
@@ -87,9 +88,9 @@ const Home = () => {
           pauseOnMouseEnter: true,
           disableOnInteraction: true,
         }}
-        pagination={{
-          clickable: true,
-        }}
+        // pagination={{
+        //   clickable: true,
+        // }}
         // navigation={true}
         // onSlideChange={() => console.log('slide change')}
         // onSwiper={(swiper) => console.log(swiper)}
@@ -382,7 +383,9 @@ const Home = () => {
                 divider={<StackDivider borderColor={useColorModeValue('#606176', 'gray.700')} />}
               >
                 <Text
-                  align={'justify'}
+                  //   align={'justify'}
+                  w={'400px'}
+                  align={'left'}
                   fontSize={{ base: '18px', sm: '18px', md: '22px' }}
                   fontFamily={'Ubuntu'}
                   color={'#606176'}
@@ -399,10 +402,10 @@ const Home = () => {
                   rounded={'full'}
                   height={'70px'}
                   // px={6}
-                  fontSize={'32px'}
+                  fontSize={'30px'}
                   colorScheme={'orange'}
                   bg={'orange.400'}
-                  _hover={{ bg: 'orange.500', color: '#2F327D' }}
+                  //   _hover={{ bg: 'orange.500', color: '#2F327D' }}
                 >
                   Start your journey
                 </Button>
@@ -481,12 +484,13 @@ const Home = () => {
           mt={20}
           backgroundColor={'#6300FF0F'}
           maxW={'full'}
-          minH={'90vh'}
+          //   minH={'90vh'}
+          minH={{ base: '60vh', sm: '60vh', md: '90vh' }}
           direction={{ base: 'column', md: 'row' }}
         >
           <Flex p={6} flexWrap={'wrap'} flex={1} align={'center'} justify={'center'}>
             <Stack spacing={2} w={'90%'} maxW={'lg'}>
-              <VStack spacing={8}>
+              <VStack spacing={10}>
                 <Heading fontSize={{ base: '24px', sm: '34px', md: '44px' }} color={'#2F327D'} fontFamily={'Ubuntu'}>
                   Introducing
                 </Heading>
@@ -509,11 +513,11 @@ const Home = () => {
               <Link href='/Register'>
                 <Button
                   height={'90px'}
-                  width={'322px'}
+                  width={'300px'}
                   rounded={'2xl'}
                   colorScheme={''}
                   bg={'#773FC6'}
-                  fontSize={'34px'}
+                  fontSize={'30px'}
                   fontWeight={'700'}
                   fontFamily={'Ubuntu'}
                 >
@@ -590,7 +594,7 @@ const Home = () => {
                 m={2}
                 color={'#606176'}
                 _hover={{
-                  color: 'white',
+                  color: '#25d366',
                   backgroundColor: '#2F327D',
                 }}
                 fontSize={'20px'}
@@ -601,12 +605,13 @@ const Home = () => {
                 fontFamily={'Ubuntu'}
               >
                 Let's Chat
+                <RiWhatsappFill style={{ marginLeft: '18px', height: '50px' }} color='#25d366' />
               </Button>
               <Link href='/Callme'>
                 <Button
                   _hover={{
-                    color: 'white',
-                    backgroundColor: '#46B40F',
+                    color: '#25d366',
+                    backgroundColor: '#2F327D',
                   }}
                   m={2}
                   fontSize={'20px'}
@@ -796,7 +801,7 @@ const Home = () => {
           </Center>
           <Stack spacing={8} mt={20} direction={{ base: 'column', md: 'row' }}>
             <Flex flex={1} justify={'center'}>
-              <Stack background={'#EDF3FF'} maxW={'500px'} spacing={5} w={'100%'}>
+              <Stack background={'#EDF3FF'} maxW={'700px'} spacing={5} w={'100%'}>
                 <Heading borderTopRadius={'20px'} height={20} align={'center'} background={'#773FC6'}>
                   {' '}
                   <Text
@@ -920,7 +925,13 @@ const Home = () => {
                               " {slider.HeadFont}"
                             </Heading>{' '}
                           </Heading>
-                          <Text fontFamily={'Roboto'} fontSize={{ base: '18px', sm: '18px', md: '22px' }}>
+                          <Text
+                            align={'left'}
+                            fontSize={{ base: '18px', sm: '18px', md: '22px' }}
+                            fontFamily={'Ubuntu'}
+                            color={'#606176'}
+                            fontWeight={400}
+                          >
                             "A RetPro helped me realize that my aspirations were leaning more towards Data sciences than
                             what I am currently doing"
                           </Text>

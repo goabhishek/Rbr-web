@@ -64,20 +64,36 @@ const Footer = () => {
               lineHeight={'40px'}
               fontWeight={400}
               as='a'
-              href={'#'}
+              href={'/AboutUs'}
             >
               About Us
             </Box>
-            <Box color={'#2F327D'} fontSize={'18px'} mt={2} lineHeight={'40px'} fontWeight={400} as='a' href={'#'}>
+            <Box
+              color={'#2F327D'}
+              fontSize={'18px'}
+              mt={2}
+              lineHeight={'40px'}
+              fontWeight={400}
+              as='a'
+              href={'/Features'}
+            >
               Features
             </Box>
-            <Box color={'#2F327D'} fontSize={'18px'} mt={2} lineHeight={'40px'} fontWeight={400} as='a' href={'#'}>
+            <Box color={'#2F327D'} fontSize={'18px'} mt={2} lineHeight={'40px'} fontWeight={400} as='a' href={'/News'}>
               News
             </Box>
-            <Box color={'#2F327D'} fontSize={'18px'} mt={2} lineHeight={'40px'} fontWeight={400} as='a' href={'#'}>
+            <Box
+              color={'#2F327D'}
+              fontSize={'18px'}
+              mt={2}
+              lineHeight={'40px'}
+              fontWeight={400}
+              as='a'
+              href={'/Careers'}
+            >
               Careers
             </Box>
-            <Box color={'#2F327D'} fontSize={'18px'} mt={2} lineHeight={'40px'} fontWeight={400} as='a' href={'#'}>
+            <Box color={'#2F327D'} fontSize={'18px'} mt={2} lineHeight={'40px'} fontWeight={400} as='a' href={'/Faq'}>
               FAQ
             </Box>
           </Stack>
@@ -91,19 +107,59 @@ const Footer = () => {
             <Heading fontWeight={'600'} color={'#2F327D'} fontSize={{ base: '22px', sm: '22px', md: '22px' }}>
               Support
             </Heading>
-            <Box color={'#2F327D'} fontSize={'18px'} mt={2} lineHeight={'40px'} fontWeight={400} as='a' href={'#'}>
+            <Box
+              color={'#2F327D'}
+              fontSize={'18px'}
+              mt={2}
+              lineHeight={'40px'}
+              fontWeight={400}
+              as='a'
+              href={'/Account'}
+            >
               Account
             </Box>
-            <Box color={'#2F327D'} fontSize={'18px'} mt={2} lineHeight={'40px'} fontWeight={400} as='a' href={'#'}>
+            <Box
+              color={'#2F327D'}
+              fontSize={'18px'}
+              mt={2}
+              lineHeight={'40px'}
+              fontWeight={400}
+              as='a'
+              href={'/SupportCenter'}
+            >
               Support Center
             </Box>
-            <Box color={'#2F327D'} fontSize={'18px'} mt={2} lineHeight={'40px'} fontWeight={400} as='a' href={'#'}>
+            <Box
+              color={'#2F327D'}
+              fontSize={'18px'}
+              mt={2}
+              lineHeight={'40px'}
+              fontWeight={400}
+              as='a'
+              href={'/Feedback'}
+            >
               Feedback
             </Box>
-            <Box color={'#2F327D'} fontSize={'18px'} mt={2} lineHeight={'40px'} fontWeight={400} as='a' href={'#'}>
+            <Box
+              color={'#2F327D'}
+              fontSize={'18px'}
+              mt={2}
+              lineHeight={'40px'}
+              fontWeight={400}
+              as='a'
+              href={'/ContactUs'}
+            >
               Contact Us
             </Box>
-            <Box color={'#2F327D'} fontSize={'18px'} mt={2} lineHeight={'40px'} fontWeight={400} as='a' href={'#'}>
+            <Box
+              color={'#2F327D'}
+              fontSize={'18px'}
+              mt={2}
+              lineHeight={'40px'}
+              fontWeight={400}
+              as='a'
+              href={'/Accesbility'}
+            >
               Accesbility
             </Box>
           </Stack>

@@ -12,8 +12,10 @@ import {
   Box,
   InputRightElement,
   InputGroup,
+  FormHelperText,
+  FormErrorMessage,
 } from '@chakra-ui/react';
-import { FcFeedback, FcGoogle, FcTabletAndroid } from 'react-icons/fc';
+import { FcFeedback, FcGoogle, FcRefresh, FcTabletAndroid } from 'react-icons/fc';
 import { FaFacebook } from 'react-icons/fa';
 import LoginPopup from '../componenets/LoginPopup';
 import { SET_LOGIN, SET_NAME } from '../features/authSlice';
@@ -26,11 +28,13 @@ import 'react-toastify/dist/ReactToastify.css';
 import { RepeatClockIcon, ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
+import { Refresh } from '@mui/icons-material';
 const initialState = {
   name: '',
   email: '',
   password: '',
   number: '',
+  repassword: '',
 };
 const Register = () => {
   //for captcha
@@ -40,6 +44,7 @@ const Register = () => {
   const refreshString = () => {
     setCaptcha(Math.random().toString(36).slice(8));
   };
+  const [repassword, setRepassword] = useState();
   const [text, setText] = useState('');
   const [valid, setValid] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -67,7 +72,7 @@ const Register = () => {
   const register = async (e) => {
     e.preventDefault();
 
-    if (!name || !email || !password || !captcha) {
+    if (!name || !email || !password || !captcha || !number) {
       return toast.error('All fields are required');
     }
     if (name.length < 4) {
@@ -87,6 +92,9 @@ const Register = () => {
       setValid(true);
       setSuccess(false);
       return toast.error('please enter valid captcha');
+    }
+    if (password === !setRepassword) {
+      return toast.error('Please match the password');
     }
 
     const userData = {
@@ -144,7 +152,7 @@ const Register = () => {
                   fontSize={{ base: '18px', sm: '18px', md: '18px' }}
                   fontFamily={'Ubuntu'}
                   height={'50px'}
-                  color={'#CCCBCB'}
+                  //   color={'#CCCBCB'}
                   //   opacity={'0.5'}
                   name='name'
                   border={'2px solid #B4B3B3'}
@@ -189,11 +197,11 @@ const Register = () => {
                     height={'50px'}
                     //   opacity={'0.5'}
                     border={'2px solid #B4B3B3'}
-                    name='password'
-                    value={password}
+                    name='repassword'
+                    value={repassword}
                     type={showPassword ? 'text' : 'password'}
                     onChange={handleInputChange}
-                    placeholder='Re enter  password*'
+                    placeholder='confirm-password*'
                   />
                   <InputRightElement h={'full'}>
                     <Button variant={'ghost'} onClick={() => setShowPassword((showPassword) => !showPassword)}>
@@ -201,6 +209,11 @@ const Register = () => {
                     </Button>
                   </InputRightElement>
                 </InputGroup>
+                {!password === repassword ? (
+                  <FormHelperText>Enter the email you'd like to receive the newsletter on.</FormHelperText>
+                ) : (
+                  <FormErrorMessage>Email is required.</FormErrorMessage>
+                )}
               </FormControl>
               <FormControl p={8} isRequired>
                 {/* <PhoneInput country={'us'} value={this.state.phone} onChange={(phone) => this.setState({ phone })} /> */}
@@ -226,7 +239,7 @@ const Register = () => {
                   //  opacity={'0.5'}
                   type='text'
                   border={'2px solid #B4B3B3'}
-                  placeholder='type to verify'
+                  placeholder='Enter here captcha code '
                   value={text}
                   onChange={(e) => setText(e.target.value)}
                   error={valid}
@@ -245,7 +258,8 @@ const Register = () => {
                   </Text>
                   <Button color={'#FFFFFF'} backgroundColor={'#773FC6'} m={4} onClick={() => refreshString()}>
                     {' '}
-                    <RepeatClockIcon m={2} boxSize={4} />
+                    <Refresh />
+                    <Text m={2}> Refresh </Text>
                   </Button>
                 </Flex>
               </FormControl>
