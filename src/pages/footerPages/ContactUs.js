@@ -16,7 +16,7 @@ const ContactUs = () => {
       //   bgPos='50% 100%'
       pos='relative'
       bgRepeat='no-repeat'
-      backgroundImage={'Images/website-3374825_1920.jpg'}
+      backgroundImage={'Images/website-3374825_1280.jpg'}
       align={'Left'}
     >
       <Image m={4} width={'150px'} src={'Images/pngegg.png'} />
@@ -36,11 +36,11 @@ const ContactUs = () => {
 
       <Container h='60vh' display='flex' alignItems='center' justifyContent='center'>
         <ChakraBox
-          animate={{
-            scale: [1, 2, 2, 1, 1],
-            rotate: [0, 0, 270, 270, 0],
-            borderRadius: ['20%', '20%', '50%', '50%', '20%'],
-          }}
+          //   animate={{
+          //     scale: [1, 2, 2, 1, 1],
+          //     rotate: [0, 0, 270, 270, 0],
+          //     borderRadius: ['20%', '20%', '50%', '50%', '20%'],
+          //   }}
           // @ts-ignore no problem in operation, although type error appears.
           transition={{
             duration: 3,
@@ -51,6 +51,7 @@ const ContactUs = () => {
           padding='2'
           bgGradient='linear(to-l, #7928CA, #FF0080)'
           display='flex'
+          color={'white'}
           // justifyContent='center'
           alignItems='center'
           width='150px'

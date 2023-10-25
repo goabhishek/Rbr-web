@@ -167,7 +167,7 @@ function HeroContent() {
                   <Text fontFamily={'Ubuntu'} fontSize={'18px'} color={'#2F327D'} fontWeight={700}>
                     Alec Thompson
                   </Text>
-                  <Text fontSize={'17px'} fontFamily={'Ubuntu'} fontWeight={500} mt={'-10px'} color={'#606176'}>
+                  <Text fontSize={'16px'} fontFamily={'Ubuntu'} fontWeight={500} mt={'-10px'} color={'#606176'}>
                     CEO / Co-Founder
                   </Text>
                 </Stack>
@@ -182,7 +182,7 @@ function HeroContent() {
                   <Button
                     as={'a'}
                     fontSize={'16px'}
-                    fontWeight={600}
+                    fontWeight={500}
                     color={'rgba(45, 55, 72, 1)'}
                     bg={'transparent'}
                     fontFamily={'Ubuntu'}
@@ -199,7 +199,7 @@ function HeroContent() {
                     as={'a'}
                     // display={{ base: 'inline-flex', md: 'none' }}
                     fontSize={'16px'}
-                    fontWeight={600}
+                    fontWeight={500}
                     color={'rgba(45, 55, 72, 1)'}
                     bg={'transparent'}
                     fontFamily={'Ubuntu'}
@@ -215,7 +215,7 @@ function HeroContent() {
                     as={'a'}
                     // display={{ base: 'inline-flex', md: 'none' }}
                     fontSize={'16px'}
-                    fontWeight={600}
+                    fontWeight={500}
                     color={'rgba(45, 55, 72, 1)'}
                     bg={'transparent'}
                     fontFamily={'Ubuntu'}
@@ -231,30 +231,17 @@ function HeroContent() {
               </Flex>
             </Flex>
           </Box>
-          <Box
-            zIndex={99}
-            mt={10}
-            borderRadius={12}
-            border={'border: 1.5px solid rgba(255, 255, 255, 1)'}
-            width={'90%'}
-            ml={12}
-            height={'70px'}
-            // backgroundColor={'rgba(255, 255, 255, 1)'}
-            // bgGradient={'background: linear-gradient(112.83deg, rgba(255, 255, 255, 0.82) 0%, rgba(255, 255, 255, 0.8) 110.84%),
-            // linear-gradient(0deg, #FFFFFF, #FFFFFF);
-            // '}
-            bgGradient='linear-gradient(112.83deg, rgba(255, 255, 255, 0.82) 0%, rgba(255, 255, 255, 0.8) 110.84%)'
-          >
+          <Box zIndex={99} mt={10} width={'90%'} ml={12} height={'70px'}>
             <Button
               as={'a'}
               w={'300px'}
               //   border={'2px solid red'}
-              borderBottom={'7px solid rgba(156, 163, 175, 1)'}
+              borderBottom={'7px solid #9CA3AF'}
               //   borderBottomColor={''}
-              m={4}
-              ml={10}
+              //   m={4}
+              //   ml={8}
               // display={{ base: 'inline-flex', md: 'none' }}
-              fontSize={24}
+              fontSize={20}
               fontWeight={500}
               color={'rgba(156, 163, 175, 1)'}
               align={'center'}
@@ -274,7 +261,7 @@ function HeroContent() {
               w={'300px'}
               borderBottom={'7px solid rgba(156, 163, 175, 1)'}
               // display={{ base: 'inline-flex', md: 'none' }}
-              fontSize={24}
+              fontSize={20}
               fontWeight={500}
               color={'rgba(231, 56, 56, 1)'}
               align={'center'}
@@ -292,11 +279,11 @@ function HeroContent() {
             </Button>
             <Button
               as={'a'}
-              ml={4}
+              //   ml={4}
               w={'300px'}
               borderBottom={'7px solid rgba(156, 163, 175, 1)'}
               // display={{ base: 'inline-flex', md: 'none' }}
-              fontSize={24}
+              fontSize={20}
               fontWeight={500}
               color={'rgba(156, 163, 175, 1)'}
               align={'center'}

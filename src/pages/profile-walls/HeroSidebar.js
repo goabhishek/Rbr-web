@@ -61,11 +61,11 @@ const SidebarContent = ({ onClose, ...rest }) => {
     <Box
       border={'2px solid #773FC6'}
       borderRadius={10}
+      m={12}
       backgroundColor={'#F4F4F4B2'}
       //   borderRight='1px'
       //   borderRightColor={useColorModeValue('gray.200', 'gray.700')}
       w={{ base: '70%', md: '300px' }}
-      pos='relative'
       h='120vh'
       ml={10}
       //   p={1}

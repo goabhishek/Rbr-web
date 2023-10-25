@@ -15,7 +15,7 @@ const AboutUs = () => {
       //   bgPos='50% 100%'
       pos='relative'
       bgRepeat='no-repeat'
-      backgroundImage={'Images/website-3374825_1920.jpg'}
+      backgroundImage={'Images/website-3374825_1280.jpg'}
       align={'Left'}
     >
       <Image m={4} width={'150px'} src={'Images/pngegg.png'} />
