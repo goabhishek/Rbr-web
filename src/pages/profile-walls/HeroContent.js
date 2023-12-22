@@ -1,29 +1,15 @@
-import {
-  Flex,
-  Button,
-  Box,
-  Heading,
-  useColorModeValue,
-  Divider,
-  filter,
-  Container,
-  Text,
-  Stack,
-  Avatar,
-  Image,
-  Center,
-  MenuButton,
-} from '@chakra-ui/react';
-import Sidebar from '../../componenets/Sidebar';
-import { AvatarBsFillQuestionCircleFill, BsFillQuestionCircleFill } from 'react-icons/bs';
+import { Flex, Button, Box, Heading, Container, Text, Stack, Avatar, Image, Center } from '@chakra-ui/react';
+// import Sidebar from '../../componenets/Sidebar';
+// import { AvatarBsFillQuestionCircleFill, BsFillQuestionCircleFill } from 'react-icons/bs';
 import HeroSidebar from './HeroSidebar';
-// import { NewPost, DisplayPost, Suggestions } from 'features';
-// import { flexMiddleContainerStyle, flexMiddleOuterContainerStyle, sortButtonsContainerStyle } from 'styles';
-// import { Navigation, Footer, Sidebar } from 'components';
 // import { useDispatch, useSelector } from 'react-redux';
 // import { useEffect, useState } from 'react';
+// import { NewPost, DisplayPost, Suggestions } from 'features';
+// import { flexMiddleContainerStyle, flexMiddleOuterContainerStyle, sortButtonsContainerStyle } from 'styles';
+// import { NewPost, DisplayPost, Suggestions } from '../../features/components/DisplayPost';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { changeSorting } from '../postsSlice';
+// import { changeSorting } from '../../features/postsSlice';
+// import { DisplayPost } from '../../features/components/DisplayPost';
 
 function HeroContent() {
   //   const { posts, postSorting } = useSelector((state) => state.posts);
@@ -34,8 +20,7 @@ function HeroContent() {
   //   useEffect(() => {
   //     const filteredPosts = posts.filter(
   //       (currPost) =>
-  //         authUser.following.find((user) => user.username === currPost.username) ||
-  //         authUser.username === currPost.username
+  //         authUser.following.find((user) => user.email === currPost.email) || authUser.email === currPost.email
   //     );
   //     switch (postSorting) {
   //       case 'trending':
@@ -80,7 +65,7 @@ function HeroContent() {
                     size={'xl'}
                     color={'#67748E80'}
                     backgroundColor={'#fff'}
-                    icon={<BsFillQuestionCircleFill />}
+                    // icon={<BsFillQuestionCircleFill />}
                     // src={'Images/questionIcon.png'}
                     // css={{
                     //   border: '2px solid white',
@@ -231,9 +216,22 @@ function HeroContent() {
               </Flex>
             </Flex>
           </Box>
+          {/* <Box
+            display={{ base: "none", md: "block" }}
+            width={{ md: "85%", lg: "30rem" }}
+            alignSelf="center"
+            p="0"
+            m="0"
+          >
+            <NewPost
+              width={{ base: "90vw", md: "100%", lg: "30rem" }}
+              boxShadow="rgb(0 0 0 / 5%) 0px 0px 10px 4px"
+            />
+          </Box> */}
           <Box zIndex={99} mt={10} width={'90%'} ml={12} height={'70px'}>
             <Button
               as={'a'}
+              //   onClick={() => dispatch(changeSorting('latest'))}
               w={'300px'}
               //   border={'2px solid red'}
               borderBottom={'7px solid #9CA3AF'}
@@ -259,19 +257,20 @@ function HeroContent() {
             <Button
               as={'a'}
               w={'300px'}
-              borderBottom={'7px solid rgba(156, 163, 175, 1)'}
+              borderBottom={'7px solid #9CA3AF'}
               // display={{ base: 'inline-flex', md: 'none' }}
               fontSize={20}
               fontWeight={500}
               color={'rgba(231, 56, 56, 1)'}
               align={'center'}
+              //   onClick={() => dispatch(changeSorting('trending'))}
               bg={'transparent'}
               fontFamily={'Ubuntu'}
               href={'#'}
               _hover={{
                 transform: 'scale(1.1)',
-                color: 'rgba(119, 63, 198, 1)',
-                borderBottom: '7px solid rgba(119, 63, 198, 1)',
+                color: '#773FC6',
+                borderBottom: '7px solid #773FC6',
               }}
             >
               Trending
@@ -299,7 +298,16 @@ function HeroContent() {
               Surprise Me!
             </Button>
           </Box>
-          <Box
+          {/* {followingPosts.length > 0 ? (
+            followingPosts.map((post) => 
+			<DisplayPost key={post._id} post={post} />
+			)
+          ) : (
+            <Heading fontSize='lg' width='80%' mt='16'>
+              No Posts to Display! Start Following and Liking your Friends Post to get updates on your Feed.
+            </Heading>
+          )} */}
+          {/* <Box
             zIndex={99}
             mt={10}
             borderRadius={12}
@@ -314,7 +322,19 @@ function HeroContent() {
             bgGradient='linear-gradient(112.83deg, rgba(255, 255, 255, 0.82) 0%, rgba(255, 255, 255, 0.8) 110.84%)'
           >
             <Text>Name and Image</Text>
-          </Box>
+          </Box> */}
+          {/* <Box
+            zIndex={99}
+            mt={10}
+            borderRadius={12}
+            border={'border: 1.5px solid rgba(255, 255, 255, 1)'}
+            width={'90%'}
+            ml={12}
+            height={'70px'}
+            bgGradient='linear-gradient(112.83deg, rgba(255, 255, 255, 0.82) 0%, rgba(255, 255, 255, 0.8) 110.84%)'
+          >
+            <Text>Post</Text>
+          </Box> */}
         </Flex>
       </Flex>
     </Container>
